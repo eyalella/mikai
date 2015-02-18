@@ -1,0 +1,60 @@
+{% if settings.show_product_list_home_page%}
+  {% if settings.product_list_collection == blank %}
+  <p style="margin-bottom: 30px;" class="container">Please select a collection in Theme Setting to display the products (Home Page section -> Home Page New Arrivals Products)</p>
+  {% else %}
+  <section class="widget-new-product container">
+    <div class="widget-title wow fadeIn">   
+      <fieldset class="box-title">
+        <legend align="center">
+          {% if settings.product_list_title != blank %}
+          {{ settings.product_list_title }}
+          {% endif %}
+        </legend>
+      </fieldset>
+    </div>
+    <div class="widget-product">
+      <div class="products-grid">
+        {% for product in collections.[settings.product_list_collection].products limit:settings.product_list_limit_all %}
+        {% include 'product-grid-item' %}	  
+        {% endfor %}
+     </div> 
+     {% assign products_to_show = settings.product_list_limit | plus:0 %} 
+     {% if settings.display_infinite_scrolling_homepage and collections.[settings.product_list_collection].all_products_count > products_to_show %}
+
+     <div class="infinite-scrolling-homepage wow fadeIn">
+        <a href="javascript:void(0)" title="{{ if settings.product_list_infinite_scrolling_text }}">{{ settings.product_list_infinite_scrolling_text }}</a>  
+     </div>
+
+     <script>
+      var productsToShow = {{products_to_show}};
+      var totalProducts = {{collections.[settings.product_list_collection].all_products_count}};
+      jQuery(".infinite-scrolling-homepage a").click(function() {
+        if (jQuery('.widget-new-product .products-grid .grid-item:hidden').length > 0) {
+          jQuery('.widget-new-product .products-grid .grid-item:hidden:lt('+productsToShow+')').each(function() {
+              jQuery(this).show();
+              {% if settings.product_item_no_hover %}
+              jQuery(this).find('img').css('height','auto');              
+              {% endif %}
+           	  if (window.product_image_resize) {
+                  jQuery(this).find('img').fakecrop({ 
+                      fill: window.images_size.is_crop,
+                      widthSelector: ".widget-new-product .products-grid .grid-item:first .product-image",
+                      ratioWrapper: window.images_size
+                  });
+              }
+          });        
+
+          jQuery("window" ).scroll();
+          if (jQuery('.widget-new-product .products-grid .grid-item:hidden').length == 0) {
+            //no more products
+            jQuery(".widget-new-product .infinite-scrolling-homepage a").text("{{settings.product_list_no_more_product_text}}").addClass('disabled');
+          }
+        }
+      });
+    </script>
+     {% endif %}
+  </div>
+  </section>
+
+  {% endif %} 
+{% endif %}

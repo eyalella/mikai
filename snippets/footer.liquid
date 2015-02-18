@@ -1,0 +1,61 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top"> 
+      <div class="row">
+        {% if settings.footer_column_1_title != blank %}
+        <div class="col-1 wow fadeInUp" data-wow-delay="200ms">
+          <h3>{{ settings.footer_column_1_title }}</h3>
+          <ul>
+            {% assign footerCol1 = settings.footer_column_1_title | handleize %}
+            {% for link in linklists.[footerCol1].links %}
+            <li>{{ link.title | link_to: link.url }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        {% if settings.footer_column_2_title != blank %}
+        <div class="col-2 wow fadeInUp" data-wow-delay="400ms">
+          <h3>{{ settings.footer_column_2_title }}</h3>
+          <ul>
+            {% assign footerCol2 = settings.footer_column_2_title | handleize %}
+            {% for link in linklists.[footerCol2].links %}
+            <li>{{ link.title | link_to: link.url }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        {% if settings.footer_column_3_title != blank %}
+        <div class="col-3 wow fadeInUp" data-wow-delay="600ms">
+          <h3>{{ settings.footer_column_3_title }}</h3>
+          <ul>
+            {% assign footerCol3 = settings.footer_column_3_title | handleize %}
+            {% for link in linklists.[footerCol3].links %}
+            <li>{{ link.title | link_to: link.url }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        <div class="col-4 wow fadeInUp last" data-wow-delay="600ms">
+          <h3>{{ settings.footer_column_4_title }}</h3>
+          {% include 'social' %}
+          {% include 'homepage-block-newsletter' %}
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom  wow fadeInUp" data-wow-delay="800ms">
+      {% if settings.display_footer_address %}
+      <address>
+        {% if settings.footer_address_code %}
+        {{ settings.footer_address_code }}
+        {% endif%}
+      </address>
+      {% endif %}
+      
+      {% comment %}
+        Loop through available payment methods and show their icons.
+      {% endcomment %}
+      {% include 'payment_methods' %}          
+    </div>
+  </div>
+</footer>
+{% include 'message-modal' %}

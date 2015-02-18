@@ -1,0 +1,28 @@
+{% if settings.show_featured_product_menu %}
+<div class="widget-featured-product">
+  <div class="widget-title">   
+    <h3>
+      <span>
+		{% if settings.menu_featured_product_title != blank %}
+    	{{ settings.menu_featured_product_title }}
+    	{% endif %}        
+      </span>
+    </h3>
+  </div>
+  {% if settings.menu_featured_product_list_collection == blank %}
+  <p style="margin-bottom: 30px;">Please select a collection in Theme Setting to display the products (Navigation -> Featured Product in Mega Menu)</p>
+  {% else %}
+  <div class="widget-product">
+	<div class="products-grid">
+	  {% comment %}
+		Loop through products in your Frontpage collection.
+		This collection is created by default, but you must add products to it.
+	  {% endcomment %}
+	  {% for product in collections.[settings.menu_featured_product_list_collection].products limit:1 %}
+      {% include 'mega-menu-product-grid' %}	  
+  	  {% endfor %}
+    </div> 
+  </div>
+  {% endif %}
+</div>
+{% endif %}

@@ -1,0 +1,96 @@
+{% if template == "index" and settings.display_slideshow %}
+<section class="main-slideshow">
+  <div class="flexslider">
+    <ul class="slides">
+      {% capture slideheadingSize %}slide_heading_size{% endcapture %}
+      {% capture slideheadingColor %}slide_heading_color{% endcapture %}
+      {% capture slidetextSize %}slide_text_size{% endcapture %}
+      {% capture slidetextColor %}slide_text_color{% endcapture %}
+      {% for i in (1..10) %}
+      {% capture display_slideshow %}display_slideshow_{{ i }}{% endcapture %}
+      {% capture slide %}slideshow_{{ i }}.jpg{% endcapture %}
+      {% capture link %}image_{{ i }}_link{% endcapture %}
+      {% capture alt %}image_{{ i }}_alt{% endcapture %}
+      {% capture slideheading %}slide-heading_{{ i }}{% endcapture %}
+      {% capture slideheadingsize %}slide_heading_size_{{ i }}{% endcapture %}
+      {% capture slideheadingcolor %}slide_heading_color_{{ i }}{% endcapture %}
+      {% capture slidetextsize %}slide_text_size_{{ i }}{% endcapture %}
+      {% capture slidetextcolor %}slide_text_color_{{ i }}{% endcapture %}
+      {% capture slidetext %}slide-text_{{ i }}{% endcapture %}
+      {% capture buttontext %}button-text_{{ i }}{% endcapture %}
+      {% capture text_align_slide %}text_align_slide_{{ i }}{% endcapture %}
+      {% if settings[display_slideshow] %}
+      <li class="slide">
+        <img src="{{ slide | asset_url }}" data-url="{{ settings[link] }}" class="slide-img" alt="{{ settings[alt] }}" />
+        <div class="slide-des" style="text-align:{{settings[text_align_slide]}};">
+          {% if settings[slideheading] != blank %}
+          <h2 class="slide-heading" style="
+                                           {% if settings[slideheadingsize] != blank %} 
+                                           font-size: {{settings[slideheadingsize]}}px;
+                                           {% elsif settings[slideheadingSize] != blank %}
+                                           font-size: {{settings[slideheadingSize]}}px;
+                                           {% endif %}
+                                           {% if settings[slideheadingcolor] != blank %} 
+                                           color: {{settings[slideheadingcolor]}};
+                                           {% elsif settings[slideheadingColor] != blank %}
+                                           color: {{settings[slideheadingColor]}};
+                                           {% endif %}"
+              >
+            {{ settings[slideheading]}}
+          </h2>
+          {% endif %}
+          
+          <p class="line" style="
+                                 {% if settings[slideheadingcolor] != blank %} 
+                                 background-color: {{settings[slideheadingcolor]}};
+                                 {% elsif settings[slideheadingColor] != blank %}
+                                 background-color: {{settings[slideheadingColor]}};
+                                 {% endif %}"
+             >&nbsp;</p>
+          {% if settings[slidetext] != blank %}
+          <p class="slide-text" style="
+                                       {% if settings[slidetextsize] != blank %} 
+                                       font-size: {{settings[slidetextsize]}}px;
+                                       {% else %}
+                                       font-size: {{settings[slidetextSize]}}px;
+                                       {% endif %}
+                                       {% if settings[slidetextcolor] != blank %} 
+                                       color: {{settings[slidetextcolor]}};
+                                       {% else %}
+                                       color: {{settings[slidetextColor]}};
+                                       {% endif %}"
+             >
+            {{ settings[slidetext]}}
+          </p>
+          {% endif %}
+          {% if settings[buttontext] != blank %}
+          <a href="{{ settings[link] }}" title="" class="slide-button btn">
+            <span class="arrow">arrrow</span>
+            <span>{{ settings[buttontext]}}</span>
+          </a>
+          {% endif %}
+        </div>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div><!-- /.flexslider -->
+</section> <!-- /#slideshow.row -->
+<script>
+  /* Flex Slider */		 
+    jQuery('.flexslider').flexslider({
+      directionNav: true,
+      controlNav: true,
+      keyboardNav: true,
+      slideshowSpeed: {{ settings.slideshow_speed }},
+      animation: "{{ settings.slideshow_transition }}",
+      prevText: 'Previous',
+      nextText: 'Next'
+    });
+    jQuery('.flexslider li img').click(function(){
+      var url = jQuery(this).attr('data-url');
+      if (url.length > 0) {window.location.href = url;}
+    });		  
+  /* End Flex Slider */
+</script>
+{% endif %}

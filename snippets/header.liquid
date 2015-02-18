@@ -1,0 +1,146 @@
+<header class="site-header" role="banner">
+  {% if settings.display_header_top_text %}
+    {% if settings.header_top_text != blank %}
+    <div class="header-top">
+      <div class="container">
+	    <p>{{ settings.header_top_text }}
+        {% if settings.header_top_link_text != blank %}
+          <a href="{{ settings.header_top_link }}" class="link">{{ settings.header_top_link_text }}</a>
+        {% endif %}
+          <a href="javascript:void(0)" class="close">close</a>
+        </p>
+      </div>
+    </div>
+  	<script>
+      if (jQuery.cookie('headerTop') == 'closed') {
+        jQuery('.header-top').remove();
+      }
+
+      jQuery('.header-top a.close').bind('click',function(){
+        jQuery('.header-top').remove();
+        jQuery.cookie('headerTop', 'closed', {expires:1, path:'/'});
+      });  
+	</script>
+    {% endif %}
+  {% endif %}
+  
+  <div class="header-bottom">
+    <div class="container">
+
+      <div class="header-mobile">
+        <div class="menu-block visible-phone"><!-- start Navigation Mobile  -->
+          <div id="showLeftPush"></div>
+        </div><!-- end Navigation Mobile  --> 
+
+        <div class="customer-area dropdown">
+          <a data-toggle="dropdown" href="#">Dropdown trigger</a>
+          <div class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            <p {% if customer %}class="login"{% endif %}><a href="/account"> החשבון שלי</a></p>
+            <div class="wishlist"><a href="/pages/wish-list" title="Wishlist">הרשימה שלי</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-panel-top">
+        <div class="nav-search">{% include 'search-bar' %}</div>
+        <div class="currency">{% include 'new-currency-picker' %}</div>
+        {% if settings.display_header_text_order %}
+        {% if settings.header_text_order != blank %}
+        <p class="text_order">{{ settings.header_text_order }}</p>
+        {% endif %}
+        {% endif %}
+      </div>
+      
+      <div class="header-panel">
+        <div class="row">
+          
+
+          <div class="header-panel-bottom col-xs-8">
+            {% if settings.display_header_free_shipping %}
+            {% if settings.header_free_shipping != blank %}
+            <p class="free_shipping">{{ settings.header_free_shipping }}</p>
+            {% endif %}
+            {% endif %}
+
+            {% include 'customer_links' %}
+
+            <div class="top-header ">
+              <div class="wrapper-top-cart">
+                <p class="top-cart">
+                  <a href="javascript:void(0)" id="cartToggle">
+                    <span class="first">עגלת הקניות</span>
+                    <span id="cartCount">{{ cart.item_count }}</span>
+                  </a> 
+                  <span class="icon">&nbsp;</span>
+                </p>
+                <div id="dropdown-cart" style="display:none"> 
+                  <div class="no-items">
+                    <p>נראה שהעגלה ריקה!</p>
+                    <p class="text-continue"><a href="javascript:void(0)">המשך בקניות</a></p>
+                  </div>
+                  <div class="has-items">
+                    <ol class="mini-products-list">  
+                      {% for item in cart.items %}
+                      <li class="item" id="cart-item-{{item.id}}">
+                        <a href="{{item.url}}" title="{{item.title}}" class="product-image"><img src="{{ item.image | product_img_url: 'small' }}" alt="{{item.title}}"></a>
+                        <div class="product-details">
+                          <a href="javascript:void(0)" title="Remove This Item" class="btn-remove">X</a>
+                          <p class="product-name"><a href="{{item.url}}">{{ item.product.title }}</a></p>
+                          <div class="option">
+                            {% if item.product.variants.size != 0 %}
+                            {% unless item.variant.title contains 'Default' %}
+                            <small>{{ item.variant.title }}</small>
+                            {% endunless %}
+                            {% endif %}
+                          </div>
+                          <div class="cart-collateral"><span class="price">{{item.price | money}}</span> {{item.quantity}}x </div>
+                        </div>
+                      </li>
+                      {% endfor %}
+                    </ol>
+                    <div class="summary">                
+                      <p class="total">
+                        <span class="label" style="color:#000">סה"כ:</span>
+                        <span class="price">{{cart.total_price | money}}</span> 
+                      </p>
+                    </div>
+                    <div class="actions">
+                      <button class="btn" onclick="window.location='/checkout'"> לקופה</button>
+                    </div>
+                    <p class="text-cart"><a href="/cart"> הצג עגלה</a></p>
+                  </div>
+                </div>
+              </div>
+
+              {% comment %}
+              If customer accounts are enabled, provide login and create account links
+              {% endcomment %}
+            </div> <!-- End Top Header --> 
+          </div>
+          <h1 class="header-logo col-xs-4">
+            {% if settings.brand_type == 'image' %}
+            <a href="/">
+              {{ 'logo.png' | asset_url | img_tag: shop.name }}
+            </a>
+            {% elsif settings.brand_text != "" %}
+            <a class="logo-title" href="/">{{ settings.brand_text }}</a>
+            {% else %}
+            <a class="logo-title" href="/">{{shop.name}}</a>
+            {% endif %}
+          </h1>
+          <div class="nav-search on">{% include 'search-bar' %}</div>
+        </div>
+
+      </div>
+    </div>
+    
+    <nav class="nav-bar" role="navigation">
+      <div class="header-logo-fix">
+        <a href="/">{{ 'logo_fix.png' | asset_url | img_tag: shop.name }}</a>
+      </div>
+      <div class="container">
+        {% include 'site-nav' %}     
+      </div>
+    </nav>
+  </div>
+</header>
