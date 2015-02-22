@@ -4,12 +4,12 @@
   {% if settings.enable_wishlist %}
   <li class="wishlist">
     <span class="icon">&nbsp;</span>
-    <a href="/pages/wish-list" title="My Wishlist">הרשימה שלי</a>
+    <a href="/pages/wish-list" title="המועדפים שלי">המועדפים שלי</a>
   </li>
   {% endif %}
   <li>
-    {{ 'Logout' | customer_logout_link }}
-    <span class="or">או</span>
+    {{ 'יציאה' | customer_logout_link }}
+    <span class="or">|</span>
     <a href="/account"> החשבון שלי</a>
   </li>
 </ul>
@@ -18,14 +18,14 @@
   {% if settings.enable_wishlist %}
   <li class="wishlist">
     <span class="icon">&nbsp;</span>
-    <a href="/pages/wish-list" title="My Wishlist">הרשימה שלי</a>
+    <a href="/pages/wish-list" title="המועדפים שלי">המועדפים שלי</a>
   </li>
   {% endif %}
   <li>
-    {{ 'Sign In' | customer_login_link }}
+    {{ 'כניסה לחשבון' | customer_login_link }}
     {% if shop.customer_accounts_optional %}
-    <span class="or">או</span>
-    {{ 'Create an account' | customer_register_link }}
+    <span class="or">|</span>
+    {{ 'הרשמה' | customer_register_link }}
     {% endif %}
   </li>
 </ul>

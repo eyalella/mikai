@@ -76,7 +76,7 @@
                 <div id="dropdown-cart" style="display:none"> 
                   <div class="no-items">
                     <p>נראה שהעגלה ריקה!</p>
-                    <p class="text-continue"><a href="javascript:void(0)">המשך בקניות</a></p>
+                    <p class="text-continue"><a href="javascript:void(0)">המשך לחנות ></a></p>
                   </div>
                   <div class="has-items">
                     <ol class="mini-products-list">  
@@ -135,9 +135,12 @@
     </div>
     
     <nav class="nav-bar" role="navigation">
-      <div class="header-logo-fix">
-        <a href="/">{{ 'logo_fix.png' | asset_url | img_tag: shop.name }}</a>
-      </div>
+      <h1 class="header-logo-fix">
+        <a href="/">
+        {% comment %}{{ 'logo_fix.png' | asset_url | img_tag: shop.name }}{% endcomment %}
+          MIKAI
+        </a>
+      </h1>
       <div class="container">
         {% include 'site-nav' %}     
       </div>

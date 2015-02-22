@@ -5,7 +5,7 @@
     <div class="inner">
       {% if settings.banner_text_title != blank %}
       <h2>{{ settings.banner_text_title }}</h2>
-      <p class="line">&nbsp;</p>
+      {% comment %}<p class="line">&nbsp;</p>{% endcomment %}
       {% endif %}
       <p>
         {% if settings.banner_text_description != blank %}

@@ -52,7 +52,7 @@
         <input class="btn add-to-cart-btn" type="submit" value="Unavailable" disabled="disabled" />
         {% else %}
         {% if variantCount > 1 %}    
-        <input class="btn" type="button" onclick="window.location.href='{{product.url}}'" value="Select options" />
+        <input class="btn" type="button" onclick="window.location.href='{{product.url}}'" value="המשך לפריט" />
         {% else %}
         <input type="hidden" name="id" value="{{ product.variants[0].id }}" />      
         <input class="btn add-to-cart-btn" type="submit" value="הוסף לעגלה" />

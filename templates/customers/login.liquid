@@ -24,7 +24,7 @@
   {% endcomment %}
   
   <div class="note form-success" id="resetSuccess" style="display:none;">
-    We've sent you an email with a link to update your password.
+   שלחנו לך מייל עם קישור לאיפוס הסיסמה.
   </div>
   
   {% comment %}
@@ -32,23 +32,24 @@
   {% endcomment %}
   {% form 'customer_login' %}
   <header class="page-header">
-    <h1>Customer Login</h1>
+    <h1>כניסה לחשבון האישי</h1>
   </header>
   
   {% include 'form-errors-custom' %}
-  <label for="customer_email">Email Address<em>*</em></label>
+  <label for="customer_email"><em>*</em>כתובת דוא"ל</label>
   <input type="email" value="" name="customer[email]" id="customer_email" {% if form.errors contains "email" %} class="error"{% endif %} >
   
   {% if form.password_needed %}
-  <label for="customer_password">Password<em>*</em></label>
+  <label for="customer_password"><em>*</em>סיסמה</label>
   <input type="password" value="" name="customer[password]" id="customer_password" {% if form.errors contains "password" %} class="error"{% endif %}>
   {% endif %}
   
   <div class="action-btn">
-    <p><input type="submit" class="btn" value="Login"></p>
+    <p><input type="submit" class="btn" value="כניסה"></p>
     <p class="last">
-      <a href="#" onclick="showRecoverPasswordForm();return false;">Forgot your password?</a>
-      <span>or</span> <a href="{{ shop.url }}">Return to Store</a>
+      <a href="{{ shop.url }}">חזרה לחנות</a>
+      |
+      <a href="#" onclick="showRecoverPasswordForm();return false;">שכחת סיסמה?</a>
     </p>
   </div>
   {% endform %}
@@ -58,9 +59,9 @@
   {% endcomment %}
   <div id="recover_password" style="display: none;">
     <header class="page-header">
-      <h2>Reset your password</h2>
+      <h2>איפוס סיסמה</h2>
     </header>
-    <p>We will send you an email to reset your password.</p>
+    <p>אנחנו נשלח לך מייל כדי לאפס את הסיסמה.</p>
     
     {% comment %}
       This form must use 'recover_customer_password'
@@ -78,12 +79,12 @@
     {% assign reset_success = true %}
     {% endif %}
     
-    <label for="recover-email">Email</label>
+    <label for="recover-email">דוא"ל</label>
     <input type="email" value="" name="email" id="recover-email" placeholder="your-email@shopify.com" >
     
     <div class="action-btn">
       <p><input type="submit" class="btn" value="Submit"></p>
-      or <a href="#" onclick="hideRecoverPasswordForm();return false;">Cancel</a>
+      או <a href="#" onclick="hideRecoverPasswordForm();return false;">ביטול</a>
     </div>
     {% endform %}
     

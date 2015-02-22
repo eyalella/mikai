@@ -82,8 +82,8 @@
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="add-to-cart-form">
               <div class="prices">
                 {% if product.compare_at_price > product.price %}
-                <span class="compare-price">{{ product.compare_at_price_max | money }}</span>
                 <span class="price on-sale" itemprop="price">{{ product.price | money }}</span>
+                <span class="compare-price">{{ product.compare_at_price_max | money }}</span>
                 {% else %}
                 <span class="price" itemprop="price">{{ product.price | money }}</span>
                 {% endif %}

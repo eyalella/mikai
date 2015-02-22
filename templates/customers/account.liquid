@@ -19,14 +19,14 @@
 {% layout settings.customer_layout %}
 
 <header class="page-header">
-  <h1>My Account</h1>
+  <h1>החשבון שלי</h1>
 </header>
 
-<div class="grid">
+<div class="grid my-account">
 
   <div class="grid-item two-thirds medium-down--one-whole">
     <header class="page-header">
-      <h4>Order History</h4>
+      <h4>היסטורית הזמנות</h4>
     </header>
 
     {% comment %}
@@ -37,11 +37,11 @@
       <table class="full">
         <thead>
           <tr>
-            <th>Order</th>
-            <th>Date</th>
-            <th>Payment Status</th>
-            <th>Fulfillment Status</th>
-            <th>Total</th>
+            <th>הזמנה</th>
+            <th>תאריך</th>
+            <th>מצב תשלום</th>
+            <th>מצב הזמנה</th>
+            <th>סה"כ</th>
           </tr>
         </thead>
         <tbody>
@@ -59,14 +59,14 @@
 
     {% else %}
 
-      <p>You haven't placed any orders yet.</p>
+      <p>עדיין לא ביצעת שום הזמנה.</p>
 
     {% endif %}
   </div>
 
   <div class="grid-item one-third medium-down--one-whole">
     <header class="page-header">
-      <h4>Account Details</h4>
+      <h4>פרטי החשבון</h4>
     </header>
 
     <h5>{{ customer.name }}</h5>
@@ -103,7 +103,7 @@
 
     {% endif %}
 
-    <p><a href="/account/addresses">View Addresses ({{ customer.addresses_count }})</a></p>
+    <p><a href="/account/addresses">צפייה בכתובות ({{ customer.addresses_count }})</a></p>
   </div>
 
 </div>

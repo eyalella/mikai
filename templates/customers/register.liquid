@@ -13,7 +13,7 @@
 {% include 'breadcrumb' %}
 <div class="create-an-account">
   <header class="page-header">
-    <h1>Create Account</h1>
+    <h1>יצירת חשבון</h1>
   </header>
   <p class="title">{{ settings.register_text_desc }}</p>
 
@@ -23,27 +23,27 @@
   {% form 'create_customer' %}
   {% include 'form-errors-custom' %}
   <div id="first_name">
-    <label for="first_name">First Name</label>
+    <label for="first_name">שם פרטי</label>
     <input type="text" value="" name="customer[first_name]" id="first_name" {% if form.errors contains "first_name" %} class="error"{% endif %} >
   </div>
   
   <div id="last_name">
-    <label for="last_name">Last Name</label>
+    <label for="last_name">שם משפחה</label>
     <input type="text" value="" name="customer[last_name]" id="last_name" {% if form.errors contains "last_name" %} class="error"{% endif %} >
   </div>
   
   <div id="email">
-    <label for="email">Your Email Address<em>*</em></label>
+    <label for="email">כתובת דוא"ל<em>*</em></label>
     <input type="email" value="" name="customer[email]" id="email" {% if form.errors contains "email" %} class="error"{% endif %}  >
   </div>
   
   <div id="create_password">
-    <label for="password">Your Password<em>*</em></label>
+    <label for="password">סיסמה<em>*</em></label>
     <input type="password" value="" name="customer[password]" id="create_password" {% if form.errors contains "password" %} class="error"{% endif %}>
   </div>
   
   <div class="action-btn">
-    <p><input type="submit" value="Create an Account" class="btn"></p>
+    <p><input type="submit" value="יצירת חשבון" class="btn"></p>
   </div>
   {% endform %}
 </div>

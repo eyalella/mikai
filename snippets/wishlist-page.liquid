@@ -75,7 +75,7 @@
               <input class="btn add-to-cart-btn" type="submit" value="Unavailable" disabled="disabled" />
               {% else %}
               {% if variantCount > 1 %}
-              <input class="btn" type="button" onclick="window.location.href='{{product.url}}'" value="Select options" />
+              <input class="btn" type="button" onclick="window.location.href='{{product.url}}'" value="המשך לפריט" />
               {% else %}
               <input type="hidden" name="id" value="{{ product.variants[0].id }}" />      
               <input class="btn add-to-cart-btn" type="submit" value="הוסף לעגלה" />
@@ -106,6 +106,6 @@
   {% capture body %}{{ body }} {% for tag in customer.tags %}{% assign the_test = 'nutthin' %}{% capture tag_id %}{{ tag }}{% endcapture %}{% assign tag_count = 0 %}{% assign tag_size = tag_id | size %}{% for tag in customer.tags %}{% capture cur_tag %}{{ tag }}{% endcapture %}{% if cur_tag contains tag_id %}{% assign cur_tag_size = cur_tag | size %}{% assign difference = tag_size | minus: cur_tag_size %}{% if difference == 0 %}{% assign the_test = tag_id %}{% else %}{% assign the_test = 'nutthin' %}{% endif %}{% endif %}{% endfor %}{% for p in collections.all.products %}{% capture pID %}{{ p.id }}{% endcapture %}{% capture difference %}{{ tag_size | minus:pID.size | money_without_currency | times:100 | divided_by: 2 }}{% endcapture %}{% assign check = difference | split:'.' %}{% if check[1] contains '5' %}{% assign display = false %}{% else %}{% assign display = true %}{% endif %}{% if display and the_test contains pID %}%0A%0A{{ p.title | replace: ' ','%20' }}%3A%20%20{{ shop.url }}{{ p.url }}{% endif %}{% endfor %}{% endfor %}{% endcapture %}
   <a class="share" href='mailto:?to=&?subject={{ subject }}&amp;body={{ body }}'>Share my wish list via email</a>
   {% else %}
-  <p>To create a wish list you must <a href='/account/login'>sign in</a> or <a href='/account/register'>create an account</a>.</p>
+  <p>כדי ליצור רשימת מועדפים יש לבצע <a href='/account/login'>כניסה לחשבון</a> או <a href='/account/register'>ליצור חשבון חדש</a>.</p>
   {% endif %}
 </div>

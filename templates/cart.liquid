@@ -9,9 +9,9 @@
 
 {% include 'breadcrumb' %}
 <header class="page-header">
-  <h1>My Cart</h1>
+  <h1>העגלה שלי</h1>
   {% if cart.item_count > 0 %}
-  <a href="/collections/{{ continue_shopping_handle }}" title="Continue Shopping" class="continue">Continue Shopping</a>
+  <a href="/collections/{{ continue_shopping_handle }}" title="המשך לחנות" class="continue">המשך לחנות ></a>
   {% endif %}
 </header>
 
@@ -19,7 +19,7 @@
 <form action="/cart" method="post" novalidate>
   <div class="row">
     <div class="wrapper-cart col-xs-9">
-      <div class="cart-title"><h2>Products</h2></div>
+      <div class="cart-title"><h2>מוצרים</h2></div>
       <ul class="cart-list">
 
       {% comment %}
@@ -98,15 +98,15 @@
             {% endcomment %}
 
             <div class="quantity">
-              <label>Quantity</label>
+              <label>כמות</label>
               <input class="qty" type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0" data-id="{{ item.id }}">
               
               {% comment %}
                 To remove an item from the cart, reload the page with the following parameters.
                 Added data-id for the ajax cart implementation only.
               {% endcomment %}
-              <a class="remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" data-id="{{ item.id }}">Remove</a>
-              <input class="update" type="submit" name="update" class="btn-secondary" value="Update cart">
+              <input class="update" type="submit" name="update" class="btn-secondary" value="עדכן עגלה">
+              <a class="remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" data-id="{{ item.id }}">הסר</a>
             </div>
           </div>
         </li>
@@ -115,7 +115,7 @@
     </div>
     <div class="cart-row col-xs-3">
       <div class="total-price">
-      	<h3>SubTotal</h3>
+      	<h3>סה"כ</h3>
         <p class="price">{{ cart.total_price | money }}</p>
       </div>
 
@@ -125,7 +125,7 @@
         - Make sure you have name="note" for the message to be submitted properly
       {% endcomment %}
       {% if settings.cart_notes %}
-      <label class="add-comments" for="cartSpecialInstructions"><span>Note</span>Additional comments</label>
+      <label class="add-comments" for="cartSpecialInstructions"><span>שים לב</span>הערות נוספות</label>
       <textarea name="note" class="input-full" id="cartSpecialInstructions">{{ cart.note }}</textarea>
       {% endif %}
 
@@ -136,7 +136,7 @@
       {% comment %}
         name="checkout" is required for the update button to work
       {% endcomment %}
-      <input type="submit" name="checkout" class="btn" value="Proceed to Checkout">
+      <input type="submit" name="checkout" class="btn" value="לקופה">
 
       {% comment %}
         name="update" is required for the update button to work
@@ -146,7 +146,15 @@
         Paypal and Google checkout buttons
       {% endcomment %}
       {% if additional_checkout_buttons %}
-      <p>{{ content_for_additional_checkout_buttons }}</p>
+      <div>
+        <p class="text-align-c additional-checkout-or">- או -</p>
+        <p class="text-align-c additional-checkout">
+          <span class="paypal-he-button">
+            {{ 'check_out_paypal_he.png' | asset_url | img_tag }}
+          </span>
+          {{ content_for_additional_checkout_buttons }}
+        </p>
+      </div>
       {% endif %}
 
       {% unless cart.item_count == 0 %}
@@ -160,4 +168,14 @@
 
 <h2>It appears that your cart is currently empty!</h2>
 <p>You can continue browsing <a href="/collections/all">here</a>.</p>
+
 {% endif %}
+
+<script>
+  $(document).ready(function(){
+    var $payPalBtn = $('input[value="paypal_express"]');
+    $('.paypal-he-button').on('click', function() {
+      $payPalBtn.trigger('click');
+    });
+  });
+</script>

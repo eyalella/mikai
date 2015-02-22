@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"center",
+				"center"
+			],
+			[
+				"visibilty",
+				"visibility:hidden"
+			],
+			[
+				"tex",
+				"text"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"r",
+				"right"
+			],
+			[
 				"pro",
 				"prototype"
 			],
@@ -119,15 +147,73 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "templates/customers/register.liquid",
+			"settings":
+			{
+				"buffer_size": 1849,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/customers/account.liquid",
+			"settings":
+			{
+				"buffer_size": 2988,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/theme-styles.css.liquid",
+			"settings":
+			{
+				"buffer_size": 107148,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 235 files for \"Add New Address\" (case sensitive)\n\n/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/customers/addresses.liquid:\n   25      </header>\n   26      <p class=\"large--right\">\n   27:       <a href=\"#\" class=\"btn\" onclick=\"Shopify.CustomerAddress.toggleNewForm(); return false;\">Add New Address</a>\n   28      </p>\n   29      <p class=\"large--text-right\"><a href=\"/account\">Return to Account Details</a></p>\n\n1 match in 1 file\n\n\nSearching 235 files for \"(default)\" (case sensitive)\n\n/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/site-nav.liquid:\n    1  {% comment %}\n    2:   List out your main-menu linklist (default)\n    3    More info on linklists:\n    4      - http://docs.shopify.com/themes/liquid-variables/linklists\n\n/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/customers/addresses.liquid:\n  107          <h3>\n  108            {{ address.first_name | capitalize }} {{address.last_name | capitalize }}\n  109:           {% if address == customer.default_address %}<em>(default)</em>{% endif %}\n  110          </h3>\n  111  \n\n2 matches across 2 files\n\n\nSearching 235 files for \"Logout\" (case sensitive)\n\n/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/customer_links.liquid:\n    9    {% endif %}\n   10    <li>\n   11:     {{ 'Logout' | customer_logout_link }}\n   12      <span class=\"or\">או</span>\n   13      <a href=\"/account\"> החשבון שלי</a>\n\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 1484,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "snippets/customer_links.liquid",
+			"settings":
+			{
+				"buffer_size": 857,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/customers/addresses.liquid",
+			"settings":
+			{
+				"buffer_size": 10383,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/customers/order.liquid",
+			"settings":
+			{
+				"buffer_size": 4993,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 75.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
-				"install",
+				"ins",
 				"Package Control: Install Package"
 			],
 			[
@@ -135,7 +221,7 @@
 				"Package Control: Install Package"
 			],
 			[
-				"ins",
+				"install",
 				"Package Control: Install Package"
 			],
 			[
@@ -163,10 +249,85 @@
 	},
 	"expanded_folders":
 	[
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop"
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/layout",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates"
 	],
 	"file_history":
 	[
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/theme-styles-setting.css.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/form-errors-custom.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/config/settings_data.json",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/theme-styles.css.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/layout/theme.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/related-product-grid-item.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/README.md",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/customers/register.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-block-banner.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/customer_links.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/wishlist-page.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/customers/login.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/theme-styles-responsive.css.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/cart.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/checkout.scss.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/header.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/product.liquid",
+		"/home/eyal/workspace/projects/transparentPolitics/WebContent/index.html",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/collection-sidebar-custom-cms-block.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/checkout.css.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/product-grid-item.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/mega-menu-product-grid.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/product-grid-item-trending.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/product-grid-item-sidebar.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/product-grid-item-category.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/jquery.elevateZoom-3.0.8.min.js",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/ella.js",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/search-result.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/recently-viewed-products.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/index.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/breadcrumb.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/page.contact.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/product-list-item.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/product-sidebar.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/owl.theme.css",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/selectize.bootstrap3.css",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/retina-responsive.css",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/owl.carousel.css",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/jquery.fancybox.css",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/bootstrap.min.css",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/jcarousel.css",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/component.css",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/animate.css",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/collection-sidebar-shop-by-blocks.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/collection-sidebar.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/classie.js",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/social.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/message-modal.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/footer.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/ _temp.html",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/mikai-theme.sublime-project",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/fb-open-graph-tags.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/search-bar.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-block-three-banner-bottom.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/head_styles.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/config/settings.html",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/ella-16-myshopify-com-copy-of-standard-ella-1-0-3-jan-30/config/settings.html",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/toolbar.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/newsletter-form.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-block-newsletter.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-block-new-arrivals.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-flexslider.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/locales/he.json",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/footer_scripts.liquid",
+		"/home/eyal/Desktop/moshe knowladge transfer.js",
+		"/home/eyal/.config/sublime-text-3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/wishlist-product.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/comment.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/collection-tags.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/collection-grid-item.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/jquery-cookie.min.js",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/quick-view-template.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/ella-16-myshopify-com-copy-of-standard-ella-1-0-3-jan-30/snippets/blog_sidebar.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/mikai-mikai-trendy-boutique-myshopify-com-ella-theme-package-1-0-3/templates/product.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/mikai-mikai-trendy-boutique-myshopify-com-ella-theme-package-1-0-3/snippets/wishlist-page.liquid",
@@ -222,89 +383,20 @@
 		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/inline/framework/nee.inlineEditorUtils.js",
 		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/inline/framework/richTextEditor/d1/inlineRichTextEditor.jsp",
 		"/home/eyal/workspace/duda/duda3/DudaRoot/war/common/ie-not-supported.html",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/index.jsp",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/inline/framework/nee.inlineEditor.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/images/noarrow.JPG",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/product/openTable/js/nee.otPublishPanel.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/dudaone/editableObjects/siteColors/one.siteColorsPopUp.jsp",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/dudaone/modules/one.pagesPanel.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/_dm/s/rt/css/one.inlineEditGrid.css",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/editableObjects/editablesInitData.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/common/experimentalProps/exprops.engine.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/common/ie-not-supported-advanced-editor.html",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/inline/framework/one.inlinePreviewDrag.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/editableObjects/header/nee.header.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/inline/framework/nee.inlinePreviewDrag.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/src/com/duda/integration/plimus/PlimusResellerDataImporterJAXRS.java",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/src/com/duda/webutil/DMRuntimeProxyRedirectorFilter.java",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/runtime/preview_devices.jsp",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/src/resources/emails/api/api-password-reset-email.tmpl.htm",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/admin/support/payment_report.jsp",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/pom.xml",
-		"/home/eyal/Desktop/moshe knowladge transfer.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/dashboardApp/app/utils/ajax.js",
-		"/home/eyal/.sublime/history/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/inline/preview/2015-02-12_19.16.28.one.inlineEditGrid.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/utils/common/modules/module.batchRequests.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/utils/crossPlatform/nee.fn.extensions.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/dudaone/shell/one.shellLayout.jsp",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/_dm/s/rt/fonts/font-pack.css",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/runtime/parts/headparts/fonts.jspf",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/dudaone/images/svg/SVG/folder-open.svg",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/runtime/parts/footer.jsp",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/dudaone/images/svg/sprites/sprites.css",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/admin/opentable/op.properties",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/src/com/duda/rest/service/api/partner/DudaOneSiteServiceRest.java",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/dudaone/editableObjects/header/one.header.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/runtime/secured/product/spotzer/footers/footer_eniro_nederlands.jsp",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/initial_loader.jspf",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/common/ie-not-supported-ie8.jsp",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/admin/dad/inSite.jsp",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/WEB-INF/JSPackage.xml",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/dashboardApp/app/mixins/tables/paginated-summary-table-controller.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/src/com/duda/editor/client/ui/pe/insert/insertInfoWidgets/FormWidgetWithValidation.java",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/src/com/duda/editor/client/ui/pe/insert/insertInfoWidgets/ShareOptionsWidget.java",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/templates/direct/definitions/Half-Widget/direct.Half-Widget.paisley_beige.properties",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/src/com/duda/editor/client/ui/pe/insert/insertInfoWidgets/DefaultFormWidget.java",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/templates/direct/definitions/yp-advertising/yellowpages.yp-advertising.yellow-black.properties",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/stub/dashboardApp/app/initializers/ember-data-errors.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/utils/nee.media.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/src/com/duda/editor/client/ui/Framework.java",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/product/yahoo/css/yahooInlineEditor.css",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/editableObjects/socialHub/nee.socialHub.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/_dm/s/rt/scripts/dmAjax.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/runtime/parts/body.jsp",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/runtime/parts/layout.jsp",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/product/openTable/css/nee.openTableInlineEditor.css",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/css/nee.inlineEditor.css",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/dudaone/utils/fw/one.fw.smart-site.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/dudaone/utils/fw/one.fw.share-module.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/inline/framework/nee.inlinePreviewDrop.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/editableObjects/imageSlider/nee.imageSlider.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/_dm/s/rt/scripts/snap/snap.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/src/com/duda/editor/client/ui/device/PreviewDialogBox.java",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/runtime/preview_claim.jsp",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/utils/responsive/one.responsive.utils.js",
-		"/home/eyal/.bash_aliases",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/lib/fullcalendar/fullcalendar.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/templates/direct/definitions/noImg-blog/noImg-blog.css",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/dudaone/images/svg/SVG/bookmark-empty.svg",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/editableObjects/restaurantMenu/nee.restaurantMenu.js",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/nee/utils/nee.history-manager.js",
-		"/home/eyal/Downloads/config",
-		"/home/eyal/workspace/projects/insite_comp/deploy.sh",
-		"/home/eyal/.aws/config",
-		"/home/eyal/.aws",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/direct/analyticsDashboard/js/utils.js"
+		"/home/eyal/workspace/duda/duda3/DudaRoot/war/index.jsp"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
+			"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop",
+			"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/ella-16-myshopify-com-copy-of-standard-ella-1-0-3-jan-30",
+			"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop",
 			"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/mikai-mikai-trendy-boutique-myshopify-com-ella-theme-package-1-0-3",
 			"/home/eyal/workspace/projects/MIKAI/",
 			"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/mikai-mikai-trendy-boutique-myshopify-com-ella-theme-package-1-0-3",
@@ -337,137 +429,137 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
-			"Add to Cart",
-			"page_titles",
-			"settings.translate",
-			"{{settings.translate",
-			"collection.title",
-			"edData.resetPosition || $startNextElem ||",
-			"$.dmops.updateCs",
-			"updateCss",
-			"dmUnblockUI",
-			"server",
-			"updateLeft",
-			"server",
-			"dmBlockUI",
-			"jquery-ui.min.js",
-			"mousup",
-			"widgetsortin",
-			"OVERLAY_WIDGETS",
-			"overlay",
-			"hideon",
-			"temp",
-			"norows",
-			"temp",
-			"tempp",
-			"norows",
-			"temp",
-			"temprows",
-			"tempro",
-			"temp",
-			"'table'",
-			"table",
-			"delete",
-			"marginT",
-			"widgetsorti",
-			"alignitem",
-			"headerUseTitle",
-			"left",
-			"max-w",
-			"handlewidgets",
-			"setInitialStyle",
-			"storedMarginLeft",
-			"storedMarginRight",
-			"storedMarginLeft",
-			"baseMarginLeft",
-			"handlewidgets",
-			"handlewidg",
-			"handlew",
-			"setinitia",
-			"setInitialStyle",
-			"handlewidgets",
-			"margin",
-			" + ' auto ' + $element.css('marginBottom') + ' auto'",
-			"block",
-			"handleWidgetSnap",
-			"handlewidgetsna",
-			"topLimit",
-			"handlewid",
-			"nw",
-			"dragging",
-			"storedMarginTop",
-			"baseMargin",
-			"handlewi",
-			"handlewidgetsna",
-			"align",
-			"alignel",
-			"handlewi",
-			"right",
-			"_getTempOffset",
-			"storedMarginTop",
-			"_getTempOffset",
-			"svg",
-			"displ",
-			"display",
-			"displ",
-			"handlewidgets",
-			"handlewidg",
-			"handle",
-			"_getTempOffset",
-			"handlewidgets",
-			"uialign",
-			"uiAlign",
-			"setAttribute",
-			"uialign",
-			"handlewid",
-			"handleWidgetSnap",
-			"debu",
-			"importantcss",
-			"create",
-			"float",
-			"widgetSortingServerUpdate",
-			"eg.widgetSortingServerUpdate(event, ui.item);",
-			"create",
-			"});\n",
-			"debugger",
-			"innerWidgetSelector",
-			"DISPLAY_TABLE_WIDGETS",
-			"displ",
-			"DISPLAY_TABLE_WIDGETS",
-			"NO_DISPLAY_WIDGETS",
-			"$(document.body).css('height');",
-			"id=\"dmRoot\"",
-			"jQuery.DM.updateWidth();",
-			"DM.updateWidth()",
-			"$(document).resize(function() {jQuery.DM.updateWidth();});",
-			".updateWidth = function () {",
-			"widgetresize",
-			"setinitials",
-			"max-w",
-			"/**\n",
-			"reques",
-			"startdrag",
-			".start",
-			".drag",
-			"dmle_widget",
-			"smart",
-			"dmle_widget",
-			"eg.helpers",
-			".helpers",
-			"helpers",
-			"NO_DISPLAY_WIDGETS",
-			"delete",
-			"initRowContextMenu",
-			"markNumberOfColumns",
-			"cols",
-			"editg",
-			"startBatch",
-			"INLINE_BLOCK_WIDGETS",
-			"eg.device",
-			"device"
+			"או",
+			"Logout",
+			"(default)",
+			"countr",
+			"count",
+			"country",
+			"add ad",
+			"Add New Address",
+			"my-account",
+			"My Account",
+			"our email addres",
+			" your email addres",
+			"please click",
+			"please click the ",
+			"please click the link included to verify yo",
+			"ooks like something went wrong.",
+			"Sign up for a free account at Ella Boutique.",
+			"Create Account",
+			"הרשמה",
+			"login",
+			"or",
+			"Customer Login",
+			"login-page",
+			"My Wishlist",
+			"הרשימה שלי",
+			"To create a wish list you must ",
+			"Sign In",
+			".customer-links",
+			".banner .inner",
+			"class=\"banner",
+			"alef",
+			"alefhebrew",
+			"Sign In",
+			"log",
+			"sign",
+			"המשך בקניות",
+			"cart",
+			"script",
+			"banner-home-bottom-2.jpg",
+			"assets",
+			"buttons",
+			"Alef Hebrew",
+			"@import url(http://fonts.googleapis.com/",
+			"MIKAI - Trendy Boutique",
+			"class=\"shop\"",
+			".share_toolbox p",
+			"Size",
+			"header",
+			"size",
+			"דןזק",
+			"size",
+			"כמות",
+			"product-variants",
+			"size",
+			"Size",
+			"Select options",
+			"header-panel-top",
+			".logo-title",
+			".header-bottom",
+			"home",
+			"<div class=\"map\">",
+			".main-content",
+			".header-bottom.on #dropdown-cart",
+			"header-bottom",
+			".product-label",
+			"<h1>My Cart</h1>",
+			"paypal",
+			"checkout_buttons",
+			"additional_checkout_buttons",
+			"additional_checkout",
+			"content_for_additional_checkout_buttons",
+			"https://www.paypal.com/en_US/i/btn/btn_xpressCheckoutsm.gif",
+			"goto_pp",
+			"class=\"quantity\"",
+			"zoomWindowPosition",
+			"options",
+			".elevateZoom(",
+			".elevateZoom(#sthash.nfJX4Jn9.dpuf",
+			"elevateZoom",
+			"zoom",
+			"size",
+			"price on-sale",
+			"p,",
+			"product-shop",
+			"Checkout with",
+			"Checkout with:",
+			"ל הזכויות שמורו",
+			"ajax-success-modal modal",
+			".banner",
+			"home",
+			"תנו לנו לייק בפייסבוק",
+			".call-to-action",
+			".call-to-call",
+			".call-to",
+			"call-to",
+			"utf8",
+			"ואכ8",
+			"תאהבו אותנו בפייסבוק",
+			"תאהבו",
+			"child_list_handle",
+			".page-header h2,",
+			"aboutus",
+			"about us",
+			"about-us",
+			"main-content",
+			".main-content",
+			".breadcrumb",
+			"value",
+			"main-content",
+			"map",
+			".total-line__name",
+			".product__info",
+			".field label",
+			".order-summary",
+			"-32em",
+			"shop",
+			"header__backdrop",
+			".header .icon--lock",
+			".header__backdrop",
+			".header .icon--lock",
+			".banner",
+			".owl-carousel .owl-wrapper-outer",
+			"class=\"footer-top\"",
+			"//cdn.shopify.com/s/files/1/0775/1963/t/2/assets/text-title.png?14972728398107505862",
+			"footer-top",
+			"view-mode",
+			".quickview-button",
+			".newsletter .input-group-btn"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -475,6 +567,34 @@
 		"regex": false,
 		"replace_history":
 		[
+			"החשבון שלי",
+			"המשך לפריט",
+			"תנו בלייק",
+			"סינון",
+			"מיון",
+			" מיון",
+			"כמות",
+			" המוצר הבא",
+			" הצג עגלה",
+			" לקופה",
+			"סה\"כ",
+			"המשך בקניות",
+			"עגלת הקניות",
+			" החשבון שלי",
+			"או",
+			"נוסף לרשימה שלי",
+			"הוסף לרשימה שלי",
+			"הרשימה שלי",
+			"נכתב",
+			"הכל ב",
+			"נקה הכל",
+			"נקה",
+			"צפה בקולקצייה",
+			"צפייה מהירה",
+			"אזל מהמלאי",
+			"מבצע",
+			"הוסף לעגלה",
+			"צפייה מהירה",
 			"הוסף לעגלה",
 			""
 		],
@@ -487,8 +607,250 @@
 	"groups":
 	[
 		{
+			"selected": 4,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "templates/customers/register.liquid",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1849,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								617,
+								617
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "templates/customers/account.liquid",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2988,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								505,
+								505
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "assets/theme-styles.css.liquid",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 107148,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								98393,
+								98393
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 26743.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1484,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										320,
+										335
+									],
+									[
+										676,
+										685
+									],
+									[
+										1068,
+										1077
+									],
+									[
+										1347,
+										1353
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								1360,
+								1360
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 3,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 493.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "snippets/customer_links.liquid",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 857,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								503,
+								503
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "templates/customers/addresses.liquid",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10383,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5360,
+								5360
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1748.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "templates/customers/order.liquid",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4993,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								533,
+								533
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -542,6 +904,130 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"stylecss",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"themstycs",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"register",
+				"templates/customers/register.liquid"
+			],
+			[
+				"styres",
+				"assets/theme-styles-responsive.css.liquid"
+			],
+			[
+				"cart",
+				"templates/cart.liquid"
+			],
+			[
+				"themse",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"checkou",
+				"assets/checkout.scss.liquid"
+			],
+			[
+				"checkoutcs",
+				"assets/checkout.css.liquid"
+			],
+			[
+				"product",
+				"templates/product.liquid"
+			],
+			[
+				"index",
+				"templates/index.liquid"
+			],
+			[
+				"themesty",
+				"assets/theme-styles-responsive.css.liquid"
+			],
+			[
+				"produc",
+				"snippets/product-grid-item.liquid"
+			],
+			[
+				"theme.css",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"theescs",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"footer",
+				"snippets/footer.liquid"
+			],
+			[
+				"th",
+				"layout/theme.liquid"
+			],
+			[
+				"stylesett",
+				"assets/theme-styles-setting.css.liquid"
+			],
+			[
+				"stylescss",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"conta",
+				"templates/page.contact.liquid"
+			],
+			[
+				"contact",
+				"templates/page.contact.liquid"
+			],
+			[
+				"themes",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"settincss",
+				"shop/assets/theme-styles-setting.css.liquid"
+			],
+			[
+				"settings",
+				"shop/config/settings_data.json"
+			],
+			[
+				"styleres",
+				"assets/theme-styles-responsive.css.liquid"
+			],
+			[
+				"owlcs",
+				"assets/owl.carousel.css"
+			],
+			[
+				"stylecs",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"social",
+				"snippets/social.liquid"
+			],
+			[
+				"homepage-block-newsletter",
+				"snippets/homepage-block-newsletter.liquid"
+			],
+			[
+				"style",
+				"assets/theme-styles-setting.css.liquid"
+			],
+			[
+				"themestyl",
+				"assets/theme-styles-responsive.css.liquid"
+			],
+			[
+				"jcarus",
+				"assets/jcarousel.css"
+			],
 			[
 				"widgetspa",
 				"war/editor/dudaone/modules/one.widgetsPanel.js"
@@ -929,130 +1415,6 @@
 			[
 				"rte.",
 				"war/editor/nee/inline/framework/richTextEditor/d1/rte.elementOps.js"
-			],
-			[
-				"rte.js",
-				"war/editor/nee/inline/framework/richTextEditor/d1/rte.sanitizer.js"
-			],
-			[
-				"neecommonjs",
-				"war/editor/nee/utils/common/nee.common.js"
-			],
-			[
-				"oneeditgridjs",
-				"war/editor/nee/inline/preview/one.inlineEditGrid.js"
-			],
-			[
-				"rulew",
-				"war/editor/dudaone/modules/one.ruleWizard.js"
-			],
-			[
-				"oneditgridjs",
-				"war/editor/nee/inline/preview/one.inlineEditGrid.js"
-			],
-			[
-				"editgrid",
-				"war/_dm/s/rt/css/one.inlineEditGrid.css"
-			],
-			[
-				"wppre",
-				"war/editor/scripts/wp_preview.js"
-			],
-			[
-				"neecommon",
-				"war/editor/nee/utils/common/nee.common.js"
-			],
-			[
-				"wp_pre",
-				"war/editor/scripts/wp_preview.js"
-			],
-			[
-				"srvjs",
-				"war/editor/nee/utils/nee.srv.js"
-			],
-			[
-				"onecontdes",
-				"war/editor/nee/utils/nee.controls-design.js"
-			],
-			[
-				"rtecontro",
-				"war/editor/nee/inline/framework/richTextEditor/d1/rte.controls.js"
-			],
-			[
-				"totransla",
-				"src/resources/CommonStrings.toTranslate.properties"
-			],
-			[
-				"oneshllcon",
-				"war/editor/stylesheets/static/one/editor/shell/one.shell.controls.scss"
-			],
-			[
-				"oneshellconto",
-				"war/editor/stylesheets/static/one/editor/shell/one.shell.controls.css"
-			],
-			[
-				"oneshellcon",
-				"war/editor/stylesheets/static/one/editor/shell/one.shell.controls.scss"
-			],
-			[
-				"inlineric",
-				"war/editor/nee/inline/framework/richTextEditor/d1/inlineRichTextEditor.jsp"
-			],
-			[
-				"onethemespanel",
-				"war/editor/dudaone/modules/one.themesPanel.js"
-			],
-			[
-				"inlineri",
-				"war/editor/nee/inline/framework/richTextEditor/d1/inlineRichTextEditor.jsp"
-			],
-			[
-				"rteobje",
-				"war/editor/nee/inline/framework/richTextEditor/d1/RTEObject.js"
-			],
-			[
-				"totra",
-				"src/resources/CommonStrings.toTranslate.properties"
-			],
-			[
-				"oneshellla",
-				"war/editor/dudaone/shell/one.shellLayout.jsp"
-			],
-			[
-				"oneeditgrid",
-				"war/editor/nee/inline/preview/one.inlineEditGrid.js"
-			],
-			[
-				"one.panel.js",
-				"war/editor/dudaone/modules/one.themesPanel.js"
-			],
-			[
-				"one.shell.controls.scss",
-				"war/editor/stylesheets/static/one/editor/shell/one.shell.controls.scss"
-			],
-			[
-				"rtecontrols",
-				"war/editor/nee/inline/framework/richTextEditor/d1/rte.controls.js"
-			],
-			[
-				"inlinerichtexteditor",
-				"war/editor/nee/inline/framework/richTextEditor/d1/inlineRichTextEditor.jsp"
-			],
-			[
-				"rtemain",
-				"war/editor/nee/inline/framework/richTextEditor/d1/rte.main.js"
-			],
-			[
-				"rteob",
-				"war/editor/nee/inline/framework/richTextEditor/d1/RTEObject.js"
-			],
-			[
-				"oneadd",
-				"war/editor/dudaone/modules/one.addPage.js"
-			],
-			[
-				"addpage",
-				"war/editor/dudaone/modules/one.addPage.js"
 			]
 		],
 		"width": 0.0
@@ -1063,8 +1425,12 @@
 		"selected_items":
 		[
 			[
+				"dud",
+				"~/sublProjects/dudaRoot.sublime-project"
+			],
+			[
 				"",
-				"~/workspace/projects/MIKAI/ella-package-UnZip-Me/ella-16-myshopify-com-copy-of-standard-ella-1-0-3-jan-30/mikai.sublime-project"
+				"~/workspace/projects/trpo/trpol.sublime-project"
 			],
 			[
 				"yach",
@@ -1075,7 +1441,7 @@
 	},
 	"select_symbol":
 	{
-		"height": 75.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
@@ -1119,7 +1485,7 @@
 				"getPreviewElement"
 			]
 		],
-		"width": 1187.0
+		"width": 392.0
 	},
 	"selected_group": 0,
 	"settings":
