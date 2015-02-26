@@ -151,70 +151,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "snippets/brands.liquid",
-			"settings":
-			{
-				"buffer_size": 3081,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "snippets/footer.liquid",
-			"settings":
-			{
-				"buffer_size": 2190,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "snippets/customer_links.liquid",
-			"settings":
-			{
-				"buffer_size": 857,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "templates/index.liquid",
-			"settings":
-			{
-				"buffer_size": 879,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "snippets/homepage-block-banner.liquid",
-			"settings":
-			{
-				"buffer_size": 813,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "snippets/header.liquid",
-			"settings":
-			{
-				"buffer_size": 6143,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "assets/theme-styles.css.liquid",
-			"settings":
-			{
-				"buffer_size": 107976,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "assets/theme-styles-responsive.css.liquid",
-			"settings":
-			{
-				"buffer_size": 26086,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -259,26 +195,29 @@
 	},
 	"expanded_folders":
 	[
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/layout",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/locales",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates"
+		"/home/eyal/workspace/projects/MIKAI/shop"
 	],
 	"file_history":
 	[
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/retina-responsive.css",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/theme-styles-responsive.css.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/theme-styles.css.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/header.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-block-banner.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/index.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/customer_links.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/footer.liquid",
+		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/brands.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-block-newsletter.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-flexslider.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-block-new-arrivals.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-instagram.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-block-banner.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/retina-responsive.css",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/customers/reset_password.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/customers/register.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/theme-styles-setting.css.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/related-products.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/related-products-by-tags.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/recently-viewed-products.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/header.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-block-trending.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/collection-sidebar-featured-products.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/config/settings.html",
@@ -286,8 +225,6 @@
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/owl.carousel.min.js",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/message-modal.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/owl.carousel.css",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/theme-styles.css.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/theme-styles-responsive.css.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/swatch.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/product.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/layout/theme.liquid",
@@ -309,7 +246,6 @@
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/page.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/customers/order.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/customers/addresses.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/customer_links.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/customers/account.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/form-errors-custom.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/config/settings_data.json",
@@ -323,7 +259,6 @@
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/jquery.elevateZoom-3.0.8.min.js",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/ella.js",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/search-result.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/index.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/breadcrumb.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/owl.theme.css",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/selectize.bootstrap3.css",
@@ -336,7 +271,6 @@
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/collection-sidebar.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/classie.js",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/social.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/footer.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/ _temp.html",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/fb-open-graph-tags.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/search-bar.liquid",
@@ -392,12 +326,11 @@
 		"/home/eyal/workspace/duda/duda3/DudaRoot/war/jquery_include.jspf",
 		"/home/eyal/workspace/duda/duda3/DudaRoot/war/editor/dudaone/utils/fw/one.fw.js",
 		"/home/eyal/workspace/duda/duda3/DudaRoot/war/runtime/parts/head.jsp",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/war/jquery_include_one.jspf",
-		"/home/eyal/workspace/duda/duda3/DudaRoot/jmeter.log"
+		"/home/eyal/workspace/duda/duda3/DudaRoot/war/jquery_include_one.jspf"
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -442,6 +375,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"owlCarousel",
 			".toolbar .view-mode",
 			"Show Sidebar",
 			"displayTextLeft",
@@ -568,8 +502,7 @@
 			"elevateZoom",
 			"zoom",
 			"size",
-			"price on-sale",
-			"p,"
+			"price on-sale"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -617,257 +550,14 @@
 	"groups":
 	[
 		{
-			"selected": 7,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "snippets/brands.liquid",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3081,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2554,
-								2554
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 733.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "snippets/footer.liquid",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2190,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1649,
-								1649
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 594.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "snippets/customer_links.liquid",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 857,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								228,
-								228
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "templates/index.liquid",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 879,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								78,
-								78
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "snippets/homepage-block-banner.liquid",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 813,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								65,
-								65
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "snippets/header.liquid",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6143,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3966,
-								3966
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1291.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "assets/theme-styles.css.liquid",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 107976,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								32507,
-								32507
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 13252.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "assets/theme-styles-responsive.css.liquid",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 26086,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								20557,
-								20558
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 8748.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -904,10 +594,10 @@
 	{
 		"height": 0.0
 	},
-	"project": "mikai-theme.sublime-project",
+	"project": "mikai-shop.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -915,6 +605,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"respon",
+				"assets/theme-styles-responsive.css.liquid"
+			],
 			[
 				"homepage-blo",
 				"snippets/homepage-block-banner.liquid"
@@ -1422,10 +1116,6 @@
 			[
 				"dmajax",
 				"war/_dm/s/rt/scripts/dmAjax.js"
-			],
-			[
-				"neecontrolsjs",
-				"war/editor/nee/utils/nee.controls.js"
 			]
 		],
 		"width": 0.0
@@ -1437,7 +1127,7 @@
 		[
 			[
 				"",
-				"~/sublProjects/dudaRoot.sublime-project"
+				"~/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/mikai-theme.sublime-workspace"
 			],
 			[
 				"dud",
