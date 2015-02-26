@@ -545,4 +545,8 @@ jQuery(function($) {
   {% endif %}
  
 });
+
+$('.swatch-element.color').off('click.toggle').on('click.toggle', 'label', function() {
+  $(this).prev().trigger('click');
+});
 </script>

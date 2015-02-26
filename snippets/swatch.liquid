@@ -43,7 +43,7 @@
 </div>
 {% else %}
 <div class="swatch clearfix" data-option-index="{{ option_index }}">
-  <div class="header">{{ swatch }}</div>
+  <div class="header" data-name="{{ swatch }}">{{ swatch }}</div>
   {% assign values = '' %}
   {% for variant in product.variants %}
     {% assign value = variant.options[option_index] %}
@@ -57,7 +57,7 @@
         {% endif %}
         <input id="swatch-{{ option_index }}-{{ value | handle }}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% if forloop.first %} checked{% endif %} {% unless variant.available %}disabled{% endunless %} />
         {% if is_color %}
-        <label for="swatch-{{ option_index }}-{{ value | handle }}" style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({{ value | handle | append: '.' | append: file_extension | file_url }})">
+        <label style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({{ value | handle | append: '.' | append: file_extension | file_url }})">
           <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" />
         </label>
         {% else %}
