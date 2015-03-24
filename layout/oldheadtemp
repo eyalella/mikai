@@ -1,0 +1,191 @@
+
+  <title>
+    Gold Star Fencing - high quality fences and gates in Bungay
+  </title>
+  <meta name="keywords" content="Gold Star Fencing, Bungay"/>
+  <meta name="description" content="Gold Star Fencing provides a versatile range of fences, trellises, finials and gates in Suffolk. Call us in Bungay for information on 01986 892 810"/>
+  <link href="http://static01.cdn.ybsitecenter.com/template/elite/css/template-v2.min.css" rel="stylesheet" type="text/css"/>
+  <link href="http://www.goldstarfencingltdbungay.co.uk/cs/Satellite?c=CSS_UXCustom&cid=1302690747129&pagename=Stylesheet&site=UKPremium" rel="stylesheet" type="text/css"/>
+  <link href="http://static01.cdn.ybsitecenter.com/template/elite/css/animations-v2.min.css" rel="stylesheet" type="text/css"/>
+  
+  <script type="text/javascript" src="http://static01.cdn.ybsitecenter.com/template/js/plugins.js?v=v4.17.6"></script>
+<script type="text/javascript" src="http://static01.cdn.ybsitecenter.com/template/js/external.js?v=v4.17.6"></script>
+<script type="text/javascript" src="http://static01.cdn.ybsitecenter.com/template/js/jquery.cookie.js?v=v4.17.6"></script>
+<script type='text/javascript' src="http://static01.cdn.ybsitecenter.com/template/js/DPNI.js?v=v4.17.6"></script>
+<script type='text/javascript' src="http://static01.cdn.ybsitecenter.com/template/js/FeedEk.js"></script>
+  
+  <style>
+      .hiddenNavPlaceHolder {
+          display: none;
+      }
+      .dmRespRow {
+          display: none;
+      }
+      .display_None_important {
+          display: none;
+      }
+  </style>
+<script type="text/javascript">
+    /* hibu sites Elite v2 - by Joe Diton - August 2014 */
+function setCookie(e, o) {
+    document.cookie = e + "=" + escape(o)
+}
+
+function getCookie(e) {
+    return document.cookie.length > 0 && (cookie_start = document.cookie.indexOf(e + "="), -1 != cookie_start) ? (cookie_start = cookie_start + e.length + 1, cookie_end = document.cookie.indexOf(";", cookie_start), -1 == cookie_end && (cookie_end = document.cookie.length), unescape(document.cookie.substring(cookie_start, cookie_end))) : ""
+}
+
+function eTouchNavPadding() {
+    menuButtonHeight = $("#menuButton").height(), $(".resizeRespond").width() < 3 ? $(".hNavOuterWrapper, .vNavOuterWrapper").css("padding-top", menuButtonHeight) : $(".hNavOuterWrapper, .vNavOuterWrapper").css("padding-top", "")
+}
+
+function eSubBody() {
+    windowHeight = $(window).height(), menuButtonHeight = $("#menuButton").height(), hNavHeight = $(".hNavOuterWrapper").length > 0 ? $(".hNavOuterWrapper").height() : "", vNavWidth = $(".vNavOuterWrapper").length > 0 ? $(".vNavOuterWrapper").width() : "", $(".resizeRespond").width() < 3 ? ($(".hSubBody, .vSubBody").css("padding-top", menuButtonHeight), $(".vSubBody").css("padding-left", "")) : ($(".hSubBody").css("padding-top", hNavHeight), $(".vSubBody").css("padding-top", ""), $(".vSubBody").css("padding-left", vNavWidth)), 2 == $(".resizeRespond").width() ? $(".vhubBody, .vSubBody").css("height", windowHeight - menuButtonHeight) : $(".resizeRespond").width() > 2 ? $(".hSubBody, vSubBody").css("height", windowHeight - hNavHeight) : $(".hSubBody, .vSubBody").css("height", "")
+}
+
+function eResponsiveImages() {
+    $("img:not(#eliteLightBox img)").each(function() {
+        $(this).parent().width() < $(this).attr("width") ? $(this).css("width", "100%") : $(this).css("width", "")
+    })
+}
+
+function eStickyNav() {
+    topOfWindow = $(window).scrollTop(), $(".resizeRespond").width() > 2 && topOfWindow > navPos ? $(".vNavOuterWrapper, .hNavOuterWrapper").addClass("fixToTop") : $(".vNavOuterWrapper, .hNavOuterWrapper").removeClass("fixToTop")
+}
+
+function eEntranceAnimations() {
+    topOfWindow = $(window).scrollTop(), windowHeight = $(window).height(), scrollTrigger = topOfWindow + windowHeight / 4 * 3, $(".imgWrapper, .imgLinkWrapper, .rowWrapper").each(function() {
+        $(this).offset().top < scrollTrigger && $(".resizeRespond").width() > 2 ? $(this).addClass("scrollAnimate") : $(this).offset().top >= topOfWindow + windowHeight && $(this).removeClass("scrollAnimate")
+    })
+}
+var topOfWindow, windowHeight, menuButtonHeight, navPos, scrollTrigger, hNavHeight, vNavWidth;
+    (function(e) {
+        e(document).ready(function() {
+            var o, t, a = window.location.href;
+            e(".navigation a").each(function() {
+                e(this).attr("href") == a && (o = e(this).parent().attr("id"), t = o.replace(new RegExp("NAV", "g"), "PAGE"), e(this).parent().attr("id", o).children("ul").length && e("body").addClass("landing"))
+            }), e("body").attr("id", t), e("#header .navigation").addClass("horizontal"), e(".navigation.horizontal").wrap('<div class="hNavInnerWrapper"></div>'), e(".hNavInnerWrapper").wrap('<div class="hNavOuterWrapper"></div>'), e(".hNavOuterWrapper").prependTo("body"), e("#page .navigation").addClass("vertical"), e(".navigation.vertical").wrap('<div class="vNavInnerWrapper"></div>'), e(".vNavInnerWrapper").wrap('<div class="vNavOuterWrapper"></div>'), e(".vNavOuterWrapper").prependTo("body"), e("#subPage > *").unwrap(), e("#subPage").remove(), e("body").prepend('<div id="menuButton"></div>'), e("body").prepend('<div class="resizeRespond"></div>');
+            var i = '<!--[if lt IE 7]><div class="ieVersion" id="ieOld"><![endif]--><!--[if IE 7]><div class="ieVersion" id="ie7"></div><![endif]--><!--[if IE 8]><div class="ieVersion" id="ie8"></div><![endif]--><!--[if IE 9]><div class="ieVersion" id="ie9"></div><![endif]--><!--[if lt IE 9]><div class="upgradeIE"></div><![endif]-->';
+            e("body").prepend(i), "ieOld" == e(".ieVersion").attr("id") ? e("html").addClass("ieOld").addClass("lt-ie8").addClass("lt-ie9") : "ie7" == e(".ieVersion").attr("id") ? e("html").addClass("ie7").addClass("lt-ie8").addClass("lt-ie9") : "ie8" == e(".ieVersion").attr("id") ? e("html").addClass("ie8").addClass("lt-ie9") : "ie9" == e(".ieVersion").attr("id") && e("html").addClass("ie9");
+            for (var r, n = ["msTouchAction"], s = ["msTextCombineHorizontal"], d = document.body.style, l = null, c = 0; c < n.length; c++) r = n[c], void 0 != d[r] && (l = "ie10");
+            for (var c = 0; c < s.length; c++) r = s[c], void 0 != d[r] && (l = "ie11");
+            e("html").addClass(l);
+            var p = '<div id="upgradeWrapper" class="clearfix"><div id="closeButton"></div><h2>It appears you are using an outdated browser that is incompatible with current web standards.</h2><p>Please consider upgrading to a modern browser to improve your web experience and enhance your online security and privacy.</p><p>A list of the most popular web browsers can be found below.</p><div id="browserLogos" class="clearfix"><a id="chrome" href="http://www.google.com/chrome" target="_blank">Google Chrome</a><a id="firefox" href="http://www.firefox.com/" target="_blank">Mozilla Firefox</a><a id="safari" href="http://www.apple.com/safari/" target="_blank">Safari</a><a id="opera" href="http://www.opera.com/" target="_blank">Opera</a><a id="internetExplorer" href="http://windows.microsoft.com/ie" target="_blank">Internet Explorer</a></div><p>Thank you</p></div>';
+            e(p).appendTo(".upgradeIE"), "no" != getCookie("show_ie_upgrage_notice") ? e(".upgradeIE").css("display", "block") : e(".upgradeIE").css("display", "none"), e(".upgradeIE #closeButton").click(function() {
+                return e(".upgradeIE").slideUp(400), setCookie("show_ie_upgrage_notice", "no"), !1
+            }), e("<span>&nbsp;</span>").insertAfter(".cookieConsent br:not(a + br)"), e(".cookieConsent br, .cookieConsent #cookieNo").remove(), e("#cookieWrapper").prependTo("body"), e(".hNavOuterWrapper").length > 0 ? e("#headerWrapper, #page, #footerWrapper").wrapAll('<div class="hSubBody"></div>') : e(".vNavOuterWrapper").length > 0 && e("#headerWrapper, #page, #footerWrapper").wrapAll('<div class="vSubBody"></div>'), e(".socialmedia > a").removeAttr("class").removeAttr("title").removeAttr("alt"), e('.socialmedia > a[href*="facebook"]').addClass("facebook"), e('.socialmedia > a[href*="twitter"]').addClass("twitter"), e('.socialmedia > a[href*="linkedin"]').addClass("linkedIn"), e('.socialmedia > a[href*="youtube"]').addClass("youTube"), e('.socialmedia > a[href*="plus.google"]').addClass("googlePlus"), e('.socialmedia > a[href*="yell"]').addClass("yell"), e('.socialmedia > a[href*="pinterest"]').addClass("pinterest"), e('.socialmedia > a[href*="tumblr"]').addClass("tumblr"), e('.socialmedia > a[href*="wordpress"]').addClass("wordpress"), e('.socialmedia > a[href*="instagram"]').addClass("instagram"), e("#header").removeAttr("class"), e(".header").remove(), e("#header > *").wrapAll('<div id="headerInner"></div>'), e(".strap").insertAfter("#headerInner .logo"), e(".strap #address, .strap #email, .strap #tel").length > 0 && e('<div class="contactIcons"></div>').insertAfter("#headerInner .logo"), e(".strap #address").length > 0 && e(".contactIcons").prepend('<div id="addressIcon"></div>'), e(".strap #email").length > 0 && e(".contactIcons").prepend('<div id="emailIcon"></div>'), e(".strap #tel").length > 0 && e(".contactIcons").prepend('<div id="telIcon"></div>'), e("div").removeClass(function(e, o) {
+                return /grid[0-9]{1,2}/i.test(o) ? /grid[0-9]{1,2}/i.exec(o)[0] : ""
+            }), e("div").removeClass("first second third fourth fifth last feature left right row fullWidth"), e("#page > #hero > div:first-child").removeClass("column").attr("id", "headerContent"), e("#headerContent").appendTo("#header"), e("#headerContent").wrap('<div id="headerContentWrapper"></div>'), e("#page, #page > *").removeAttr("class"), e("#page .column:not(#subContent .column)").addClass("row").removeClass("column"), e(".row").wrap('<div class="rowWrapper"></div>');
+            var h = 1;
+            e(".rowWrapper").each(function() {
+                e(this).attr("id", "row" + h++)
+            }), e(".row").each(function() {
+                e(this).addClass("cols" + e("> *:not(script, iframe)", this).length)
+            }), e("#subContent .column").wrapAll('<div class="columnsWrapper"></div>');
+            var v = 1;
+            e("#subContent .column").each(function() {
+                e(this).attr("id", "col" + v++)
+            }), e("#footer .column").wrapAll('<div class="columnsWrapper"></div>');
+            var v = 1;
+            e("#footer .column").each(function() {
+                e(this).attr("id", "col" + v++)
+            }), e('<div id="globalFooterContent"></div>').appendTo("#footer"), e("#footer .socialmedia").removeAttr("class").attr("id", "socialFollowIcons"), e("#socialFollowIcons").appendTo("#globalFooterContent"), e("#footer .social").removeAttr("class").attr("id", "socialShareIcons"), e("#socialShareIcons > #socialFollowIcons > *").unwrap(), e("#socialShareIcons").appendTo("#globalFooterContent"), e("#socialFollowIcons").clone().appendTo("#headerInner"), e("#yellFooter").removeAttr("class").removeAttr("id").attr("id", "extraFooterContent").removeClass("clear"), e("#extraFooterContent div:contains('Generic right hand')").remove(), e("#extraFooterContent div:contains('Generic Footer')").remove(), e("#extraFooterContent").appendTo("#globalFooterContent"), e("#footer .navigation").wrap('<div id="footerNavigation"></div>'), e("#footerNavigation").appendTo("#globalFooterContent");
+            var u, g = (new Date).getFullYear();
+            u = e("#footer .sitemap *").length > 0 ? '<a href="' + e("#footer .sitemap a").attr("href") + '">Site Map</a> | ' : "";
+            var f = '<div id="hibuFooter"><p class="hibuCopyright">&copy; hibu (UK) Limited ' + g + ". All rights reserved. " + u + '<a href="/template/html/conditions.html?v=v4.16.2" target="_blank" rel="nofollow">Conditions of use</a> | <a href="/template/html/privacy-policy.html?v=v4.16.2" target="_blank" rel="nofollow">Privacy Policy</a> | <a href="/template/html/cookie-policy.html?v=v4.16.2" target="_blank" rel="nofollow">Cookie Policy</a> | <a href="http://marketing.hibu.co.uk/products/web-design" target="_blank" rel="nofollow">Web design</a> by <a href="http://marketing.hibu.co.uk/products/web-design" target="_blank" rel="nofollow">hibu</a></p></div>';
+            e(f).appendTo("#footerWrapper"), e("#footer .sitemap").remove(), e("#footerWrapper").append('<div id="backToTopButton" style="display: none;"></div>'), e(".hNavInnerWrapper, #headerInner, #headerContent, .row, .columnsWrapper, #globalFooterContent, #hibuFooter").addClass("width"), e("img:not(.logo img, .slideshow img, .gallery img, .location img)").each(function() {
+                e(this).parent("a").length > 0 ? (e(this).parent().unwrap(), e(this).parent().wrap('<div class="imgLinkWrapper"></div>')) : e(this).next(".caption").andSelf().wrapAll('<div class="imgWrapper"></div>')
+            }), e(".imgLinkWrapper").each(function() {
+                e("+ .caption", this).appendTo(this), e("+ a", this).remove()
+            }), e("iframe:not(#googlemapframe, .videoBackground)").each(function() {
+                e(this).wrap('<div class="iframeWrapper"></div>')
+            }), e("#googlemapframe").each(function() {
+                e(this).siblings().andSelf().wrapAll('<div class="iframeWrapper"></div>')
+            });
+            var m, w, C;
+            e('iframe[src*="youtube"]').each(function() {
+                m = e(this).attr("height"), w = e(this).attr("width") / 16 * 9 + 80, C = m > w ? "aspectRatio4x3" : "aspectRatio16x9", e(this).wrap('<div class="youTubeWrapper ' + C + '"></div>')
+            }), e('iframe[src*="google"]:not(#googlemapframe)').each(function() {
+                var o = e(this).attr("width"),
+                    t = e(this).attr("height"),
+                    a = t / o * 100 + "%";
+                e(this).wrap('<div class="googleMapWrapper" style="padding-bottom: ' + a + ';"></div>')
+            }), e("#googlemapframe").each(function() {
+                e(this).siblings().andSelf().wrapAll('<div class="uxGoogleMapWrapper"></div>')
+            }), e(".gMap").remove(), e(".uxGoogleMapWrapper, .googleMapWrapper").prepend('<div class="googleMapOverlay"></div>'), e(".uxGoogleMapWrapper, .googleMapWrapper").prepend('<div class="googleMapOverlayClick"><strong>Enable</strong> Interactive Map</div>'), e(".googleMapOverlayClick").click(function() {
+                e("~ .googleMapOverlay", this).toggleClass("enabled"), e(this).html(e("~ .googleMapOverlay", this).hasClass("enabled") ? "<strong>Disable</strong> Interactive Map" : "<strong>Enable</strong> Interactive Map")
+            }), e(".videoBackground").each(function() {
+                var o = e(this).attr("id");
+                e(this).prependTo("body" == o ? o : "headerWrapper" == o ? "#" + o : e(this).closest("rowWrapper" == o ? "." + o : ".contents"))
+            }), e(".overlay").addClass("Overlay").removeClass("overlay"), e(".accordionHeader").addClass("copyAccordionHeader").removeClass("accordionHeader"), e(".accordionContent").addClass("copyAccordionContent").removeClass("accordionContent"), e(".contents .copyAccordionContent").each(function() {
+                e("> *:not(.imgWrapper, .imgLinkWrapper, iframe, .iframeWrapper)", this).wrapAll('<div class="copy"></div>'), e(this).parent().prev().prependTo(this), e(this).unwrap(), e(this).parent().addClass("contentsAccordion").removeClass("contents")
+            }), e(".contents a.contentsLinkWrap").each(function() {
+                var o = e(this).attr("href"),
+                    t = e(this).attr("target");
+                t = "undefined" != typeof t && t !== !1 ? 'target="' + t + '" ' : "", e(this).closest(".contents").wrap('<a href="' + o + '" ' + t + 'class="contentsLinkWrap"></a>'), e(this).remove()
+            }), e(".contents > div:not(.imgLinkWrapper, .imgWrapper, .iframeWrapper)").each(function() {
+                e(this).addClass("copy")
+            }), e(".cols2 > *:nth-child(2n+1):not(.copyAccordionHeader)").each(function() {
+                e(this).addClass("Left")
+            }), e(".cols2 > *:nth-child(2n):not(.copyAccordionContent)").each(function() {
+                e(this).addClass("Right")
+            }), e(".cols3 > *:nth-child(3n+1)").each(function() {
+                e(this).addClass("Left")
+            }), e(".cols3 > *:nth-child(3n)").each(function() {
+                e(this).addClass("Right")
+            }), e(".cols4 > *:nth-child(4n+1)").each(function() {
+                e(this).addClass("Left")
+            }), e(".cols4 > *:nth-child(4n)").each(function() {
+                e(this).addClass("Right")
+            }), e(".cols5 > *:nth-child(5n+1)").each(function() {
+                e(this).addClass("Left")
+            }), e(".cols5 > *:nth-child(5n)").each(function() {
+                e(this).addClass("Right")
+            }), e(".cols6 > *:nth-child(6n+1)").each(function() {
+                e(this).addClass("Left")
+            }), e(".cols6 > *:nth-child(6n)").each(function() {
+                e(this).addClass("Right")
+            }), e(".slideshow").wrap('<div class="slideshowOuterWrapper"></div>'), e(".slideshowOuterWrapper").each(function() {
+                var o = e(".slideshow > li:first-child img", this).attr("width"),
+                    t = e(".slideshow > li:first-child img", this).attr("height");
+                e(this).css("padding-top", t / o * 100 + "%")
+            }), e('a[href^="#"]').each(function() {
+                e(this).attr("href").length > 1 && e(this).addClass("scrollTo")
+            }), e(".intro").remove(), e(".meta").remove(), e(".hNavInnerWrapper, .vNavInnerWrapper, .navigation, #headerInner, #contactIcons, #socialFollowIcons, .contactIcons, .strap, #headerContent, .contents, .row, .copyAccordionContent, .gallery, .columnsWrapper, .column, #globalFooterContent, #socialShareIcons, #extraFooterContent").addClass("clearfix"), e(".row > .copyAccordionHeader").click(function() {
+                e("+ .copyAccordionContent", this).hasClass("active") ? e(".copyAccordionContent").removeClass("active").slideUp(400) : (e(".copyAccordionContent").removeClass("active").slideUp(400), e("+ .copyAccordionContent", this).addClass("active").slideDown(400))
+            }), e(".contentsAccordion > .copyAccordionHeader").click(function() {
+                e("+ .copyAccordionContent", this).hasClass("active") ? e("+ .copyAccordionContent", this).removeClass("active").slideUp(400) : (e(".contentsAccordion > .copyAccordionHeader + .copyAccordionContent").removeClass("active").slideUp(400), e("+ .copyAccordionContent", this).addClass("active").slideDown(400))
+            }), e("#menuButton").click(function() {
+                e(".hNavOuterWrapper, .vNavOuterWrapper").slideToggle(400), e(".hSubBody, .vSubBody").fadeToggle(400)
+            }), e("#telIcon").click(function() {
+                e(".strap #email, .strap #address").removeClass("active"), e(".strap #tel").toggleClass("active")
+            }), e("#emailIcon").click(function() {
+                e(".strap #tel, .strap #address").removeClass("active"), e(".strap #email").toggleClass("active")
+            }), e("#addressIcon").click(function() {
+                e(".strap #tel, .strap #email").removeClass("active"), e(".strap #address").toggleClass("active")
+            }), e(".scrollTo").click(function(o) {
+                e(".resizeRespond").width() > 2 && e(".hNavOuterWrapper").length > 0 ? (e("html, body").animate({
+                    scrollTop: Math.ceil(e(e(this).attr("href")).offset().top - Math.ceil(e(".hNavOuterWrapper").height()))
+                }, 1e3), o.preventDefault()) : e(".resizeRespond").width() < 3 ? (e("html, body").animate({
+                    scrollTop: Math.ceil(e(e(this).attr("href")).offset().top - Math.ceil(e("#menuButton").height()))
+                }, 1e3), o.preventDefault()) : (e("html, body").animate({
+                    scrollTop: Math.ceil(e(e(this).attr("href")).offset().top)
+                }, 1e3), o.preventDefault())
+            }), e("#backToTopButton").click(function() {
+                e("html, body").animate({
+                    scrollTop: 0
+                }, "slow")
+            }), e("html").addClass("load"), navPos = e(".vNavOuterWrapper, .hNavOuterWrapper").offset().top, eSubBody(), eResponsiveImages(), eTouchNavPadding(), eEntranceAnimations()
+        }), e(window).scroll(function() {
+            eStickyNav(), eEntranceAnimations(), topOfWindow > windowHeight / 4 * 3 ? e("#backToTopButton").fadeIn() : windowHeight / 4 * 3 > topOfWindow && e("#backToTopButton").fadeOut()
+        }), e(window).resize(function() {
+            eSubBody(), eResponsiveImages(), eTouchNavPadding(), e(".resizeRespond").width() > 2 ? e(".hNavOuterWrapper, .vNavOuterWrapper, .hSubBody, .vSubBody").css({
+                display: "block"
+            }) : (e(".hNavOuterWrapper, .vNavOuterWrapper").css({
+                display: "none"
+            }), e(".hSubBody, .vSubBody").css({
+                display: "block"
+            }))
+        })
+    }(jQuery));
+</script>

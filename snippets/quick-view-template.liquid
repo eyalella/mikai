@@ -17,13 +17,13 @@
         {% if settings.display_quickview_availability or settings.display_quickview_product_type or settings.display_quickview_vendor %}
         <div class="product-infor">
           {% if settings.display_quickview_availability %}
-          <p class="product-inventory"><label>Availability</label><span></span></p>
+          <p class="product-inventory"><label>זמינות</label><span></span></p>
           {% endif %}
           {% if settings.display_quickview_product_type %}
-          <p class="product-type"><label>Product Type</label><span></span></p>
+          <p class="product-type"><label>סוג</label><span></span></p>
           {% endif %}
           {% if settings.display_quickview_vendor %}
-          <p class="product-vendor"><label>Vendor</label><span></span></p>
+          <p class="product-vendor"><label></label><span></span></p>
           {% endif %}
         </div>
         {% endif %}
@@ -41,19 +41,19 @@
               <span class="compare-price"></span>
               <span class="price"></span>
             </div>
-            <label for="quantity">Quantity:</label>
+            <label for="quantity">כמות:</label>
             <div class="dec button">-</div>
             <input type="text" name="quantity" value="1" class="quantity">
             <div class="inc button">+</div>
             
             {% if settings.display_quickview_subtotal %}
             <div class="total-price">
-              <label>Subtotal: </label><span></span>
+              <label>סה"כ: </label><span></span>
             </div>
             {% endif %}
             
             <div class="actions">
-              <button type="button" class="btn add-to-cart-btn">הוסף לעגלה</button>
+              <button type="button" class="btn add-to-cart-btn">הוספה לעגלה</button>
             </div>
           </form>
         </div>
@@ -62,7 +62,7 @@
         {% endif %}
       </div>
     </div>  
-        <a href="javascript:void(0)" class="close-window">Close</a> 
+        <a href="javascript:void(0)" class="close-window"></a> 
   </div>
 </div>
 <!-- End of quick-view-template -->
@@ -80,7 +80,7 @@
       if (variant) {
         if (variant.available) {
           // We have a valid product variant, so enable the submit button
-          addToCart.removeClass('disabled').removeAttr('disabled').text('הוסף לעגלה');
+          addToCart.removeClass('disabled').removeAttr('disabled').text('הוספה לעגלה');
     
         } else {
           // Variant is sold out, disable the submit button
@@ -118,12 +118,12 @@
           var inventoryInfo = productItem.find('.product-inventory span');
           if (variant.available) {
             if (variant.inventory_management!=null) {
-              inventoryInfo.text(variant.inventory_quantity + " in stock");
+              inventoryInfo.text(variant.inventory_quantity + " במלאי");
             } else {
-              inventoryInfo.text("Many in stock");
+              inventoryInfo.text("זמין במלאי");
             }
           } else {
-            inventoryInfo.text("Out of stock");
+            inventoryInfo.text("אזל");
           }
     	{% endif %}
     

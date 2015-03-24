@@ -34,12 +34,12 @@
   
   {% if search.results_count == 0 %}
   <header class="page-header">
-    <h2>Your search for "{{ search.terms }}" did not yield any results.</h2>
+    <h2>לא נמצאו תוצאות עבור "{{ search.terms }}".</h2>
     <div class="wrapper-search-bar">{% include 'search-bar' %}</div>
   </header>
   {% else %}
   <header class="page-header">
-    <h2>Your search for "{{ search.terms }}" revealed the following:</h2>
+    <h2>תוצאות חיפוש עבור "{{ search.terms }}":</h2>
     <div class="wrapper-search-bar">{% include 'search-bar' %}</div>
   </header>
   
@@ -77,7 +77,7 @@
   {% endcomment %}
   
   <header class="page-header">
-    <h2>Search for products on our site</h2>
+    <h2>חיפוש מוצרים באתר</h2>
     {% include 'search-bar' %}
   </header>
   {% endif %}

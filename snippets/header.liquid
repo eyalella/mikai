@@ -41,36 +41,24 @@
         </div>
       </div>
 
-      <div class="header-panel-top">
-        <div class="nav-search">{% include 'search-bar' %}</div>
-        <div class="currency">{% include 'new-currency-picker' %}</div>
-        {% if settings.display_header_text_order %}
-        {% if settings.header_text_order != blank %}
-        <p class="text_order">{{ settings.header_text_order }}</p>
-        {% endif %}
-        {% endif %}
-      </div>
-      
       <div class="header-panel">
         <div class="row">
           
 
-          <div class="header-panel-bottom col-xs-8">
+          <div class="header-panel-bottom col-xs-12">
             {% if settings.display_header_free_shipping %}
             {% if settings.header_free_shipping != blank %}
             <p class="free_shipping">{{ settings.header_free_shipping }}</p>
             {% endif %}
             {% endif %}
 
-            {% include 'customer_links' %}
-
             <div class="top-header ">
               <div class="wrapper-top-cart">
                 <p class="top-cart">
                   <a href="javascript:void(0)" id="cartToggle">
                     <span class="first">עגלת הקניות</span>
-                    <span id="cartCount">{{ cart.item_count }}</span>
                   </a> 
+                  <span id="cartCount">{{ cart.item_count }}</span>
                   <span class="icon">&nbsp;</span>
                 </p>
                 <div id="dropdown-cart" style="display:none"> 
@@ -115,15 +103,29 @@
               {% comment %}
               If customer accounts are enabled, provide login and create account links
               {% endcomment %}
-            </div> <!-- End Top Header --> 
+
+            </div> 
+
+            {% include 'customer_links' %}
+
+            
+             <div class="header-panel-top">
+                
+                <div class="currency">{% include 'new-currency-picker' %}</div>
+                {% if settings.display_header_text_order %}
+                {% if settings.header_text_order != blank %}
+                <p class="text_order">{{ settings.header_text_order }}</p>
+                {% endif %}
+                {% endif %}
+              </div><!-- End Top Header --> 
           </div>
-          <h1 class="header-logo col-xs-4">
+          <h1 class="header-logo col-xs-12">
             {% if settings.brand_type == 'image' %}
             <a href="/">
               {{ 'logo.png' | asset_url | img_tag: shop.name }}
             </a>
             {% elsif settings.brand_text != "" %}
-            <a class="logo-title" href="/">{{ settings.brand_text }}</a>
+            <a class="logo-title" href="/">{{ settings.brand_text }}<small>בוטיק אופנה מאת סוזן אלה</small> </a>
             {% else %}
             <a class="logo-title" href="/">{{shop.name}}</a>
             {% endif %}
@@ -142,6 +144,7 @@
         </a>
       </h1>
       <div class="container">
+        <div class="nav-search large-screen">{% include 'search-bar' %}</div>
         {% include 'site-nav' %}     
       </div>
     </nav>

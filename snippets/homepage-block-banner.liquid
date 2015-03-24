@@ -1,16 +1,14 @@
 {% if settings.display_banner %}
-<section class="banner wow fadeInUp">
+<section class="banner home-page wow fadeInUp" style="background-image: url({{ 'banner.jpg' | asset_url }});">
   {{ 'banner.jpg' | asset_url | img_tag }}
   <div class="container">
     <div class="inner">
       {% if settings.banner_text_title != blank %}
-      <h2>{{ settings.banner_text_title }}</h2>
+      <h2>ברוכה הבאה ל<span class="logo-font">-MIKAI.</span></h2>
       {% comment %}<p class="line">&nbsp;</p>{% endcomment %}
       {% endif %}
       <p>
-        {% if settings.banner_text_description != blank %}
-        {{ settings.banner_text_description }}
-        {% endif %}
+        שלום יפה שלי! ברוכה הבאה ל<span class="logo-font">-MIKAI</span> בוטיק אופנה. אחת לכמה שבועות אני טסה לאיטליה ובוחרת עבורך את הבגדים היפים ביותר. באתר תוכלי למצוא בגדים, תיקים, נעליים ואקססוריז. את מוזמנת לעיין.
       </p>
       {% if settings.banner_button_text != blank %}
       <a href="{{ settings.banner_button_link }}" title="{{ settings.banner_button_text }}" class="btn">

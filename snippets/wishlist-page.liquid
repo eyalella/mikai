@@ -16,11 +16,11 @@
     </colgroup>
     <thead>
       <tr>
-        <th>Product Image</th>
-        <th>Product Name</th>
-        <th class="a-center">Unit Price</th>
-        <th class="a-center">Remove</th>
-        <th class="a-center">הוסף לעגלה</th>
+        <th>תמונה</th>
+        <th>שם</th>
+        <th class="a-center">מחיר</th>
+        <th class="a-center">הסרה</th>
+        <th class="a-center">הוספה לעגלה</th>
       </tr>
     </thead>
     <tbody>
@@ -78,7 +78,7 @@
               <input class="btn" type="button" onclick="window.location.href='{{product.url}}'" value="המשך לפריט" />
               {% else %}
               <input type="hidden" name="id" value="{{ product.variants[0].id }}" />      
-              <input class="btn add-to-cart-btn" type="submit" value="הוסף לעגלה" />
+              <input class="btn add-to-cart-btn" type="submit" value="הוספה לעגלה" />
               {% endif %}
               {% endif %}
             </form>         
@@ -104,7 +104,7 @@
   {% capture subject %}My%20{{ shop.name | replace: ' ','%20' }}%20Wish%20List{% endcapture %}
   {% capture body %}I%20have%20added%20the%20following%20items%20to%20my%20wish%20list%20at%20{{ shop.name | replace: ' ','%20' }}{% endcapture %}
   {% capture body %}{{ body }} {% for tag in customer.tags %}{% assign the_test = 'nutthin' %}{% capture tag_id %}{{ tag }}{% endcapture %}{% assign tag_count = 0 %}{% assign tag_size = tag_id | size %}{% for tag in customer.tags %}{% capture cur_tag %}{{ tag }}{% endcapture %}{% if cur_tag contains tag_id %}{% assign cur_tag_size = cur_tag | size %}{% assign difference = tag_size | minus: cur_tag_size %}{% if difference == 0 %}{% assign the_test = tag_id %}{% else %}{% assign the_test = 'nutthin' %}{% endif %}{% endif %}{% endfor %}{% for p in collections.all.products %}{% capture pID %}{{ p.id }}{% endcapture %}{% capture difference %}{{ tag_size | minus:pID.size | money_without_currency | times:100 | divided_by: 2 }}{% endcapture %}{% assign check = difference | split:'.' %}{% if check[1] contains '5' %}{% assign display = false %}{% else %}{% assign display = true %}{% endif %}{% if display and the_test contains pID %}%0A%0A{{ p.title | replace: ' ','%20' }}%3A%20%20{{ shop.url }}{{ p.url }}{% endif %}{% endfor %}{% endfor %}{% endcapture %}
-  <a class="share" href='mailto:?to=&?subject={{ subject }}&amp;body={{ body }}'>Share my wish list via email</a>
+  <a class="share" href='mailto:?to=&?subject={{ subject }}&amp;body={{ body }}'>שתפי את הרשימה שלך</a>
   {% else %}
   <p>כדי ליצור רשימת מועדפים יש לבצע <a href='/account/login'>כניסה לחשבון</a> או <a href='/account/register'>ליצור חשבון חדש</a>.</p>
   {% endif %}

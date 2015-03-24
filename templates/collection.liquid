@@ -10,19 +10,19 @@
   {% include 'collection-sidebar' %}
   <div class="block-row col-xs-9 col-main">    
     {% paginate collection.products by product_per_page %}
-<!--     <header class="page-header">
+     <header class="page-header">
+      <h2>{{ collection.title }}</h2>
+      {% if collection.description != ''  %}
+      <h4 class="rte">
+        {{ collection.description }}
+      </h4>
+      {% endif %}
       <div class="img_cart">
       {% if settings.display_image_cat %}
         {{ 'img_cat.jpg' | asset_url | img_tag }}
       {% endif %}
       </div>
-      <h2>{{ collection.title }}</h2>
-      {% if collection.description != ''  %}
-      <div class="rte">
-        {{ collection.description }}
-      </div>
-      {% endif %}
-    </header> -->
+    </header>
 
     {% comment %}
       Use .grid--rev so that the collection tags appear below the products on mobile
@@ -43,7 +43,8 @@
       {% endfor %}
       {% endpaginate %}
       {% else %}
-      <p style="text-align: center;">There are no products in this collection.</p>
+      <p style="text-align: center;">לא נותרו מוצרים זמינים בקולקציה הזאת.<br>
+אנחנו מעדכנים את הקולקציות שלנו באופן קבוע... <strong>כדי להישאר מעודכנים!</strong></p>
       {% endif %}
     </div>
     

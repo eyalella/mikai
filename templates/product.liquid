@@ -7,7 +7,7 @@
       <meta itemprop="image" content="{{ product.featured_image.src | product_img_url: 'grande' }}">
       <meta itemprop="shop-currency" content="{{ shop.currency }}">
 
-      <div class="row">
+      <div class="row flex-box">
         <div class="col-xs-7 product-shop">
           <div itemprop="offers" itemtype="http://schema.org/Offer">
             <header class="product-title {% if collection.previous_product or collection.next_product and settings.display_prev_next_product and collection %}has-btn{% endif %}">
@@ -46,7 +46,7 @@
             {% if settings.display_availability or settings.display_product_type or settings.display_vendor %}
             <div class="product-infor">
               {% if settings.display_availability %}
-              <p class="product-inventory"> <label>Availability</label><span>{% if product.selected_or_first_available_variant.inventory_management %}{% assign first_inventory = product.selected_or_first_available_variant.inventory_quantity %}{% if first_inventory > 0 %}{{first_inventory}} in stock{% else %}Out of stock{% endif %}{% else %}Many in stock{% endif %}
+              <p class="product-inventory"> <label>Availability</label><span>{% if product.selected_or_first_available_variant.inventory_management %}{% assign first_inventory = product.selected_or_first_available_variant.inventory_quantity %}{% if first_inventory > 0 %}{{first_inventory}} במלאי{% else %}אזל{% endif %}{% else %}זמין במלאי{% endif %}
                 </span></p>
               {% endif %}
               {% if settings.display_product_type %}
@@ -139,7 +139,7 @@
               </div>
               {% endif %}
 
-              <input type="submit" name="add" class="btn" id="product-add-to-cart" value="הוסף לעגלה">          
+              <input type="submit" name="add" class="btn" id="product-add-to-cart" value="הוספה לעגלה">          
               {% else %} 
               <input type="submit" name="add" class="btn" id="product-add-to-cart" disabled value="Unavailable">          
               {% endif %}
@@ -409,7 +409,7 @@ var selectCallback = function(variant, selector) {
   if (variant) {
     if (variant.available) {
       // We have a valid product variant, so enable the submit button
-      addToCart.removeClass('disabled').removeAttr('disabled').val('הוסף לעגלה');
+      addToCart.removeClass('disabled').removeAttr('disabled').val('הוספה לעגלה');
 
     } else {
       // Variant is sold out, disable the submit button
@@ -458,12 +458,12 @@ var selectCallback = function(variant, selector) {
   {% if settings.display_availability %}
   if (variant.available) {
     if (variant.inventory_management!=null) {
-      jQuery(".product-inventory span").text(variant.inventory_quantity + " in stock");
+      jQuery(".product-inventory span").text(variant.inventory_quantity + " במלאי");
     } else {
-      jQuery(".product-inventory span").text("Many in stock");
+      jQuery(".product-inventory span").text("קיים במלאי");
     }
   } else {
-    jQuery(".product-inventory span").text("Out of stock");
+    jQuery(".product-inventory span").text("אזל");
   }
   {% endif %}
   

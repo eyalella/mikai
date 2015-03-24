@@ -4,11 +4,7 @@
 
 /*  General -------------------------- */
 html { font-size: {{ settings.body_font_size }}px; color: {{ settings.body_color }}; font-family: 'Roboto'; font-weight: 400; }
-body { direction: rtl; font-family: "Alef Hebrew",
-               “Helvetica Neue”,
-               Helvetica,
-               Arial,
-               sans-serif; }
+body { direction: rtl; font-family: "Alef Hebrew", ans-serif; }
 
 h3 { font-family: Alef Hebrew; font-size: 16px; font-weight: 700; letter-spacing: 0.02em; color: #000; }
 h5 { color: #000; font-family: 'Montserrat'; font-weight: 700; font-size: 13px; letter-spacing: 0.05em; margin-bottom: 13px; }
@@ -65,7 +61,7 @@ payment-due__currency,
 .product__info__name { margin-bottom: 11px; }
 .product__info__name strong { font-weight: 400; color: #000; }
 .product-list .has-image .product__info { color: #717171; margin: 2px 0; float: right; }
-.product-list .product__price { margin-left: -65px; font-size: 13px; font-weight: 700; color: #000; float: left; }
+.product-list .product__price { font-size: 13px; font-weight: 700; color: #000; float: left; }
 .payment-due-container .payment-due__label { font-size: 14px; font-weight: 700; color: #000; }
 .payment-due .payment-due__price { font-size: 24px; font-weight: 700; color: #000; }
 .payment-due__currency { font-size: 11px; font-weight: 700; padding: 0 8px; height: 21px; line-height: 21px; float: left; display: none; }
@@ -80,7 +76,7 @@ payment-due__currency,
 .total-line--total { border-color: #dadada; padding-top: 20px; margin-top: 25px; }
 .order-summary .payment-due-container { padding: 10px 0 6px; }
 
-.call-to-action label { color: {{ settings.body_color }}; font-weight: 400; }
+.call-to-action label { color: {{ settings.body_color }}; font-weight: 400; margin-right: 20px; }
 .shipping-option__price { right: 20px; }
 
 .section__summary { padding-top: 15px; }
@@ -96,6 +92,14 @@ payment-due__currency,
 
 .section__header .section__edit-link { font-size: {{ settings.body_font_size }}px; font-weight: 700; border-bottom: 1px solid {{ settings.checkout_accent_color }}; }
 .section__header .section__edit-link:hover { border-bottom-color: transparent; }
+.logged-in-customer__avatar { float: right; margin-left: 1em; margin-right: 0; }
+.logged-in-customer__information { float: right; }
+.section__header .section__edit-link { float: left; }
+.field .label--full-width { position: relative; }
+.shipping-option__price { left: 10px; right: auto; }
+.field__icon { left: 1.25em; right: auto; }
+.more:hover:after { -webkit-transform: translateX(0.5em); transform: translateX(-0.5em); }
+
 
 /*  Footer -------------------------- */
 .footer { padding: 35px 0 70px; margin-top: 40px; }
