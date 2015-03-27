@@ -2,16 +2,16 @@
 <div class="row">
   {% include 'product-sidebar' %}
   <div class="col-xs-9 col-main">
-    <div itemscope itemtype="http://schema.org/Product" class="product">
+    <div itemscope itemtype="http://schema.org/Offer" class="product">
       <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
       <meta itemprop="image" content="{{ product.featured_image.src | product_img_url: 'grande' }}">
-      <meta itemprop="shop-currency" content="{{ shop.currency }}">
+      <meta itemprop="priceCurrency" content="{{ shop.currency }}">
 
       <div class="row flex-box">
         <div class="col-xs-7 product-shop">
-          <div itemprop="offers" itemtype="http://schema.org/Offer">
+          <div itemtype="http://schema.org/Offer">
             <header class="product-title {% if collection.previous_product or collection.next_product and settings.display_prev_next_product and collection %}has-btn{% endif %}">
-              <h2 itemprop="name">{{ product.title }}</h2>
+              <h1 itemprop="name">{{ product.title }}</h1>
               {% if settings.display_prev_next_product and collection %}
                 {% if collection.previous_product %}
                 <a class="prev btn" href="{{ collection.next_product }}" title="המוצר הקודם">המוצר הקודם</a>
