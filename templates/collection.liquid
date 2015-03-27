@@ -8,7 +8,11 @@
 
 <div class="row">
   {% include 'collection-sidebar' %}
-  <div class="block-row col-xs-9 col-main">    
+  <div class="block-row col-xs-9 col-main">  
+    <div class="inner-breadcrumb">
+      {% include 'breadcrumb' %}  
+    </div>
+    {% include 'toolbar' %}
     {% paginate collection.products by product_per_page %}
      <header class="page-header">
       <h2>{{ collection.title }}</h2>
@@ -28,7 +32,7 @@
       Use .grid--rev so that the collection tags appear below the products on mobile
     {% endcomment %}
     
-    {% include 'toolbar' %}
+    {% comment %}{% include 'toolbar' %}{% endcomment %}
     
     {% comment %}
       Use class grid-uniform to have evenly sized columns clear
