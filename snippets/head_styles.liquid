@@ -1,4 +1,4 @@
-{{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+{% comment %}{{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
 
 <!-- Theme base and media queries -->
 {{ 'owl.carousel.css' | asset_url | stylesheet_tag }}
@@ -10,7 +10,12 @@
 {{ 'theme-styles.css' | asset_url | stylesheet_tag }}
 {{ 'theme-styles-setting.css' | asset_url | stylesheet_tag }}
 {{ 'theme-styles-responsive.css' | asset_url | stylesheet_tag }}
-{{ 'animate.css' | asset_url | stylesheet_tag }}
+{{ 'animate.css' | asset_url | stylesheet_tag }}{% endcomment %}
+
+{{ 'head.min.css' | asset_url | stylesheet_tag }}
+{{ 'theme-styles.css' | asset_url | stylesheet_tag }}
+{{ 'theme-styles-setting.css' | asset_url | stylesheet_tag }}
+{{ 'theme-styles-responsive.css' | asset_url | stylesheet_tag }}
 
 {% if settings.enable_retina %}
 {{ 'retina-responsive.css' | asset_url | stylesheet_tag }}
