@@ -55,7 +55,7 @@
         <input class="btn" type="button" onclick="window.location.href='${url}'" value="המשך לפריט" />
         {{else}}
         <input type="hidden" name="id" value="${variants[0].id}" />      
-        <input class="btn add-to-cart-btn" type="submit" value="הוספה לעגלה" />
+        <input class="btn add-to-cart-btn" type="submit" value="הוספי לעגלה" onclick="ga('send', 'event', 'button', 'add to cart', 'recently viewed');" />
         {{/if}}
       </form>
     </div>    
