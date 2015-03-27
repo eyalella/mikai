@@ -430,8 +430,16 @@ html[xmlns] .slides {display: block;}
 .header-top { text-align: center; text-transform:uppercase; font-size:11px; padding: 9px 0 6px; letter-spacing: 0.05em; }
 .header-top a.link { color:#b05d5d; border-bottom: 1px solid #b05d5d; }
 .header-top a.link:hover { text-decoration:none; border-bottom:0; }
-.header-top .close { text-indent: -999em; display:block; width: 9px; height: 9px; background: url(icons_new14.png ) no-repeat 0 -229px; opacity: 1; margin-top:3px; }
-
+.header-top .close {   display: block;
+  width: 9px;
+  height: 9px;
+  opacity: 1;
+  margin-top: 3px;
+  line-height: 6px; }
+.header-top .close svg {
+	  width: 100%;
+  height: 100%;
+}
 .header { padding: 16px 0 0; }
 .header-mobile { display: none; position: relative; float: left; background: #141414; }
 .header-mobile #showLeftPush { height:46px; background: url(wizard.png) no-repeat center center; display: block; text-indent: -999em; text-align: center; border-right: 1px solid #868686; cursor: pointer; }
