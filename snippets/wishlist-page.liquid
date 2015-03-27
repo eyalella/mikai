@@ -20,7 +20,7 @@
         <th>שם</th>
         <th class="a-center">מחיר</th>
         <th class="a-center">הסרה</th>
-        <th class="a-center">הוספה לעגלה</th>
+        <th class="a-center">הוספי לעגלה</th>
       </tr>
     </thead>
     <tbody>
@@ -78,7 +78,7 @@
               <input class="btn" type="button" onclick="window.location.href='{{product.url}}'" value="המשך לפריט" />
               {% else %}
               <input type="hidden" name="id" value="{{ product.variants[0].id }}" />      
-              <input class="btn add-to-cart-btn" type="submit" value="הוספה לעגלה" />
+              <input class="btn add-to-cart-btn" type="submit" value="הוספי לעגלה" onclick="ga('send', 'event', 'button', 'add to cart', 'wishlist page');" />
               {% endif %}
               {% endif %}
             </form>         

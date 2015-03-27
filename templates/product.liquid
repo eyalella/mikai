@@ -139,7 +139,7 @@
               </div>
               {% endif %}
 
-              <input type="submit" name="add" class="btn" id="product-add-to-cart" value="הוספה לעגלה">          
+              <input type="submit" name="add" class="btn" id="product-add-to-cart" value="הוספי לעגלה" onclick="ga('send', 'event', 'button', 'add to cart', 'product');">          
               {% else %} 
               <input type="submit" name="add" class="btn" id="product-add-to-cart" disabled value="Unavailable">          
               {% endif %}
@@ -409,7 +409,7 @@ var selectCallback = function(variant, selector) {
   if (variant) {
     if (variant.available) {
       // We have a valid product variant, so enable the submit button
-      addToCart.removeClass('disabled').removeAttr('disabled').val('הוספה לעגלה');
+      addToCart.removeClass('disabled').removeAttr('disabled').val('הוספי לעגלה');
 
     } else {
       // Variant is sold out, disable the submit button
