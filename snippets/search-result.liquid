@@ -50,7 +50,7 @@
        <strong class="label">מבצע</strong>
       {% endif %}
       {% if sold_out %}
-        <strong class="sold-out-label">Sold Out</strong>
+        <strong class="sold-out-label">אזל במלאי</strong>
       {% endif %}
      </div>
     {% endif %}
@@ -86,7 +86,7 @@
       {% assign variantCount = item.variants | size %}
       <form action="/cart/add" method="post" class="variants" id="product-actions-{{ item.id }}" enctype="multipart/form-data" style="padding:0px;">    
         {% if sold_out %}
-        <input class="btn add-to-cart-btn" type="submit" value="Unavailable" disabled="disabled" />
+        <input class="btn add-to-cart-btn" type="submit" value="לא זמין" disabled="disabled" />
         {% else %}
         {% if variantCount > 1 %}    
         <input class="btn" type="button" onclick="window.location.href='{{item.url}}'" value="המשך לפריט" />

@@ -84,7 +84,7 @@
     
         } else {
           // Variant is sold out, disable the submit button
-          addToCart.val('Sold Out').addClass('disabled').attr('disabled', 'disabled');
+          addToCart.val('אזל במלאי').addClass('disabled').attr('disabled', 'disabled');
         }
     
         // Regardless of stock, update the product price
@@ -172,7 +172,7 @@
     
       } else {
         // The variant doesn't exist. Just a safegaurd for errors, but disable the submit button anyway
-        addToCart.text('Unavailable').addClass('disabled').attr('disabled', 'disabled');
+        addToCart.text('לא זמין').addClass('disabled').attr('disabled', 'disabled');
       }
     
   };

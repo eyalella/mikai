@@ -141,7 +141,7 @@
 
               <input type="submit" name="add" class="btn" id="product-add-to-cart" value="הוספי לעגלה" onclick="ga('send', 'event', 'button', 'add to cart', 'product');">          
               {% else %} 
-              <input type="submit" name="add" class="btn" id="product-add-to-cart" disabled value="Unavailable">          
+              <input type="submit" name="add" class="btn" id="product-add-to-cart" disabled value="לא זמין">          
               {% endif %}
             </form>
 
@@ -413,7 +413,7 @@ var selectCallback = function(variant, selector) {
 
     } else {
       // Variant is sold out, disable the submit button
-      addToCart.val('Sold Out').addClass('disabled').attr('disabled', 'disabled');
+      addToCart.val('אזל במלאי').addClass('disabled').attr('disabled', 'disabled');
     }
 
     // Regardless of stock, update the product price
@@ -451,7 +451,7 @@ var selectCallback = function(variant, selector) {
           
   } else {
     // The variant doesn't exist. Just a safeguard for errors, but disable the submit button anyway
-    addToCart.val('Unavailable').addClass('disabled').attr('disabled', 'disabled');
+    addToCart.val('לא זמין').addClass('disabled').attr('disabled', 'disabled');
   }
 
   //update variant inventory

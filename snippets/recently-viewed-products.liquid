@@ -50,7 +50,7 @@
     <div class="action">
       <form action="/cart/add" method="post" class="variants" id="product-actions-${id}" enctype="multipart/form-data" style="padding:0px;">    
         {{if !available}} 
-        <input class="btn add-to-cart-btn" type="submit" value="Unavailable" disabled="disabled" />
+        <input class="btn add-to-cart-btn" type="submit" value="לא זמין" disabled="disabled" />
         {{else variants.length > 1 }}
         <input class="btn" type="button" onclick="window.location.href='${url}'" value="המשך לפריט" />
         {{else}}
