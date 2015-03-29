@@ -6,10 +6,10 @@ Refined tags
 {% else %}
 {% assign has_refined = true %}
 {% endif %}
-<div class="refined-widgets">
+{% comment %}<div class="refined-widgets">
   <span>סינון</span>
   <a href="javascript:void(0)" class="clear-all" {% if has_refined == false %} style="display:none" {% endif %}>נקה הכל</a>
-  {% comment %}<ul>    
+  <ul>    
   {% if collection.handle != 'all' %}
     <li><a href="javascript:void(0)" class="selected-collection">{{collection.title}}<span>X</span></a></li>
   {% endif %}
@@ -18,8 +18,8 @@ Refined tags
       {% assign tag_value = tag | handleize %}
     <li><a href="{{tag_value}}" class="selected-tag">{{tag}}<span>X</span></a></li>
   {% endfor %}
-  </ul>{% endcomment %}
-</div>
+  </ul>
+</div>{% endcomment %}
 
 <div class="sidebar-block">
 {% if settings.enable_shop_by_tags_1 %}
