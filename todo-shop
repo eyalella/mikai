@@ -1,19 +1,31 @@
-Add analytics events
+Facebook campeign
+Remove empty categories
+Fix text issues
+Ready campign
+facebook login
+Check flows:
+	Signup
+	Share
+	Contact
+
+TODO
 Setup Email for mikai
-Fix cartpage footer order
 Change 3 banner to codrops style
-Change gallery to rtl
+Add parallax effect to homepage
+Change hot products gallery to rtl
 Improve alert for terms checkbox appearnce
 Improve products gallery items (improve item box + add social to item box)
-fix mobile spaces and order so item appears on top
-
-תונומתל תומש לע אבאל דיגהל
+Fix mobile spaces and order so item appears before the fold
+Fix lazyload to show images erlier on scroll
+Add inventory to product page
 
 CLI
 grunt:
 grunt watch:shopify
+grunt cssmin 
+grunt uglify
 
-
+Shopify
 // If we're "offsite" (checkout.shopify.com), then we'll just rely on the
 // token cookies themselves as indicators of a new visit/unique, as they
 // are the cookies that will be propagated across domains.
