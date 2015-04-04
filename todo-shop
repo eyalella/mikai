@@ -1,33 +1,78 @@
-Facebook campeign
-Remove empty categories
-Fix text issues
-Ready campign
-facebook login
-Check flows:
-	Signup
-	Share
-	Contact
+#Facebook campeign
+	Remove empty categories
+	Fix text issues
+	Ready campign
+	Facebook login
+	Check flows:
+		Signup
+		Share
+		Contact
 
-TODO
-Setup Email for mikai
-Change 3 banner to codrops style
-Add parallax effect to homepage
-Change hot products gallery to rtl
-Improve alert for terms checkbox appearnce
-Improve products gallery items (improve item box + add social to item box)
-Fix mobile spaces and order so item appears before the fold
-Fix lazyload to show images erlier on scroll
-Add inventory to product page
+#TODO
+	Setup Email for mikai
+	Change 3 banner to codrops style
+	Add parallax effect to homepage
+	Change hot products gallery to rtl
+	Improve alert for terms checkbox appearnce
+	Improve products gallery items (improve item box + add social to item box)
+	Fix mobile spaces and order so item appears before the fold
+	Fix lazyload to show images erlier on scroll
+	Add inventory to product page
+	Go over Danielle's notes
 
-CLI
-grunt:
-grunt watch:shopify
-grunt cssmin 
-grunt uglify
+#CLI
+	#grunt:
+		grunt watch:shopify
+		grunt cssmin 
+		grunt uglify
 
-Shopify
-// If we're "offsite" (checkout.shopify.com), then we'll just rely on the
-// token cookies themselves as indicators of a new visit/unique, as they
-// are the cookies that will be propagated across domains.
-if (readCookie('_shopify_s')) { visit = 1; }
-if (readCookie('_shopify_y')) { uniq = 1; }
+#Shopify
+	
+	#facebook-login
+		mikai-app-client-id: 6fa731ff81625344c273dedaccb06510
+		code: d270332095081cc4d5313aa7acd22c15
+		credential: d35b41aa17ac119870377f1efcda0570
+
+		$.ajax({
+		  mthod: "POST",
+		  url: "https://mikai-mikai-trendy-boutique.myshopify.com/admin/oauth/access_token",
+		  data: {client_id:"6fa731ff81625344c273dedaccb06510", client_secret:"d35b41aa17ac119870377f1efcda0570", code:"d270332095081cc4d5313aa7acd22c15"}
+		});
+	
+	#Cookies:
+		// If we're "offsite" (checkout.shopify.com), then we'll just rely on the
+		// token cookies themselves as indicators of a new visit/unique, as they
+		// are the cookies that will be propagated across domains.
+		if (readCookie('_shopify_s')) { visit = 1; }
+		if (readCookie('_shopify_y')) { uniq = 1; }
+
+
+#FB login flow (https://docs.shopify.com/api/customer#index)
+
+	beforeSend: function (xhr) {
+	    xhr.setRequestHeader ("X-Shopify-Access-Token", "XXXXXX");
+	},
+	methos: POST,
+	url: /admin/customers.json
+	data: {
+	  "customer": {
+	    "first_name": "Steve",
+	    "last_name": "Lastnameson",
+	    "email": "steve.lastnameson@example.com",
+	    "verified_email": true,
+	    "addresses": [
+	      {
+	        "address1": "123 Oak St",
+	        "city": "Ottawa",
+	        "province": "ON",
+	        "phone": "555-1212",
+	        "zip": "123 ABC",
+	        "last_name": "Lastnameson",
+	        "first_name": "Mother",
+	        "country": "CA"
+	      }
+	    ]
+	  }
+	}
+
+	http://localhost:4040/?code=259f1f47d4bf812db7098f1eb1b7bd7a&hmac=be6b5e92dfc10f186ac9da01cbcfd44454a918c430c0e67f39ab63d88c713709&shop=mikai-mikai-trendy-boutique.myshopify.com&signature=6ffaa129b06b66dd5e0b833dead38b4f&timestamp=1427908989
