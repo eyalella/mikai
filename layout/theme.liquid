@@ -60,6 +60,7 @@
   Add the page template as a class for easy page or template specific styling.
 {% endcomment %}
 <body id="{{ page_title | handle }}" class=" {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
+{{ 'facebook-login.js' | asset_url | script_tag }}
   <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
     <div class="gf-menu-device-wrapper">
       <div class="gf-menu-device-container"></div>
