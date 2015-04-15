@@ -48,18 +48,24 @@
 {% endpaginate %}
 </section>
 <script>
-  jQuery(document).ready(function() {
-    jQuery(".related-products .products-grid").owlCarousel({
-      autoPlay: 8000,     
-      scrollPerPage: true,
-      slideSpeed: 500,
-      stopOnHover: true,     
-      navigation: true,
+  jQuery(document).ready(function(){
+    jQuery(".related-products .products-grid").slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 4,
       rtl: true,
-      items : 4,
- 	  itemsDesktop : [1200,3],
-      itemsTablet: [767,3],
-      itemsTabletSmall: [721,2]
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      responsive: [
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     });
   });
 </script>

@@ -134,7 +134,7 @@ a, a:link, a:hover, a:active { outline: none; }
 .section-title {  display: none;}
 
 /*  Layout -------------------------------------------------- */
-.main-content { display: block; padding-bottom: 50px; padding-top: 30px; min-height: 450px; direction: rtl; }
+.main-content { display: block; padding-bottom: 50px; padding-top: 30px; min-height: 450px; }
 .template-index .main-content { padding: 0; }
 
 /*  Buttons -------------------------------------------------- */
@@ -149,7 +149,7 @@ a, a:link, a:hover, a:active { outline: none; }
 #get-rates-submit,
 .infinite-scrolling a,
 .infinite-scrolling-homepage a { padding: 0 25px; text-transform: uppercase; line-height: 34px; height: 36px; letter-spacing: 0.05em; font-weight: 700; border: 2px solid transparent; text-decoration: none; }
-.btn span.arrow { text-indent: -999em; display: inline-block; width:0; height:0; line-height:0; margin-right: 10px; border: 5px solid transparent; }
+.btn span.arrow { text-indent: -999em; display: inline-block; width:0; height:0; line-height:0; margin-right: 0; border: 5px solid transparent; }
 
 .text-continue a { display: inline-block; }
 
@@ -1015,7 +1015,7 @@ line-height: 22px; }
 /* product-grid ------------------------------------------------------------------------------------------- */
 .grid-item .product-top { position: relative; overflow: hidden; }
 .template-list-collections .grid-item .product-top { height: 418px; }
-.products-grid { margin: 0 -10px; clear: both; direction: ltr; }
+.products-grid { margin: 0 -10px; clear: both; }
 .products-grid .grid-item { width: 220px; margin: 0 10px; position: relative; margin-bottom: 50px; float: right; vertical-align: top; text-align: center; }
 .products-grid .grid-item .product-top { margin-bottom: 15px; }
 .products-grid .grid-item .product-bottom { min-height: 70px; position: relative; }
@@ -1176,12 +1176,12 @@ label[for="quantity"] {display: block; font-weight: 700; margin-bottom: 5px; }
 
 .product-img-box { position: relative; padding-right: 30px;}
 .product-img-box .product-photo-container { position: relative;overflow: hidden; text-align: center; }
-.product-img-box .product-photo-thumbs li { margin: 0; }
+.product-img-box .product-photo-thumbs li { margin: 0; padding: 4px; }
 .product-img-box .product-photo-thumbs.owl-theme li { padding: 0 5px; width: 100%; }
 .product-img-box .product-photo-thumbs li a { display: block; }
 
 .more-view-wrapper { visibility: hidden; margin: 25px 0 0; }
-.more-view-wrapper.more-view-wrapper-owlslider li { float: left; }
+.more-view-wrapper.more-view-wrapper-owlslider .slick-dots li {  }
 .more-view-wrapper .owl-theme .owl-controls { height: 55px; }
 .more-view-wrapper .owl-theme .owl-controls .owl-buttons div { top: auto; bottom: 0; }
 .more-view-wrapper .owl-theme .owl-controls .owl-buttons div.owl-prev { left: 50%; margin-left: -43px; }

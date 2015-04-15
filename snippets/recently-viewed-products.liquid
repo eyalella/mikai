@@ -83,23 +83,23 @@ Shopify.Products.showRecentlyViewed({
   	  if (window.show_multiple_currencies) {
          Currency.convertAll(window.shop_currency, jQuery('#currencies').val(), 'span.money', 'money_format');
       }
-  
-      jQuery("#recently-viewed-products-grid").owlCarousel({
-    rtl:true,
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
+jQuery('#recently-viewed-products-grid').slick({
+  infinite: true,
+  slidesToShow: 5,
+  slidesToScroll: 5,
+  rtl: true,
+  dots: true,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  responsive: [
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
     }
+  ]
 });
       if (jQuery(".spr-badge").length>0) {
           return window.SPR.registerCallbacks(), window.SPR.initRatingHandler(), window.SPR.initDomEls(), window.SPR.loadProducts(), window.SPR.loadBadges();
