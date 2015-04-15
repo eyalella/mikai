@@ -8,7 +8,7 @@
       <meta itemprop="priceCurrency" content="{{ shop.currency }}">
 
       <div class="row flex-box">
-        <div class="col-xs-7 product-shop">
+        <div class="col-xs-6 product-shop">
           <div itemtype="http://schema.org/Offer">
             <header class="product-title {% if collection.previous_product or collection.next_product and settings.display_prev_next_product and collection %}has-btn{% endif %}">
               <h1 itemprop="name">{{ product.title }}</h1>
@@ -258,7 +258,7 @@
           </div>
         </div>
         
-        <div class="col-xs-5 product-img-box {% if settings.product_image_border%} grid-item-border {% endif %}">
+        <div class="col-xs-6 product-img-box {% if settings.product_image_border%} grid-item-border {% endif %}">
           {% if product.images.size == 0 %}
           <div class="product-photo-container">
             <img src="{{ '' | product_img_url: 'grande' }}" alt="">
