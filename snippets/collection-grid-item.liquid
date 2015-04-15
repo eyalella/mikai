@@ -27,9 +27,9 @@
       <h3 class="h5">
         <a href="{{ collection.url }}" title="Browse our {{ collection_title }} collection">{{ collection.title }}</a>
       </h3>
-      <p class="count-products">{{ collection.all_products_count }} {{ collection.all_products_count | pluralize: 'מוצר', 'מוצרים' }}</p>
-      <p class="desc">{{ collection.description | strip_html | truncatewords: 14 }}</p>
-      <p><a href="{{ collection.url }}" title="לצפייה בקולקצייה" class="btn">לצפייה בקולקצייה</a></p>
+      {% comment %}<p class="count-products">{{ collection.all_products_count }} {{ collection.all_products_count | pluralize: 'מוצר', 'מוצרים' }}</p>
+      <p class="desc">{{ collection.description | strip_html | truncatewords: 14 }}</p>{% endcomment %}
+      <p><a href="{{ collection.url }}" title="לחצי לצפייה ב{{ collection.title }}" class="btn">לחצי לצפייה ב{{ collection.title }}</a></p>
     </div>
   </div>
 </div>
