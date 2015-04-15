@@ -70,7 +70,7 @@
     {% endunless %}
     {% if variant.available %}
     <script>
-      jQuery('.swatch[data-option-index="{{ option_index }}"] .{{ value | handle }}').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+      /*jQuery('.swatch[data-option-index="{{ option_index }}"] .{{ value | handle }}').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');*/
     </script>
     {% endif %}
   {% endfor %}
