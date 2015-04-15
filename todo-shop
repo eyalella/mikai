@@ -1,24 +1,20 @@
 #Facebook campeign
-	Remove empty categories
-	Fix text issues
-	Ready campign
 	Facebook login
-	Check flows:
-		Signup
-		Share
-		Contact
 
 #TODO
-	Setup Email for mikai
-	Change 3 banner to codrops style
+	Switch images to "compact" on multi-image pages
+	Fix products top filter bar to be more plain 
+	Improve flow from homepage to checkout
+	Add delivery note: cheap and fast delivery
+	Allow cheaper delivery for members
+	Next collection timer
+	Block first-day collection products to registerd users
 	Add parallax effect to homepage
-	Change hot products gallery to rtl
+	Change hot products gallery to rtl + Fix multiple product images on mobile - remove owl carusel
 	Improve alert for terms checkbox appearnce
 	Improve products gallery items (improve item box + add social to item box)
-	Fix mobile spaces and order so item appears before the fold
 	Fix lazyload to show images erlier on scroll
 	Add inventory to product page
-	Go over Danielle's notes
 
 #CLI
 	#grunt:
