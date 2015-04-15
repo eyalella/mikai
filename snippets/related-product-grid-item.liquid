@@ -29,7 +29,7 @@
 {% endcomment %}
 
 {% assign productIndex = forloop.index |minus:1 %}
-{% assign delayTime = 200 | times : productIndex %}
+{% assign delayTime = 200 %}
 <div class="{% if settings.product_image_border%}grid-item-border{% endif %} {% if settings.product_image_crop%}crop_image{% else %} no_crop_image {% endif %} grid-item product-item {% if sold_out %} sold-out{% endif %}{% if on_sale %} on-sale{% endif %} wow fadeIn" data-wow-delay="{{delayTime}}ms" id="product-{{ product.id }}">
   {% comment %}
     Link to your product with the 'within: collection' filter for the link to be aware of the collection.
