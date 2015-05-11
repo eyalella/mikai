@@ -47,10 +47,10 @@
 				{{ article.comments_count }} {{ article.comments_count | pluralize: 'comment','comments' }}
 			  </a><span class="separator">/</span>
 			{% endif %}
-			<span class="blog_author">Posted 
+			<span class="blog_author">נכתב בתאריך 
 			<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
-			  {{ article.published_at | date: '%b %d, %Y' }}
-              </time> by {{ article.author }} </span>  
+			  {{ article.published_at | date: "%D" }}
+              </time> על ידי {{ article.author }} </span>  
           </p> 
 			
 		  {% comment %}
@@ -65,9 +65,9 @@
 			Show off meta information like number of comments and tags.
 		  {% endcomment %}
           
-          <p class="button">
+          {% comment %}<p class="button">
               <a href="{{ article.url }}">Read more</a>
-          </p>
+          </p>{% endcomment %}
           
 		  <ul class="user-tags">
 			{% include 'tags-article' %}

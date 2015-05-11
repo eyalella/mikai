@@ -125,12 +125,6 @@
         - Make sure you have name="note" for the message to be submitted properly
       {% endcomment %}
       {% if settings.cart_notes %}
-      <p style="float:none; text-align:right; clear: both; margin: 10px 0;">
-        <input class="agree-to-terms-cb" type="checkbox" id="agree" />
-        <label class="agree-to-terms-label" style="display:inline; float:none" for="agree">
-          אני מאשרת את <a href="/pages/site-rules">תקנון האתר</a>.
-        </label>
-      </p>
       <textarea name="note" class="input-full" id="cartSpecialInstructions" placeholder="הערות נוספות">{{ cart.note }}</textarea>
       {% endif %}
       
@@ -182,15 +176,5 @@
     $('.paypal-he-button').on('click', function() {
       $payPalBtn.trigger('click');
     });
-  });
-
-  $('[name="checkout"], input[name="goto_pp"], input[name="goto_gc"]').click(function() {
-    if($('#agree').is(':checked')){
-      $(this).submit();
-    }
-    else{
-      alert("אנא אשרי שאת מסכימה לתנאי השימוש באתר");
-      return false;
-    }
   });
 </script>

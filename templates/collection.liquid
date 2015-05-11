@@ -9,15 +9,13 @@
 <div class="row">
   {% include 'collection-sidebar' %}
   <div class="block-row col-xs-9 col-main">  
-    <div class="inner-breadcrumb">
-      {% include 'breadcrumb' %}  
-    </div>
+   
     {% include 'toolbar' %}
     {% paginate collection.products by product_per_page %}
      <header class="page-header">
       <h2>{{ collection.title }}</h2>
       {% if collection.description != ''  %}
-      <h4 class="rte">
+      <h4 class="rte hidden">
         {{ collection.description }}
       </h4>
       {% endif %}
@@ -26,6 +24,9 @@
         {{ 'img_cat.jpg' | asset_url | img_tag }}
       {% endif %}
       </div>
+      <div class="inner-breadcrumb">
+      {% include 'breadcrumb' %}  
+    </div>
     </header>
 
     {% comment %}

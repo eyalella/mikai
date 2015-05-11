@@ -1,7 +1,29 @@
+#Purchase flow
+	Fix signup flow
+	Remove terms checkbox on cart page
+	Change color for form inputs
+	Rethink mandatory/amount of input fields
+		Minimize fields
+		Mark mandatory fields
+	Change "יש לך חשבון? לחצי כאן"
+		Improve copy
+		Improve design
+	2nd pahse cart: add לחצי "הזמיני כעת"
+	Setup ICount billing 
+		http://www.icount.co.il/%D7%97%D7%99%D7%91%D7%95%D7%A8-icount-%D7%9C-shopify/
+	Change logo on GBPremium payment page
+	Design payment page
+
 #Facebook campeign
 	Facebook login
 
 #TODO
+	take exapmles from http://www.net-a-porter.com/
+	Set option for tow-column display on products lobby
+	Fix login/register flow
+	Fix payment flow
+	Setup blog for daniel
+	Delay newslatter popup
 	Switch images to "compact" on multi-image pages
 	Fix products top filter bar to be more plain 
 	Improve flow from homepage to checkout
@@ -23,7 +45,6 @@
 		grunt uglify
 
 #Shopify
-	
 	#facebook-login
 		mikai-app-client-id: 6fa731ff81625344c273dedaccb06510
 		code: d270332095081cc4d5313aa7acd22c15
@@ -44,7 +65,6 @@
 
 
 #FB login flow (https://docs.shopify.com/api/customer#index)
-
 	beforeSend: function (xhr) {
 	    xhr.setRequestHeader ("X-Shopify-Access-Token", "XXXXXX");
 	},
@@ -70,5 +90,4 @@
 	    ]
 	  }
 	}
-
 	http://localhost:4040/?code=259f1f47d4bf812db7098f1eb1b7bd7a&hmac=be6b5e92dfc10f186ac9da01cbcfd44454a918c430c0e67f39ab63d88c713709&shop=mikai-mikai-trendy-boutique.myshopify.com&signature=6ffaa129b06b66dd5e0b833dead38b4f&timestamp=1427908989

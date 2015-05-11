@@ -29,7 +29,7 @@
  
 <section class="related-products">
         {% if settings.related_products_title != '' %}
-        <h2>{{ settings.related_products_title }}</h2>
+        <h2><span>{{ settings.related_products_title }}</span></h2>
         {% endif %}
         <div class="products-grid">
  
@@ -54,7 +54,7 @@
       slidesToShow: 4,
       slidesToScroll: 4,
       rtl: true,
-      dots: true,
+      dots: false,
       autoplay: true,
       autoplaySpeed: 5000,
       responsive: [

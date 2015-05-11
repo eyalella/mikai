@@ -53,7 +53,7 @@
     <div class="product-image">
       <a href="{{ product.url | within: collection }}" class="product-grid-image">
         <img src="{{ product.featured_image.src | product_img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-        <div class="hover"></div>
+        {% comment %}<div class="hover"></div>{% endcomment %}
       </a>
     </div>
     
@@ -68,20 +68,24 @@
     </div>
     {% endif %}
     
-    <div class="product-des">
+   {% comment %} <div class="product-des clearfix">
       {% include 'wishlist-product' %}
       
-      <div class="action">
+      <div class="action" title="הוסיפי לעגלה">
+        <svg width="30" height="32" viewBox="0 0 30 32">
+          <path d="M11.429 27.429q0 0.929-0.679 1.607t-1.607 0.679-1.607-0.679-0.679-1.607 0.679-1.607 1.607-0.679 1.607 0.679 0.679 1.607zM27.429 27.429q0 0.929-0.679 1.607t-1.607 0.679-1.607-0.679-0.679-1.607 0.679-1.607 1.607-0.679 1.607 0.679 0.679 1.607zM29.714 8v9.143q0 0.429-0.295 0.759t-0.723 0.384l-18.643 2.179q0.232 1.071 0.232 1.25 0 0.286-0.429 1.143h16.429q0.464 0 0.804 0.339t0.339 0.804-0.339 0.804-0.804 0.339h-18.286q-0.464 0-0.804-0.339t-0.339-0.804q0-0.196 0.143-0.563t0.286-0.643 0.384-0.714 0.277-0.527l-3.161-14.696h-3.643q-0.464 0-0.804-0.339t-0.339-0.804 0.339-0.804 0.804-0.339h4.571q0.286 0 0.509 0.116t0.348 0.277 0.232 0.438 0.143 0.464 0.098 0.527 0.080 0.464h21.446q0.464 0 0.804 0.339t0.339 0.804z"></path>
+        </svg>
+
         {% assign variantCount = product.variants | size %}
         <form action="/cart/add" method="post" class="variants" id="product-actions-{{ product.id }}" enctype="multipart/form-data" style="padding:0px;">    
           {% if sold_out %}
-          <input class="btn add-to-cart-btn" type="submit" value="לא זמין" disabled="disabled" />
+          <input class="btn add-to-cart-btn" type="submit" value="אזל במלאי" disabled="disabled" />
           {% else %}
             {% if variantCount > 1 %}    
-            <input class="btn" type="button" onclick="window.location.href='{{product.url}}'" value="המשך לפריט" />
+            <input class="btn plain-text-button" type="button" onclick="window.location.href='{{product.url}}'" value="בחירת פריט" />
             {% else %}
             <input type="hidden" name="id" value="{{ product.variants[0].id }}" />      
-            <input class="btn add-to-cart-btn" type="submit" value="הוספי לעגלה" onclick="ga('send', 'event', 'button', 'add to cart', 'product grid item');" />
+            <input class="btn add-to-cart-btn" type="submit" value="add" onclick="ga('send', 'event', 'button', 'add to cart', 'product grid item');" />
             {% endif %}
           {% endif %}
         </form>     
@@ -89,11 +93,15 @@
       
       {% if settings.enable_quick_view %}
       <div class="quickview-button">
-        <a href="javascript:void(0)" id="{{ product.handle }}" title="צפייה מהירה">צפייה מהירה</a>
+        <a href="javascript:void(0)" id="{{ product.handle }}" title="צפייה מהירה">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+            <path d="M29.714 17.143q-2.714-4.214-6.804-6.304 1.089 1.857 1.089 4.018 0 3.304-2.348 5.652t-5.652 2.348-5.652-2.348-2.348-5.652q0-2.161 1.089-4.018-4.089 2.089-6.804 6.304 2.375 3.661 5.955 5.83t7.759 2.17 7.759-2.17 5.955-5.83zM16.857 10.286q0-0.357-0.25-0.607t-0.607-0.25q-2.232 0-3.83 1.598t-1.598 3.83q0 0.357 0.25 0.607t0.607 0.25 0.607-0.25 0.25-0.607q0-1.536 1.089-2.625t2.625-1.089q0.357 0 0.607-0.25t0.25-0.607zM32 17.143q0 0.607-0.357 1.232-2.5 4.107-6.723 6.58t-8.92 2.473-8.92-2.482-6.723-6.571q-0.357-0.625-0.357-1.232t0.357-1.232q2.5-4.089 6.723-6.571t8.92-2.482 8.92 2.482 6.723 6.571q0.357 0.625 0.357 1.232z"></path>
+          </svg>
+        </a>
       </div>
       {% endif %}
       
-    </div>
+    </div>{% endcomment %}
     
   </div>
   
@@ -116,9 +124,23 @@
         You can show a leading 'from' or 'up to' by checking 'product.price_varies'
         if your variants have different prices.
       {% endcomment %}
-        <span >{% if product.price_varies %}<em>from </em>{% endif %}{{ product.price_min | money }}</span>
+        <span >{% if product.price_varies %}<em>החל מ-</em>{% endif %}{{ product.price_min | money }}</span>
       </p>
+        
       {% endif %}
+      {% assign variantCount = product.variants | size %}
+      <form action="/cart/add" method="post" class="variants" id="product-actions-{{ product.id }}" enctype="multipart/form-data" style="padding:0px;">    
+          {% if sold_out %}
+          <input class="btn add-to-cart-btn" type="submit" value="אזל במלאי" disabled="disabled" />
+          {% else %}
+            {% if variantCount > 1 %}    
+            <input class="btn plain-text-button" type="button" onclick="window.location.href='{{product.url}}'" value="בחירת פריט" />
+            {% else %}
+            <input type="hidden" name="id" value="{{ product.variants[0].id }}" />      
+            <input class="btn add-to-cart-btn plain-text-button" type="submit" value="הוספה לעגלה" onclick="ga('send', 'event', 'button', 'add to cart', 'product grid item');" />
+            {% endif %}
+          {% endif %}
+        </form>   
     </div>
   </div>
 </div>

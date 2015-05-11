@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"marg",
+				"margin: 〔property〕"
+			],
+			[
+				"cenre",
+				"center"
+			],
+			[
+				"rela",
+				"relative"
+			],
+			[
+				"dir",
+				"direction: 〔property〕"
+			],
+			[
+				"ma",
+				"margin-bottom"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"border-ri",
+				"border-right-color"
+			],
+			[
 				"ba",
 				"background"
 			],
@@ -26,10 +54,6 @@
 			[
 				"le",
 				"left"
-			],
-			[
-				"ma",
-				"margin"
 			],
 			[
 				"r",
@@ -152,64 +176,57 @@
 	"buffers":
 	[
 		{
-			"file": "assets/theme-styles.css.liquid",
+			"contents": "{% assign variantCount = product.variants | size %}\n      <form action=\"/cart/add\" method=\"post\" class=\"variants\" id=\"product-actions-{{ product.id }}\" enctype=\"multipart/form-data\" style=\"padding:0px;\">    \n          {% if sold_out %}\n          <input class=\"btn add-to-cart-btn\" type=\"submit\" value=\"אזל במלאי\" disabled=\"disabled\" />\n          {% else %}\n            {% if variantCount > 1 %}    \n            <input class=\"btn plain-text-button\" type=\"button\" onclick=\"window.location.href='{{product.url}}'\" value=\"בחירת פריט\" />\n            {% else %}\n            <input type=\"hidden\" name=\"id\" value=\"{{ product.variants[0].id }}\" />      \n            <input class=\"btn add-to-cart-btn plain-text-button\" type=\"submit\" value=\"הוספה לעגלה\" onclick=\"ga('send', 'event', 'button', 'add to cart', 'product grid item');\" />\n            {% endif %}\n          {% endif %}\n        </form>  ",
 			"settings":
 			{
-				"buffer_size": 109223,
+				"buffer_size": 887,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "assets/_checkout.css.liquid",
+			"file": "snippets/homepage-block-three-banner-bottom.liquid",
 			"settings":
 			{
-				"buffer_size": 14000,
+				"buffer_size": 8247,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "assets/checkout.scss.liquid",
+			"file": "snippets/homepage-block-banner.liquid",
 			"settings":
 			{
-				"buffer_size": 6543,
+				"buffer_size": 827,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<!doctype html>\n<!--[if lt IE 7]><html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"en\"> <![endif]-->\n<!--[if IE 7]><html class=\"no-js lt-ie9 lt-ie8\" lang=\"en\"> <![endif]-->\n<!--[if IE 8]><html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\n<!--[if IE 9 ]><html class=\"ie9 no-js\"> <![endif]-->\n<!--[if (gt IE 9)|!(IE)]><!--> <html class=\"no-js\"> <!--<![endif]-->\n<head>\n\n  <!-- Basic page needs ================================================== -->\n  <meta charset=\"utf-8\">\n\n  <!-- Title and description ================================================== -->\n  <title>\n  {{ page_title }}{% if current_tags %} &ndash; tagged \"{{ current_tags | join: ', ' }}\"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}\n  </title>\n\n  {% if page_description %}\n  <meta name=\"description\" content=\"{{ page_description | escape }}\">\n  {% endif %}\n\n  <!-- Product meta ================================================== -->\n  {% include 'fb-open-graph-tags' %}\n  {% include 'twitter-card' %}\n\n  <!-- Helpers ================================================== -->\n  <link rel=\"canonical\" href=\"{{ canonical_url }}\">\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n  \n  <!-- Favicon -->\n  <link rel=\"shortcut icon\" href=\"{{ 'favicon.png' | asset_url }}\" type=\"image/x-icon\" />\n  \n   <!-- fonts -->\n  {% include 'head_fonts' %}\n  \n   <!-- Styles -->\n   {% include 'head_styles' %}\n  \n   <!-- Scripts -->\n  {% include 'head_scripts' %}\n\n  <!-- Header hook for plugins ================================================== -->\n  {{ content_for_header }}\n\n  <!--[if lt IE 9]>\n  {{ '//html5shiv.googlecode.com/svn/trunk/html5.js' | script_tag }}\n  <![endif]-->\n\n  {% comment %}\n    If you store has customers disabled, you can remove the following JS file\n  {% endcomment %}\n  {% if template contains 'customers' %}\n    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}\n    {{ 'customer_area.js'  | shopify_asset_url | script_tag }}\n  {% endif %}\n\n  \n\n</head>\n\n{% comment %}\n  Add the page template as a class for easy page or template specific styling.\n{% endcomment %}\n<body id=\"{{ page_title | handle }}\" class=\" {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}\" >\n  <nav class=\"cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left\" id=\"cbp-spmenu-s1\">\n    <div class=\"gf-menu-device-wrapper\">\n      <div class=\"gf-menu-device-container\"></div>\n    </div>             \n  </nav>\n  <div class=\"wrapper-container\">	\n	{% include 'header' %}\n      \n  <div class=\"quick-view\"></div>\n\n  <main class=\"container main-content\" role=\"main\">\n    {{ content_for_layout }}\n  </main>\n\n  {% include 'footer' %}\n\n  {% if settings.enable_quick_view %}\n  	{% include 'quick-view-template' %}\n  {% endif %}\n\n  {% include 'footer_scripts' %}\n  {% include 'newsletter' %}\n  <div id=\"back-top\" style=\"display: none;\"><a class=\"nav_up\" href=\"#top\">Back to top</a></div>\n  </div>\n\n  {% if settings.display_recently_viewed_products %}\n  <!-- Begin Recently Viewed Products -->\n  {{ '//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js' | script_tag }}\n  {{ 'jquery.products.min.js' | asset_url | script_tag }}\n  {% if template contains 'product' %}\n  <script>\n  Shopify.Products.recordRecentlyViewed();\n  </script>\n  {% endif %}\n  <!-- End Recently Viewed Products -->\n  {% endif %}\n  \n  {% if settings.enable_retina %}\n  {{ 'retina.js' | asset_url | script_tag }}\n  {% endif %}\n</body>\n</html>",
-			"file": "layout/theme.liquid",
-			"file_size": 3563,
-			"file_write_time": 130696102372516046,
+			"file": "/home/eyal/.bash_aliases",
 			"settings":
 			{
-				"buffer_size": 3566,
+				"buffer_size": 775,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<!-- start: HTML Header -->\n\n  <head>\n		\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n		<title>Beautiful decorative fence panels for your garden</title>\n		<meta name=\"description\" content=\"Looking for a way to improve your garden? Trellis and finials are decorative panels to enhance your fencing. Call us today in Bungay on 01986 892 810\" />\n		<meta name=\"keywords\" content=\"Trellis, finials, Bungay\" />\n		<meta charset=\"utf-8\">\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\" />\n\n<link rel=\"stylesheet\" href=\"http://static01.cdn.ybsitecenter.com/template/elite/css/normalize-3.0.1.min.css\" type=\"text/css\" />\n<link rel=\"stylesheet\" href=\"http://static01.cdn.ybsitecenter.com/template/elite/css/template-v2.min.css\" type=\"text/css\" />\n\n<script src=\"//code.jquery.com/jquery-1.11.1.min.js\"></script>\n<script src=\"http://static01.cdn.ybsitecenter.com/template/elite/js/template-v2.min.js\" type=\"text/javascript\"></script>\n\n<link rel=\"canonical\" href=\"\" />\n<link rel=\"stylesheet\" href=\"http://static01.cdn.ybsitecenter.com/template/elite/css/animations-v2.min.css\" type=\"text/css\" />\n\n\n<link href=\"/cs/Satellite?c=CSS_UXCustom&cid=1302690747129&pagename=Stylesheet&site=UKPremium\" rel=\"stylesheet\" type=\"text/css\"/>\n\n<link href=\"/cs/Satellite?c=CSS_UXCustom&cid=1302693449523&pagename=Stylesheet&site=UKPremium\" rel=\"stylesheet\" type=\"text/css\"/>\n\n<!--[if IE 9]>\n<script src=\"http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js\">var IE7_PNG_SUFFIX = \".png\";</script>\n<![endif]-->\n\n<!--[if IE 8]>\n<script src=\"http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js\">var IE7_PNG_SUFFIX = \".png\";</script>\n<![endif]-->\n\n<!--[if IE 7]>\n<script src=\"http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js\">var IE7_PNG_SUFFIX = \".png\";</script>\n<![endif]-->\n\n\n<!--[if IE 6]>\n<script type=\"text/javascript\">\nvar IE6UPDATE_OPTIONS = {\nicons_path: \"http://static01.cdn.ybsitecenter.com/template/css/images/ie6updateimages/\"\n}\n</script>\n<script type=\"text/javascript\" src=\"http://static01.cdn.ybsitecenter.com/template/js/ie6update.js\"></script>\n\n<![endif]--> \n\n\n<!-- load jQuery -->\n<!-- fixes for issue# 11022 -->\n<script type=\"text/javascript\" src=\"http://static01.cdn.ybsitecenter.com/template/js/jquery-1.8.2.js?v=v4.17.6\"></script>\n<!-- fixes for issue# 11022 ends here -->\n\n<script type=\"text/javascript\" src=\"http://static01.cdn.ybsitecenter.com/template/js/jquery-ui-1.9.1.custom.min.js?v=v4.17.6\"></script>\n<link rel=\"Stylesheet\" type=\"text/css\" href=\"http://static01.cdn.ybsitecenter.com/template/css/jquery.datepick.css\" />\n<link rel=\"stylesheet\" href=\"http://static01.cdn.ybsitecenter.com/template/css/smoothness/theme.css?v=v4.17.6\" type=\"text/css\" />\n\n<script type=\"text/javascript\" src=\"http://static01.cdn.ybsitecenter.com/template/js/jquery-ui-effects.min.js?v=v4.17.6\"></script>\n\n<script type=\"text/javascript\" src=\"http://static01.cdn.ybsitecenter.com/template/js/plugins.js?v=v4.17.6\"></script>\n<script type=\"text/javascript\" src=\"http://static01.cdn.ybsitecenter.com/template/js/external.js?v=v4.17.6\"></script>\n<script type=\"text/javascript\" src=\"http://static01.cdn.ybsitecenter.com/template/js/jquery.cookie.js?v=v4.17.6\"></script>\n<script type='text/javascript' src=\"http://static01.cdn.ybsitecenter.com/template/js/DPNI.js?v=v4.17.6\"></script>\n<script type='text/javascript' src=\"http://static01.cdn.ybsitecenter.com/template/js/FeedEk.js\"></script>\n\n<!--  Start DatePicker Localization Scripts -->\n<script type=\"text/javascript\" src=\"http://static01.cdn.ybsitecenter.com/template/js/jquery.datepick.js\"></script>  \n<script type=\"text/javascript\" src=\"http://static01.cdn.ybsitecenter.com/template/js/jquery.datepick-es.js\"></script>    \n<script type=\"text/javascript\" src=\"http://static01.cdn.ybsitecenter.com/template/js/jquery.datepick-en-GB.js\"></script>   \n<!-- End DatePicker Localization Scripts -->\n\n<!-- end jQuery -->	\n	\n<link rel=\"icon\" type=\"image/png\" href=\"/cs/Satellite?blobcol=urlimagefile&blobheader=application%2Foctet-stream&blobheadername1=Content-Disposition&blobheadervalue1=inline%3B+filename%3Dgsf-hero-logo-fav-icon.ico&blobkey=id&blobtable=UXImage&blobwhere=1302693544923&ssbinary=true&moddate=2014-10-31 04:13:58\" />\n\n<meta name=\"google-site-verification\" content=\"OeweP_jwOsKKCQDGgwYeH1rLi7nZlKNBUOv8ojO1-mo\" />\n\n   <script>  \n    $(document).ready(function(){\n\n        \n		\n		//Modified to fix #4854 - starts\n          \n 		//Modified to fix #4854 - ends\n 		\n 		\n		//Added to fix #1342 - starts\n 		\n		//Added to fix #1342 - ends\n			\n    	\n	   		var originalEmail =$.cookie('OriginalEmail');\n	   		var substituteEmail = $.cookie('SubstituteEmail'); \n			if(originalEmail != null && substituteEmail != null)\n	   		{\n	   	 		var originalEmailList = originalEmail.split(';');\n	   	 		var substituteEmailList = substituteEmail.split(';');\n	   	 		if(originalEmailList.length = substituteEmailList.length)\n	   	  		{\n	   	   		for (var i=0; i<originalEmailList.length; ++i) {\n	   	   			document.body.innerHTML = unescape(document.body.innerHTML.replace(originalEmailList[i],substituteEmailList[i]));\n	   			}\n	   	  	  }\n	   		 }\n    			\n       			\n       			 var originalPhone =$.cookie('originalPhone');\n       			 var rcfPhone = $.cookie('rcfPhone');\n       			 var useYFs = $.cookie('useYF');\n    			 if(originalPhone != null && rcfPhone != null)\n    			   	{\n    				 ybFindPhNums = originalPhone.split(';');\n    			   	 ybReplacePhNums = rcfPhone.split(';');\n    			   	 useYF =useYFs;\n					  ybFun_ReplaceText();\n    			   	} \n        });  \n    </script>  \n    \n\n</head>\n\n<body class=\"internal\">\n\n\n\n\n	\n	\n  \n\n\n\n<!-- start: Header Wrapper -->\n\n\n\n\n\n\n\n\n       \n          \n\n\n\n\n\n\n<!--Modified to fix #2446 starts-->\n\n<!-- Modified to fix the #1946 - Ends Here -->	\n		\n	\n\n<!--Modified to fix #2446 ends -->\n\n<div id=\"headerWrapper\">\n\n	<div id=\"header\" class=\"row fullWidth\">\n	\n	\n	<div class=\"header\"> \n	\n	\n	\n	\n	</div> \n	\n	\n	<div class=\"logo\">\n	\n	\n	\n	\n	\n	\n		\n		\n		\n		\n	\n	<a href=\"http://www.goldstarfencingltdbungay.co.uk/\" title=\"Return to the Home Page\" alt=\"Link to home page\">\n	\n	\n\n\n\n\n\n<img src=\"/cs/Satellite?blobcol=urlimagefile&blobheader=image%2Fpng&blobheadername1=Content-Disposition&blobheadervalue1=inline%3B+filename%3Dgsf-header-logo.png&blobkey=id&blobtable=UXImage&blobwhere=1302690800362&ssbinary=true&moddate=2014-10-29 02:25:16\" title=\"Gold Star Fencing\" alt=\"Gold Star Fencing\" width='213'  height='16' />\n\n	\n	</a>\n	\n	</div>\n	<div class=\"strap\"><div id=\"tel\"> 	<a href=\"tel: 441986892810\">01986 892 810</a> </div>	\n	</div>\n	\n		\n		\n		\n		\n		\n		\n\n\n\n\n<ul class=\"navigation\">\n	\n	\n	<li class=\"first\" id=\"NAV-1302690725001\"><a href='http://www.goldstarfencingltdbungay.co.uk/'>Home</a>\n\n</li>\n	\n	\n	<li id=\"NAV-1414256528092\"><a href='http://www.goldstarfencingltdbungay.co.uk/fence-panels'>Fence Panels</a>\n\n</li>\n	\n	\n	<li id=\"NAV-1414257527827\"><a href='http://www.goldstarfencingltdbungay.co.uk/trellis-and-finials'>Trellis & Finials</a>\n\n</li>\n	\n	\n	<li id=\"NAV-1414257038294\"><a href='http://www.goldstarfencingltdbungay.co.uk/arbours-and-arches'>Arbours & Arches</a>\n\n</li>\n	\n	\n	<li id=\"NAV-1414257554837\"><a href='http://www.goldstarfencingltdbungay.co.uk/gates'>Gates</a>\n\n</li>\n	\n	\n	<li id=\"NAV-1414257636699\"><a href='http://www.goldstarfencingltdbungay.co.uk/about-us'>About Us</a>\n\n</li>\n	\n	\n	<li class=\"last\" id=\"NAV-1414257750141\"><a href='http://www.goldstarfencingltdbungay.co.uk/contact'>Contact Us</a>\n\n</li></ul>\n					\n	</div>\n</div>\n\n\n<div id=\"page\" class=\"fullWidth\">\n<div id=\"hero\" class=\"row\"><div class=\"column grid4 left first\">\n\n\n\n\n\n\n\n\n	\n	\n	\n	\n\n\n\n\n\n\n			\n\n\n\n\n\n\n		\n		\n\n\n\n\n\n\n\n\n\n\n\n\n\n	\n	\n	\n	\n	\n\n\n<div class=\"contents news\">\n\n<div><h1>A trellis – the perfect way to add visual interest to your garden</h1>\n	<p class=\"meta\">2014-10-30 05:52:36</p>\n\n	\n		\n		</div>\n</div>\n\n\n\n\n\n\n\n\n\n\n		\n\n\n		<a class=\"scrollTo\" href=\"#row1\">&nbsp;</a>\n		\n			\n			\n		\n\n\n</div><div class=\"column grid4 left second\">\n\n\n\n\n\n\n\n\n	\n	\n	\n	\n\n\n\n\n\n\n\n\n\n\n\n\n		\n		\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n	\n	\n	\n	\n	\n\n\n<div class=\"contents\">\n\n<div>\n\n	\n		\n		<h2>A trellis</h2>\n<p>There are lots of different types of trellis which you can use, but they&rsquo;ve all got one thing in common &ndash; they&rsquo;re a really striking and beautiful addition to your property. They can be used to divide up areas of the garden or get rid of hard lines.</p></div>\n\n\n\n\n\n\n\n\n\n	\n\n\n\n\n\n\n<img src=\"/cs/Satellite?blobcol=urlimagefile&blobheader=image%2Fpng&blobheadername1=Content-Disposition&blobheadervalue1=inline%3B+filename%3Dgsf-content-bottom-stars.png&blobkey=id&blobtable=UXImage&blobwhere=1302690859701&ssbinary=true&moddate=2014-10-29 06:08:20\" title=\"\" alt=\"\" width='140'  height='20' />\n\n	\n</a>\n\n</div>\n\n\n\n\n</div><div class=\"column grid4 left third\"></div></div><div id=\"contentTop\" class=\"row fullWidth\"><div class=\"column grid4 left first\">\n\n\n\n\n\n\n\n\n	\n	\n	\n	\n\n\n\n\n\n\n\n\n\n\n\n\n		\n		\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n	\n	\n	\n	\n	\n\n\n<div class=\"contents imageLeft\">\n\n\n\n\n\n<img src=\"/cs/Satellite?blobcol=urlimagefile&blobheader=image%2Fjpeg&blobheadername1=Content-Disposition&blobheadervalue1=inline%3B+filename%3DH2support-1_image.jpg&blobkey=id&blobtable=UXImage&blobwhere=1414623851131&ssbinary=true&moddate=2014-10-30 06:14:19\" title=\"H2support-1\" alt=\"alt\" width='330'  height='257' />\n\n	\n\n<div>\n\n	\n		\n		<h2>A trellis as part of a growing garden</h2>\n<p>In addition to its value as an attractive part of the garden, a trellis can help you if you&rsquo;re an enthusiastic gardener: a trellis is a great place for a climbing plant to grow. So whether you&rsquo;d like a formal looking garden or a bit of a wilderness, a trellis is a great for you. Take a look.</p></div>\n</div>\n\n\n\n\n</div><div class=\"column grid4 left second\">\n\n\n\n\n\n\n\n\n	\n	\n	\n	\n\n\n\n\n\n\n\n\n\n\n\n\n		\n		\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n	\n	\n	\n	\n	\n\n\n<div class=\"contents\">\n\n<div><div class=\"accordionHeader\"><h2>View gallery<br><span>click here to open the gallery</span></h2></div><div class=\"accordionContent\">\n\n	\n		\n		<script type=\"text/javascript\" class=\"Left\">\n//&lt;![CDATA[ \n$(document).ready(function(){\n	$('.lightbox').lightbox();\n	$('.gallery li').captions({ });\n}); \n//]]&gt;\n</script><ul class=\"contentlist lightbox gallery clearfix\">\n		<li>\n		\n			\n			\n			\n			\n		\n		\n\n\n\n\n<a href=\"/cs/Satellite?blobcol=urlimagefile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-BowTopTrellis_image.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850753&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:12\" rel=\"12\">\n	<img width=\"246\" height=\"222\" alt=\"alt\" title=\"Accordian-BowTopTrellis\" src=\"/cs/Satellite?blobcol=urlthumbfile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-BowTopTrellis_thumb.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850753&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:12\">\n	\n</a>\n		</li>\n		<li>\n		\n			\n			\n			\n			\n		\n		\n\n\n\n\n<a href=\"/cs/Satellite?blobcol=urlimagefile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-FanTrellis_image.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850788&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:13\" rel=\"13\">\n	<img width=\"246\" height=\"222\" alt=\"alt\" title=\"Accordian-FanTrellis\" src=\"/cs/Satellite?blobcol=urlthumbfile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-FanTrellis_thumb.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850788&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:13\">\n	\n</a>\n		</li>\n		<li>\n		\n			\n			\n			\n			\n		\n		\n\n\n\n\n<a href=\"/cs/Satellite?blobcol=urlimagefile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-Bigod_image.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850822&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:13\" rel=\"14\">\n	<img width=\"246\" height=\"222\" alt=\"alt\" title=\"Accordian-Bigod\" src=\"/cs/Satellite?blobcol=urlthumbfile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-Bigod_thumb.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850822&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:13\">\n	\n</a>\n		</li>\n		<li>\n		\n			\n			\n			\n			\n		\n		\n\n\n\n\n<a href=\"/cs/Satellite?blobcol=urlimagefile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-RoundTopTrellis_image.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850856&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:14\" rel=\"15\">\n	<img width=\"246\" height=\"222\" alt=\"alt\" title=\"Accordian-RoundTopTrellis\" src=\"/cs/Satellite?blobcol=urlthumbfile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-RoundTopTrellis_thumb.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850856&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:14\">\n	\n</a>\n		</li>\n		<li>\n		\n			\n			\n			\n			\n		\n		\n\n\n\n\n<a href=\"/cs/Satellite?blobcol=urlimagefile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-SquareTrellis_image.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850890&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:15\" rel=\"16\">\n	<img width=\"246\" height=\"222\" alt=\"alt\" title=\"Accordian-SquareTrellis\" src=\"/cs/Satellite?blobcol=urlthumbfile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-SquareTrellis_thumb.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850890&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:15\">\n	\n</a>\n		</li>\n		<li>\n		\n			\n			\n			\n			\n		\n		\n\n\n\n\n<a href=\"/cs/Satellite?blobcol=urlimagefile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-FlameBishopWindsorAcornBallCollar_image.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850924&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:15\" rel=\"17\">\n	<img width=\"246\" height=\"222\" alt=\"alt\" title=\"Accordian-FlameBishopWindsorAcornBallCollar\" src=\"/cs/Satellite?blobcol=urlthumbfile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-FlameBishopWindsorAcornBallCollar_thumb.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850924&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:15\">\n	\n</a>\n		</li>\n		<li>\n		\n			\n			\n			\n			\n		\n		\n\n\n\n\n<a href=\"/cs/Satellite?blobcol=urlimagefile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-OmegaTrellis_image.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850959&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:16\" rel=\"18\">\n	<img width=\"246\" height=\"222\" alt=\"alt\" title=\"Accordian-OmegaTrellis\" src=\"/cs/Satellite?blobcol=urlthumbfile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-OmegaTrellis_thumb.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850959&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:16\">\n	\n</a>\n		</li>\n		<li>\n		\n			\n			\n			\n			\n		\n		\n\n\n\n\n<a href=\"/cs/Satellite?blobcol=urlimagefile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-Wingfield_image.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850993&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:16\" rel=\"19\">\n	<img width=\"246\" height=\"222\" alt=\"alt\" title=\"Accordian-Wingfield\" src=\"/cs/Satellite?blobcol=urlthumbfile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-Wingfield_thumb.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623850993&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:16\">\n	\n</a>\n		</li>\n		<li>\n		\n			\n			\n			\n			\n		\n		\n\n\n\n\n<a href=\"/cs/Satellite?blobcol=urlimagefile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-Waveny_image.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623851028&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:17\" rel=\"20\">\n	<img width=\"246\" height=\"222\" alt=\"alt\" title=\"Accordian-Waveny\" src=\"/cs/Satellite?blobcol=urlthumbfile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-Waveny_thumb.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623851028&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:17\">\n	\n</a>\n		</li>\n		<li>\n		\n			\n			\n			\n			\n		\n		\n\n\n\n\n<a href=\"/cs/Satellite?blobcol=urlimagefile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-Wharton_image.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623851062&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:18\" rel=\"21\">\n	<img width=\"246\" height=\"222\" alt=\"alt\" title=\"Accordian-Wharton\" src=\"/cs/Satellite?blobcol=urlthumbfile&amp;blobheader=image%2Fjpeg&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=inline%3B+filename%3DAccordian-Wharton_thumb.jpg&amp;blobkey=id&amp;blobtable=UXImage&amp;blobwhere=1414623851062&amp;ssbinary=true&amp;moddate=2014-10-30 06:14:18\">\n	\n</a>\n		</li>\n		\n	</ul></div></div>\n</div>\n\n\n\n\n</div><div class=\"column grid4 left third\">\n\n\n\n\n\n\n\n\n	\n	\n	\n	\n\n\n\n\n\n\n\n\n\n\n\n\n		\n		\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n	\n	\n	\n	\n	\n\n\n<div class=\"contents imageRight\">\n\n\n\n\n\n<img src=\"/cs/Satellite?blobcol=urlimagefile&blobheader=image%2Fjpeg&blobheadername1=Content-Disposition&blobheadervalue1=inline%3B+filename%3DH2support-2_image.jpg&blobkey=id&blobtable=UXImage&blobwhere=1414623851097&ssbinary=true&moddate=2014-10-30 06:14:18\" title=\"H2support-2\" alt=\"alt\" width='330'  height='257' />\n\n	\n\n<div>\n\n	\n		\n		<h2>Improve your fence posts with finials</h2>\n<p>Fence posts can look a bit dull &ndash; they are, after all, just posts. But you can really improve their appearance with finial &ndash; they are effectively caps which can be placed on top of a fence post and can give your garden a distinct and charming character.</p></div>\n</div>\n\n\n\n\n</div><div class=\"column grid4 left fourth\"></div></div><div id=\"contentBottom\" class=\"row fullWidth\"><div class=\"column grid4 left first\">\n\n\n\n\n\n\n\n\n	\n	\n	\n	\n\n\n\n\n\n\n\n\n\n\n\n\n		\n		\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n	\n	\n	\n	\n	\n\n\n<div class=\"contents\">\n\n<div>\n\n	\n		\n		<h3>Free Delivery</h3></div>\n\n\n\n\n\n\n\n\n\n	\n\n\n\n\n\n\n<img src=\"/cs/Satellite?blobcol=urlimagefile&blobheader=image%2Fpng&blobheadername1=Content-Disposition&blobheadervalue1=inline%3B+filename%3Dgsf-content-bottom-stars.png&blobkey=id&blobtable=UXImage&blobwhere=1302690859701&ssbinary=true&moddate=2014-10-29 06:08:20\" title=\"\" alt=\"\" width='140'  height='20' />\n\n	\n</a>\n\n</div>\n\n\n\n\n</div><div class=\"column grid4 left second\">\n\n\n\n\n\n\n\n\n	\n	\n	\n	\n\n\n\n\n\n\n\n\n\n\n\n\n		\n		\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n	\n	\n	\n	\n	\n\n\n<div class=\"contents\">\n\n<div>\n\n	\n		\n		<p>Add personality to your garden with trellis and finials. Call us on <br />\n<span class=\"telNo\"><a href=\"tel: 441986892810\">01986 892 810</a></span></p></div>\n</div>\n\n\n\n\n</div></div>\n\n</div>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<!-- start: Footer Wrapper -->\n<div id=\"footerWrapper\">\n      <!-- start: Footer Content -->\n      <div id=\"footer\" class=\"row fullWidth\">\n     \n	\n	\n	\n	\n\n      \n	  \n	  \n\n\n	\n\n\n\n\n<div class=\"social\"><div class=\"contents socialmedia\">\n      \n<h3>\nShare\n\n         \n</h3>\n          <div class=\"addthis_toolbox addthis_default_style\">\n              <a class=\"addthis_button_facebook\"></a>\n              <a class=\"addthis_button_twitter\"></a>\n                \n\n            <a class=\"addthis_button_google_plusone\" g:plusone:size=\"small\" g:plusone:count=\"false\" rel=\"nofollow\" g:plusone:href='http://goldstarfencingltdbungay.co.uk/trellis-and-finials'></a>\n			\n			         \n			\n			 <a class=\"addthis_button_stumbleupon\"></a>\n			\n			\n              <a class=\"addthis_button_compact\"></a>\n          </div>\n      </div>\n     \n</div> \n<!--start: Generating SiteMapPage URL and Link #286 -->\n<div class=\"contents sitemap\">\n\n	\n	\n\n</div>\n<!-- end: Generating SiteMapPage URL and Link #286 -->\n</div>		\n	<!-- end: Footer Content -->	\n<div id=\"yellFooter\" class=\"clear grid24\">\n<p><p>\n<link href=\"http://fonts.googleapis.com/css?family=Open+Sans:400,700,600\" rel=\"stylesheet\" type=\"text/css\" />\n<link href=\"http://fonts.googleapis.com/css?family=Arvo:400,700\" rel=\"stylesheet\" type=\"text/css\" />\n<link href=\"http://fonts.googleapis.com/css?family=Lato:400,700\" rel=\"stylesheet\" type=\"text/css\" /></p></p>\n</div>\n</div>\n<!-- end: Footer Wrapper -->\n\n\n\n\n\n\n\n<!-- netreach: start -->\n \n<!-- netreach: end --> \n</body>\n\n\n\n\n\n\n\n\n\n\n\n\n       \n          \n\n\n\n\n\n\n\n<script type=\"text/javascript\">\n//<![CDATA[\n$(document).ready( function(){$(\"#NAV-1414257527827\").addClass(\"current\");});\n//]]>\n</script>\n\n<script type=\"text/javascript\" src=\"http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e4254e323a463ad\">\n</script>\n\n\n\n\n\n	\n	\n	\n\n\n\n	\n	\n	\n	\n	\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n\n\n\n<script type=\"text/javascript\"> \n	<!--\n\n	if (!window.getCookie){\n		function getCookie(c_name)	{\n		var i,x,y,ARRcookies=document.cookie.split(\";\");\n		for (i=0;i<ARRcookies.length;i++){\n		  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf(\"=\"));\n		  y=ARRcookies[i].substr(ARRcookies[i].indexOf(\"=\")+1);\n		  x=x.replace(/^\\s+|\\s+$/g,\"\");\n		  if (x==c_name){\n		    return unescape(y);\n		    }\n		  }\n		}\n	}\n	\n	var jsParam = '';\n	if(self.StatPixelParamFromPage) {jsParam=StatPixelParamFromPage;};\n	var size = 'n/a';\n	var puri = '';\n	var nav = navigator.appName;\n	var agent = navigator.userAgent;\n	var objValue = '';\n    var TsessionID=encodeURIComponent(getCookie(\"JSESSIONID\"));\n    var ref = document.referrer;\n    var theurl=document.location.href;\n   // alert(theurl);\n    ref=ref.replace(/&/g, \"[amp]\");\n    theurl=theurl.replace(/&/g, \"[amp]\");\n    \n    \n    var write = (navigator.appName=='Netscape' && (navigator.appVersion.charAt(0)=='2' || navigator.appVersion.charAt(0)=='3')) ? false:true;\n	if (write==true) {\n		size = screen.width + \"x\" + screen.height;\n		objValue= encodeURIComponent('Trellis & Finials');\n		puri = '?siteName=goldstarfencingltdbungay.co.uk&objType=UXPAGE&objID=1414257527827&objName=' +objValue+'&sessionID='+TsessionID+'&Referer='+ref+'&nav='+nav+'&agent='+agent+'&size='+size+'&js=true'+jsParam;\n		puri += '';\n		puri += '&URLENC='+theurl;\n		//alert(puri);		\n		//document.write('<img style=\"display:none;\" height=\"1\" width=\"1\" border=\"0\" src=\"http://analytics.ybsitecenter.com/statistic'+puri+'\" alt=\"pixel\" />');\n		pixel = new Image();\n		pixel.src = \"http://analytics.ybsitecenter.com/statistic\" + puri;\n	}\n	//-->\n	</script>\n\n	<noscript>	\n	<img style=\"display:display;\" height=\"1\" width=\"1\" src=\"http://analytics.ybsitecenter.com/statistic?siteName=goldstarfencingltdbungay.co.uk&objType=UXPAGE&objID=1414257527827&objName=Trellis+%26+Finials&URLENC=&URLENC=http://www.goldstarfencingltdbungay.co.uk/trellis-and-finials&sessionID=&Referer=&js=false\" alt=\"pixel\" />\n	</noscript>\n	\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n	\n	  \n	 \n\n\n\n\n\n\n\n<script type=\"text/javascript\">\n	var HAF = {};\n	HAF.config = {'global':{'internalDomains':'javascript:,www.yell.com','downloadFileTypes':'exe,zip,wav,mp3,mov,mpg,avi,wmv,doc,pdf,xls','charset':'ISO-8859-1','eventsElement':'UX/Analytics/UXUKAnalytics','currenty':'GBP','appjsurl':'','trackExternalLinks':false,'fwjsurl':'http://static01.cdn.ybsitecenter.com/template/js/yell-analytics-min.js?v=v4.17.6','trackDownloadLinks':false,'currency':'GBP'},'omniture':{'id':'','enabled':true,'serverSecure':'','currentYear':2015,'account':'yellmerchantlandingpages','server':'yellgroup.122.2o7.net','dstEnd':'11/01/2015','campaign':'','dstStart':'03/08/2015','url':'http://static01.cdn.ybsitecenter.com/template/js/omniture-24.js?v=v4.17.6','namespace':'yellgroup'},'googleanalytics':{'maxCustomVars':'','enabled':true,'sessionCookieTimeout':1800000,'campaignCookieTimeout':2592000000,'externalLinks':'','domainName':'','allowLinker':false,'downloadLinks':'','visitorCookieTimeout':'','defaultEventName':'Event','account':'UA-56330653-22','useSynchronousAPI':false,'allowHash':false},'piwik':{'enabled':true,'urlJsSecure':'https://siteanalyser.yellgroup.com/piwik/piwik.js','siteId':2748,'listener':'http://siteanalyser.yellgroup.com/piwik/piwik.php','listenerSecure':'https://siteanalyser.yellgroup.com/piwik/piwik.php','urlJs':'http://siteanalyser.yellgroup.com/piwik/piwik.js'}}\n</script>\n<script type=\"text/javascript\" charset=\"ISO-8859-1\" src=\"http://static01.cdn.ybsitecenter.com/template/js/omniture-24.js?v=v4.17.6\"></script>\n<script type=\"text/javascript\" async=\"true\" charset=\"ISO-8859-1\" src=\"http://www.google-analytics.com/ga.js\"></script>\n<script type=\"text/javascript\" charset=\"ISO-8859-1\" src=\"http://siteanalyser.yellgroup.com/piwik/piwik.js\"></script>\n<script type=\"text/javascript\" charset=\"UTF-8\" src=\"http://static01.cdn.ybsitecenter.com/template/js/yell-analytics-min.js?v=v4.17.6\"></script>\n\n\n\n\n\n\n\n\n\n\n\n\n<script type=\"text/javascript\">\n//<![CDATA[\n\n\n\n\n\n\n\n\n\n\n\n\ns.usePlugins=true;\nfunction s_doPlugins(s) {\n\n\n	\ns.pageName=window.location.toString().split('?')[0];\ns.channel=location.host;\ns.server=location.host;           \n          \n	\ns.dstStart=\"03/31/2013\";\ns.dstEnd=\"10/27/2013\"; \ns.currentYear=\"2013\";           \n           \ns.prop42=\"\";\ns.prop45=\"2748\";\ns.prop47=\"YellSite-Plus\";	\n	\n	\n	\n/**********Time-Parting-Plugin**************/\ns.prop48=s.getTimeParting('h','0');\ns.prop48+='|'+s.getTimeParting('d','0');\n\n/***********Campaign Tracking***************/\ns.campaign=s.getQueryParam('cam');\n\n/***********New Or Repeat Users***************/\ns.prop49= s.getNewRepeat();\n\n}\n\ns.doPlugins=s_doPlugins;\n\n\n\n\nvar YellEvents = { \n	};\n\n\nvar YellProps = { \n	};\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nif(location.hash.indexOf('excludebrowser') != -1) {\n\n	var d=new Date(); d.setDate(d.getDate()+365); \n	document.cookie = 'excludebrowser=true;expires='+d.toUTCString()+'; path=/';\n	\n}\nvar track = (document.cookie.indexOf('excludebrowser') == -1);\n\n// TODO dont call piwik if track == false\n\n\n\n\n//]]>\n</script>\n\n\n\n\n\n\n\n<noscript>\n	<img src=\"http://yellgroup.122.2o7.net/b/ss/yellmerchantlandingpages/1/H.23.3--NS/0\" height=\"1\" width=\"1\" border=\"0\" alt=\"\" />\n	<img src=\"http://www.google-analytics.com/__utm.gif?utmac=UA-56330653-22&utmcs=ISO-8859-1&utmn=621210&utmp=%2Fcs%2FContentServer&utmr=http%3A%2F%2Fwww.goldstarfencingltdbungay.co.uk%2Ffence-panels&utmhn=dmzkopftwcs01.yb.dmz\" height=\"1\" width=\"1\" border=\"0\" alt=\"\" />\n	<img src=\"http://siteanalyser.yellgroup.com/piwik/piwik.php?idsite=2748\" height=\"1\" width=\"1\" border=\"0\" alt=\"\" />\n</noscript>\n\n\n\n\n\n\n\n\n<script type=\"text/javascript\">\n//<![CDATA[\n	HAF.pg_event();\n//]]>\n</script>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n<!--\n\n\n      hibu Limited\n\n      Web Presence Platform\n\n      Release version v4.17.6 \n\n--> \n\n\n\n\n\n\n\n\n</html>\n",
-			"file": "layout/temp.html",
-			"file_size": 27514,
-			"file_write_time": 130715755695304178,
+			"contents": "Searching 274 files for \"אתר רכישות און ליין\"\n\n/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-banner.liquid:\n    5      <div class=\"inner\">\n    6        {% if settings.banner_text_title != blank %}\n    7:       <h2>ברוכה הבאה ל<span class=\"logo-font\">-MIKAI</span><br>אתר רכישות און ליין</h2>\n    8        <p>רכישת פריטים במשלוח עד הבית או באיסוף עצמי</p>\n    9        {% comment %}<p class=\"line\">&nbsp;</p>{% endcomment %}\n\n1 match in 1 file\n",
 			"settings":
 			{
-				"buffer_size": 27213,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "layout/oldheadtemp",
-			"settings":
-			{
-				"buffer_size": 20898,
-				"line_ending": "Unix"
+				"buffer_size": 462,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
 			}
 		}
 	],
 	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 117.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -258,27 +275,77 @@
 	],
 	"file_history":
 	[
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/newsletter-form.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/newsletter.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/templates/cart.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-grid-item.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/checkout.scss.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/header.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/theme-styles-responsive.css.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/theme-styles.css.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/layout/theme.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/config/settings_data.json",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/mega-menu-product-grid.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-grid-item-category.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-grid-item-sidebar.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-trending.liquid",
+		"/home/eyal/.bash_aliases",
+		"/home/eyal/workspace/projects/MIKAI/Gruntfile.js",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/head.min.js",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/footer.min.js",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/ella.js",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/toolbar.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/theme-styles-responsive.css.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/theme-styles-setting.css.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/related-products-by-tags.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-grid-item-trending.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-list-item.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/quick-view-template.liquid",
+		"/home/eyal/Downloads/CommonStrings_de_DE (2).properties",
+		"/home/eyal/workspace/duda/duda3/DudaRoot/src/resources/German/config/CommonStrings_GERMAN.config.properties",
+		"/home/eyal/workspace/duda/duda3/DudaRoot/src/resources/German/strings/CommonStrings_GERMAN.strings.properties",
+		"/home/eyal/workspace/projects/MIKAI/shop/templates/product.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/recently-viewed-products.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/related-product-grid-item.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/related-products.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-grid-item-category.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/message-modal.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/templates/index.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-three-banner.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/layout/theme.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/header.liquid",
+		"/etc/hosts",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-banner.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/templates/customers/register.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/customer_links.liquid",
+		"/home/eyal/Desktop/untitled.js",
+		"/home/eyal/workspace/projects/MIKAI/shop/templates/cart.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/wishlist-product.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/templates/customers/activate_account.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/checkout.scss.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/todo-shop",
+		"/home/eyal/workspace/duda/duda3/DudaRoot/war/_dm/s/rt/scripts/vendor/jplayer/popcorn/popcorn.jplayer.js",
+		"/home/eyal/workspace/projects/MIKAI/shop/templates/collection.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/collection-grid-item.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/templates/list-collections.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/quick-view-template.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/config/settings_data.json",
+		"/home/eyal/.cache/.fr-JHpS7s/SVG/eye.svg",
+		"/home/eyal/.cache/.fr-4f8d40/SVG/shopping-cart.svg",
+		"/home/eyal/.cache/.fr-TeH0zi/SVG/heart.svg",
+		"/home/eyal/workspace/projects/MIKAI/shop/templates/blog.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/templates/article.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/collection-sidebar-banner-block.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/blog_sidebar.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/widget_article.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/bootstrap.min.css",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/tags-article.liquid",
+		"/home/eyal/workspace/projects/myPortfolio/webpack.config.js",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/collection-sidebar-featured-products.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-grid-item.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/slick.css",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/slick-theme.css",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/swatch.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/swatch_scripts.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/head_scripts.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/head.min.css",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-list-item.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/templates/page.contact.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/layout/oldheadtemp",
+		"/home/eyal/workspace/projects/MIKAI/shop/layout/temp.html",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/_checkout.css.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/newsletter-form.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/newsletter.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/mega-menu-product-grid.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-grid-item-sidebar.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/search-result.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/wishlist-page.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/templates/product.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/footer.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-16-myshopify-com-copy-of-standard-ella-1-0-3-jan-30/snippets/mega-menu-product-grid.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-16-myshopify-com-copy-of-standard-ella-1-0-3-jan-30/snippets/product-grid-item-category.liquid",
@@ -290,13 +357,11 @@
 		"/home/eyal/workspace/projects/MIKAI/ella-16-myshopify-com-copy-of-standard-ella-1-0-3-jan-30/snippets/related-product-grid-item.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-16-myshopify-com-copy-of-standard-ella-1-0-3-jan-30/snippets/search-result.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-16-myshopify-com-copy-of-standard-ella-1-0-3-jan-30/assets/theme-styles-responsive.css.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/swatch.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/site-nav.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/templates/collection.list32.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/templates/collection.list16.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/templates/collection.list12.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/templates/collection.list.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/templates/collection.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/templates/collection.all.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/templates/collection.32.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/templates/collection.16.liquid",
@@ -318,84 +383,39 @@
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/collection-sidebar-custom-cms-block.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/_owl.carousel.css",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/jquery.fancybox.css",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/bootstrap.min.css",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/_checkout.css.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/jcarousel.css",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/component.css",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/animate.css",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/collection-sidebar-shop-by-blocks.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/collection-sidebar.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/checkout.css",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/ella.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/collection-sidebar-featured-products.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-newsletter.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/checkout.css.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/message-modal.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/templates/search.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/search-bar.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/wishlist-product-search.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/collection-grid-item.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/templates/list-collections.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/mikai-theme.sublime-project",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/owl.carousel.min.css",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/owl.carousel.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/related-products.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/head_styles.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/footer_scripts.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/aboutus.html",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/head_scripts.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/head_fonts.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/locales/he.json",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-banner.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/templates/index.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/brands.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/theme-styles-setting.css.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/jquery.pick.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/owlCarousel/owl",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/jquery.elevateZoom-3.0.8.min.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/jquery.jcarousel.latest.min.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/jquery.products.min.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/jquery.currencies.min.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/jquery.countdown.min.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/jquery.cart.min.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/jquery-cookie.min.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/jquery.flexslider-min.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/jquery.fakecrop.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/_owl.carousel.min.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/owl.carousel.min.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-trending.liquid",
-		"/home/eyal/.cache/.fr-10L2sw/owl.carousel.2.0.0-beta.2.4/owl.carousel.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-new-arrivals.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/retina-responsive.css",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/theme-styles-responsive.css.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/theme-styles.css.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/header.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-block-banner.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/index.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/customer_links.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/footer.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/brands.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-block-newsletter.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-flexslider.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-block-new-arrivals.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-instagram.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/customers/reset_password.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/templates/customers/register.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/assets/theme-styles-setting.css.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/related-products.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/related-products-by-tags.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/recently-viewed-products.liquid",
-		"/home/eyal/workspace/projects/MIKAI/ella-package-UnZip-Me/shop/snippets/homepage-block-trending.liquid"
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/brands.liquid"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
+			"/home/eyal/workspace/projects/MIKAI/shop",
+			"*.liquid",
+			"/home/eyal/workspace/projects/MIKAI/shop",
 			"/home/eyal/workspace/projects/MIKAI/",
 			"/home/eyal/workspace/projects/MIKAI/shop/",
 			"*.css",
@@ -440,137 +460,137 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": true,
+		"case_sensitive": false,
 		"find_history":
 		[
-			".product-list .product__price",
-			".product__price",
-			".product-list .product__price",
-			"בוטיק אופנה",
-			"הוסף לעגלה",
-			"footer-top",
-			"logo-title",
-			"הוסף לעגלה",
-			".sidebar-custom input[type=checkbox] + label",
-			"<strong class=\"label\">Sale</strong>",
-			"Sale",
-			"min-w",
-			".site-nav-dropdown",
-			"There are no products in this collection.",
-			"There are no products in this collection",
-			"<!-- <div class=\"rte\">",
-			"link.title",
-			"data-name=",
-			".site-nav-dropdown",
-			".more:hover:after",
-			"Standard Shipping",
-			".field .label--full-width",
-			"logg",
-			".logged-in-customer__avatar",
-			"צ",
-			"פ",
-			"ע",
-			"ס",
-			"נ",
-			"מ",
-			"ל",
-			"כ",
-			"י",
-			"ט",
-			"ח",
-			"ז",
-			"ו",
-			"ה",
-			"ד",
-			"ג",
-			"ב",
-			"א",
-			"ת",
-			"ש",
-			"ר",
-			"ק",
-			"צ",
-			"פ",
-			"ע",
-			"ס",
-			"נ",
-			"מ",
-			"צ",
-			"ל",
-			"כ",
-			"י",
-			"ט",
-			"ח",
-			"ז",
-			"ו",
-			"ה",
-			"ד",
-			"ג",
-			"ב",
-			"א",
-			"MIKAI",
-			"checkout.scss",
-			".css",
-			"checkout.css",
-			"checkout.css.liquid",
-			"class=\"shop\"",
-			"header",
-			"class=\"header\"",
-			"<title>",
-			"icon--lock",
-			"icon icon--lock",
-			"checkout",
-			"checkout.css",
-			"shop",
-			".shop",
-			"z-index: 1;",
-			"z-index",
-			"z-i",
-			".shop",
-			"המוצר נוסף לעגלת הקניות",
-			".site-nav > li.dropdown p.toogleClick",
-			"ount has been created for you a",
-			"<header class=\"page-header\">",
-			"<h2>מוצר",
-			"page-header",
-			".site-nav-dropdown",
-			"צ",
-			"ח",
-			"class=\"dropdown",
-			"class=\"dropdown \"",
-			"has_drop_down",
-			"role=\"navigation\"",
-			"role=\"n",
-			"צפה בקולקצייה",
-			"count-products",
-			"no_crop_image",
-			"Collections",
-			"Many in stock",
-			"add to wish list",
-			"class=\"icon-search\"",
-			"role=\"search\"",
-			"search",
-			"YOUR SEARCH FOR",
-			"Hide Sidebar",
-			"קטגוריות",
-			"קטגו",
-			"cbp-spmenu-push-toright",
-			"showLeftPush.onclick",
-			"Show Sidebar",
-			"inde",
-			"width=device-width,initial-scale=1",
-			"header-logo",
-			"כמות",
+			"אתר רכישות און ליין",
+			"banner-home-bottom-1",
+			"banner.jpg",
+			"debugger",
+			"class=\"filter-sortby",
+			"class=\"filter-sortby btn-group open\"",
+			"debug",
+			"filter-sortby",
+			".product-label strong",
+			"banner home-page wow fadeInUp",
+			"animated",
+			".product-title",
+			".col-main .products-grid .grid-item.grid-4",
+			"filter-sortby",
+			"class=\"related-products\"",
+			"{% include 'recently-viewed-products' %}",
+			"recently-viewed-pro",
+			"בחירת פריט",
+			"recently-viewed-products-grid",
+			"class=\"recently-viewed-products\"",
+			"class=\"related-products\"",
+			"class=\"widget-title wow fadeI",
+			"class=\"widget-title wow fadeIn",
+			"class=\"widget-title wow fadeIn ",
+			"class=\"widget-title wow fadeIn a",
+			"class=\"widget-title wow fadeIn an",
+			"class=\"widget-title wow fadeIn ani",
+			"class=\"widget-title wow fadeIn anim",
+			"class=\"widget-title wow fadeIn anima",
+			"class=\"widget-title wow fadeIn animated\"",
+			"homepage-block-trending",
+			"homepage-block-tre",
+			"product-grid-item-trending",
+			"class=\"product-des\"",
+			"div class=\"product-des",
+			"div class=\"product-des clearfix\">",
+			"ajax-error-title",
+			"class=\"product-des",
+			"product-des",
+			"class=\"product-inventory\"",
 			"Availability",
-			"Remove",
-			"class=\"quick-view\"",
-			".header-bottom .search-bar input.input-group-field",
-			".live",
-			"owl.carousel.",
-			"owl.carousel.css",
-			"owl-carousel",
-			".owlCarousel",
-			"owlCarousel"
+			".banner",
+			".price-box",
+			".free-shipping h3,",
+			"class=\"header-top\"",
+			".header-top",
+			"<head>",
+			"בוטיק אופנה מאת סוזן אלה",
+			" function initSocialLoginLocale() {",
+			"ga('send', 'event', 'button', 'click', 'homepage store btn');",
+			"title=\"לחנות לחצי כאן\"",
+			"ברוכה הבאה ל",
+			"banner home-page wow",
+			"banner home-page wow fadeInUp animated",
+			"לכניסה לחנות",
+			"לכניסה לחנות לחצי כאן",
+			"widget-trending-product container",
+			"מוצרים חמים",
+			" .",
+			"background:ur",
+			"backg",
+			"close",
+			"An account already exists for this email ad",
+			"An account already exists for this email add",
+			"An account already exists for this email addr",
+			"An account already exists for this email addre",
+			"An account already exists for this email addres",
+			"An account already exists for this email address",
+			"An account already exists for this email address.",
+			"exists",
+			"An account already exists for this email address.",
+			"signin_submit",
+			"signin_result",
+			"Activate Account",
+			"id=\"first_name\"",
+			"id=\"create_customer\"",
+			"agree-to-terms-label",
+			"class=\"wishlist\"",
+			"נוסף לרשימה שלי",
+			".ajax-product-title",
+			"class=\"product-des\"",
+			"class=\"contact-form\"",
+			"title=\"הוסיפי לעגלה\"",
+			"action=\"/cart/add\"",
+			"action=\"/contact\"",
+			".header-bottom .top-header",
+			"customer-links",
+			"<div class=\"wishlist\">",
+			"<a href=\"/account\"> החשבון שלי</a>",
+			".banner h2",
+			"Delete account and remove all access",
+			"class=\"widget-trending-product container\"",
+			".customer-links",
+			"  font-size: 16px;",
+			"customer_register_link",
+			"id=\"customer_register_link\"",
+			"id=\"cartToggle\"",
+			".order-summary .product-list .product",
+			".product-list .product--has-image",
+			"<h2",
+			"class=\"related-products\"",
+			"מוצרים רלוונטים",
+			"<h2",
+			"#C0387D",
+			"related-products",
+			".products-grid .grid-item",
+			".grid-item:hover",
+			".grid-item:hover img",
+			".products-grid .grid-item",
+			".col-main .products-grid .grid-item.grid-4",
+			".quickview-button a",
+			"class=\"list-category row\"",
+			".collection-title a",
+			"height",
+			"product-grid-image",
+			".slick",
+			".recently-viewed-products",
+			"class=\"recently-viewed-products\"",
+			"section class=\"related-products\"",
+			"מוצרים רלוונטים",
+			"<h2",
+			"class=\"related-products\"",
+			"raw",
+			"recently-viewed-products",
+			"recently-viewed-products.liquid",
+			"bottom",
+			"product-bottom",
+			"-bottom"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -578,6 +598,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"הוסיפי למועדפים",
+			"אזל מהמלאי",
 			"הוספה לעגלה",
 			"<strong class=\"label\">מבצע</strong>",
 			"לא נותרו מוצרים זמינים בקולקציה הזאת.<br>\nאנחנו מעדכנים את הקולקציות שלנו באופן קבוע... <strong>כדי להישאר מעודכנים!</strong>",
@@ -621,57 +643,29 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "assets/theme-styles.css.liquid",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 109223,
+						"buffer_size": 887,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								35138,
-								35138
+								887,
+								887
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 14674.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "assets/_checkout.css.liquid",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14000,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								599,
-								599
-							]
-						],
-						"settings":
-						{
+							"default_dir": "/home/eyal/workspace/projects/MIKAI/shop",
 							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -684,48 +678,50 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "assets/checkout.scss.liquid",
+					"buffer": 1,
+					"file": "snippets/homepage-block-three-banner-bottom.liquid",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6543,
+						"buffer_size": 8247,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3102,
-								3102
+								572,
+								572
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage"
+							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1032.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "layout/theme.liquid",
+					"buffer": 2,
+					"file": "snippets/homepage-block-banner.liquid",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3566,
+						"buffer_size": 827,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2061,
-								2061
+								311,
+								311
 							]
 						],
 						"settings":
@@ -736,37 +732,6 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 244.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "layout/temp.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 27213,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								27213,
-								27213
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"auto_name": "",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -774,34 +739,78 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "layout/oldheadtemp",
+					"buffer": 3,
+					"file": "/home/eyal/.bash_aliases",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 20898,
+						"buffer_size": 775,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7725,
-								7725
+								245,
+								245
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1870.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 462,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										286,
+										305
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								300,
+								300
+							]
+						],
+						"settings":
+						{
+							"default_dir": "/home/eyal/workspace/projects/MIKAI/shop",
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -809,7 +818,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 32.0
 	},
 	"input":
 	{
@@ -846,17 +855,195 @@
 	{
 		"height": 0.0
 	},
+	"pinned_build_system": "",
 	"project": "mikai-shop.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 74.0
 	},
 	"save_all_on_build": true,
 	"select_file":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"footermin",
+				"assets/footer.min.js"
+			],
+			[
+				"head",
+				"assets/head.min.js"
+			],
+			[
+				"themes",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"homepagetr",
+				"snippets/homepage-block-trending.liquid"
+			],
+			[
+				"ella",
+				"assets/ella.js"
+			],
+			[
+				"themestyl",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"themestyle",
+				"assets/theme-styles-setting.css.liquid"
+			],
+			[
+				"product-grid-item-trending",
+				"snippets/product-grid-item-trending.liquid"
+			],
+			[
+				"trending",
+				"snippets/homepage-block-trending.liquid"
+			],
+			[
+				"related-product-grid-item",
+				"snippets/related-product-grid-item.liquid"
+			],
+			[
+				"recent",
+				"snippets/recently-viewed-products.liquid"
+			],
+			[
+				"related",
+				"snippets/related-product-grid-item.liquid"
+			],
+			[
+				"relate",
+				"snippets/related-product-grid-item.liquid"
+			],
+			[
+				"rele",
+				"snippets/related-products.liquid"
+			],
+			[
+				"rece",
+				"snippets/recently-viewed-products.liquid"
+			],
+			[
+				"homepageblocktree",
+				"snippets/homepage-block-three-banner.liquid"
+			],
+			[
+				"themestyleres",
+				"assets/theme-styles-responsive.css.liquid"
+			],
+			[
+				"wishlist-product",
+				"snippets/wishlist-product.liquid"
+			],
+			[
+				"themestyle.css",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"checkout.cs",
+				"assets/checkout.scss.liquid"
+			],
+			[
+				"todo",
+				"todo-shop"
+			],
+			[
+				"relatedpro",
+				"snippets/related-product-grid-item.liquid"
+			],
+			[
+				"relatedprod",
+				"snippets/related-products-by-tags.liquid"
+			],
+			[
+				"collection-grid-item",
+				"snippets/collection-grid-item.liquid"
+			],
+			[
+				"themestylesett",
+				"assets/theme-styles-setting.css.liquid"
+			],
+			[
+				"themestylerespo",
+				"assets/theme-styles-responsive.css.liquid"
+			],
+			[
+				"colection",
+				"templates/collection.liquid"
+			],
+			[
+				"wishlist-pro",
+				"snippets/wishlist-product.liquid"
+			],
+			[
+				"product-grid-item-category",
+				"snippets/product-grid-item-category.liquid"
+			],
+			[
+				"themestylere",
+				"assets/theme-styles-responsive.css.liquid"
+			],
+			[
+				"themesty",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"slick",
+				"assets/slick.css"
+			],
+			[
+				"thesty",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"slick-the",
+				"assets/slick-theme.css"
+			],
+			[
+				"slickcss",
+				"assets/slick-theme.css"
+			],
+			[
+				"to",
+				"todo-shop"
+			],
+			[
+				"headmin",
+				"assets/head.min.css"
+			],
+			[
+				"script",
+				"snippets/head_scripts.liquid"
+			],
+			[
+				"prod",
+				"snippets/product-list-item.liquid"
+			],
+			[
+				"collec",
+				"templates/collection.liquid"
+			],
+			[
+				"themst",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"themecss",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"settings",
+				"config/settings_data.json"
+			],
+			[
+				"contac",
+				"templates/page.contact.liquid"
+			],
 			[
 				"theme",
 				"layout/theme.liquid"
@@ -870,19 +1057,7 @@
 				"assets/_checkout.css.liquid"
 			],
 			[
-				"themesty",
-				"assets/theme-styles.css.liquid"
-			],
-			[
 				"themest",
-				"assets/theme-styles.css.liquid"
-			],
-			[
-				"themes",
-				"assets/theme-styles.css.liquid"
-			],
-			[
-				"themecss",
 				"assets/theme-styles.css.liquid"
 			],
 			[
@@ -902,24 +1077,12 @@
 				"snippets/site-nav.liquid"
 			],
 			[
-				"collection-grid-item",
-				"snippets/collection-grid-item.liquid"
-			],
-			[
 				"search",
 				"snippets/search-result.liquid"
 			],
 			[
-				"themestyl",
-				"assets/theme-styles.css.liquid"
-			],
-			[
 				"head.liq",
 				"snippets/head_scripts.liquid"
-			],
-			[
-				"themestylerespo",
-				"assets/theme-styles-responsive.css.liquid"
 			],
 			[
 				"themestyres",
@@ -938,16 +1101,8 @@
 				"assets/owl.theme.css"
 			],
 			[
-				"relate",
-				"snippets/related-products.liquid"
-			],
-			[
 				"recen",
 				"snippets/recently-viewed-products.liquid"
-			],
-			[
-				"trending",
-				"snippets/homepage-block-trending.liquid"
 			],
 			[
 				"trendin",
@@ -960,10 +1115,6 @@
 			[
 				"owlcajs",
 				"assets/owl.carousel.min.js"
-			],
-			[
-				"product-grid-item-trending",
-				"snippets/product-grid-item-trending.liquid"
 			],
 			[
 				"responsi",
@@ -1072,10 +1223,6 @@
 			[
 				"settincss",
 				"shop/assets/theme-styles-setting.css.liquid"
-			],
-			[
-				"settings",
-				"shop/config/settings_data.json"
 			],
 			[
 				"styleres",
@@ -1232,142 +1379,6 @@
 			[
 				"dmlayoutcomm",
 				"war/_dm/s/rt/scripts/dmLayoutCommonComponents.js"
-			],
-			[
-				"oneinlineeditgridhelp",
-				"war/editor/nee/inline/preview/one.inlineEditGrid-helpers.js"
-			],
-			[
-				"oneinlineeditgridhe",
-				"war/editor/nee/inline/preview/one.inlineEditGrid-helpers.js"
-			],
-			[
-				"oneinlineedi",
-				"war/editor/nee/inline/preview/one.inlineEditGrid.js"
-			],
-			[
-				"needivi",
-				"war/editor/nee/editableObjects/divider/nee.divider.js"
-			],
-			[
-				"neeyoutube",
-				"war/editor/nee/editableObjects/youtube/nee.youtube.js"
-			],
-			[
-				"oneresponsiveu",
-				"war/editor/nee/utils/responsive/one.responsive.utils.js"
-			],
-			[
-				"oneinlienejs",
-				"war/editor/nee/inline/preview/one.inlineEditGrid.js"
-			],
-			[
-				"crosspla",
-				"war/editor/nee/utils/crossPlatform/cross.platform.commons.js"
-			],
-			[
-				"oneinlinee",
-				"war/editor/nee/inline/preview/one.inlineEditGrid-helpers.js"
-			],
-			[
-				"neespacer",
-				"war/editor/nee/editableObjects/spacer/nee.spacer.js"
-			],
-			[
-				"neecontro",
-				"war/editor/nee/utils/nee.controls.js"
-			],
-			[
-				"onecontrolsjs",
-				"war/editor/dudaone/utils/one.controls.js"
-			],
-			[
-				"photogallerycontainer.jsp",
-				"war/editor/nee/editableObjects/photoGallery/photoGalleryContainer.jsp"
-			],
-			[
-				"neephotogaller",
-				"war/editor/nee/editableObjects/photoGallery/nee.photoGallery.js"
-			],
-			[
-				"inlineeditoru",
-				"war/editor/nee/inline/framework/nee.inlineEditorUtils.js"
-			],
-			[
-				"onephoto",
-				"war/editor/dudaone/editableObjects/photoGallery/one.photoGallery.js"
-			],
-			[
-				"photogal",
-				"war/editor/nee/editableObjects/photoGallery/nee.photoGallery.js"
-			],
-			[
-				"needivde",
-				"war/editor/nee/editableObjects/divider/nee.divider.js"
-			],
-			[
-				"oneinlineedit",
-				"war/_dm/s/rt/css/one.inlineEditGrid.css"
-			],
-			[
-				"oneinlineedcss",
-				"war/editor/dudaone/css/one.inlineEditor.css"
-			],
-			[
-				"runtimecss",
-				"war/_dm/s/rt/css/runtime.css"
-			],
-			[
-				"dmaja",
-				"war/_dm/s/rt/scripts/dmAjax.js"
-			],
-			[
-				"oneinlineeditgridcss",
-				"war/_dm/s/rt/css/one.inlineEditGrid.css"
-			],
-			[
-				"inlineedit",
-				"war/editor/nee/inline/preview/one.inlineEditGrid.js"
-			],
-			[
-				"oneinlinecss",
-				"war/_dm/s/rt/css/one.inlineEditGrid.css"
-			],
-			[
-				"inlineediti",
-				"war/editor/nee/inline/preview/one.inlineEditGrid.js"
-			],
-			[
-				"oneinlineeditgrid",
-				"war/editor/nee/inline/preview/one.inlineEditGrid.js"
-			],
-			[
-				"oneheaderjs",
-				"war/editor/dudaone/editableObjects/header/one.header.js"
-			],
-			[
-				"301",
-				"war/conf/templates/content/header/301-blank-header-resp-tmpl.html"
-			],
-			[
-				"commonpropse",
-				"src/resources/CommonProps_eyal.properties"
-			],
-			[
-				"commonpropseya",
-				"src/resources/CommonProps_eyal.properties"
-			],
-			[
-				"commonpropspro",
-				"src/CommonProps.properties"
-			],
-			[
-				"neeheaderjs",
-				"war/editor/nee/editableObjects/header/nee.header.js"
-			],
-			[
-				"oneheader",
-				"war/editor/dudaone/editableObjects/header/one.header.js"
 			]
 		],
 		"width": 0.0
@@ -1375,6 +1386,7 @@
 	"select_project":
 	{
 		"height": 500.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -1395,6 +1407,7 @@
 	"select_symbol":
 	{
 		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[

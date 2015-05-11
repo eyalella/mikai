@@ -3,7 +3,7 @@
 
 <section class="recently-viewed-products">
   {% if settings.recently_viewed_products_title != '' %}
-  <h2>{{ settings.recently_viewed_products_title }}</h2>
+  <h2><span>{{ settings.recently_viewed_products_title }}</span></h2>
   {% endif %}
   <div class="products-grid" id="recently-viewed-products-grid">
   </div>
@@ -17,7 +17,7 @@
 	<div class="product-image">
 		<a href="${url}" class="product-grid-image">
 		  <img src="${Shopify.Products.resizeImage(featured_image, "large")}" alt="${featured_image.alt}"/>
-          <div class="hover"></div>
+          
 		</a>
         <div class="product-label">
           {{if compare_at_price_min > price_min}} 
@@ -29,6 +29,7 @@
         </div>
 	</div>
   </div>
+  
   
   <div class="product-bottom">
     <a class="product-title" href="${url}">${title}</a>	
@@ -47,18 +48,7 @@
 	{{/if}}
 	</div>
     
-    <div class="action">
-      <form action="/cart/add" method="post" class="variants" id="product-actions-${id}" enctype="multipart/form-data" style="padding:0px;">    
-        {{if !available}} 
-        <input class="btn add-to-cart-btn" type="submit" value="לא זמין" disabled="disabled" />
-        {{else variants.length > 1 }}
-        <input class="btn" type="button" onclick="window.location.href='${url}'" value="המשך לפריט" />
-        {{else}}
-        <input type="hidden" name="id" value="${variants[0].id}" />      
-        <input class="btn add-to-cart-btn" type="submit" value="הוספי לעגלה" onclick="ga('send', 'event', 'button', 'add to cart', 'recently viewed');" />
-        {{/if}}
-      </form>
-    </div>    
+       
   </div>
 </div>
 </script>
@@ -85,12 +75,13 @@ Shopify.Products.showRecentlyViewed({
       }
 jQuery('#recently-viewed-products-grid').slick({
   infinite: true,
-  slidesToShow: 5,
-  slidesToScroll: 5,
+  slidesToShow: 4,
+  slidesToScroll: 4,
   rtl: true,
   dots: true,
   autoplay: true,
   autoplaySpeed: 5000,
+  dots: false,
   responsive: [
     {
       breakpoint: 600,

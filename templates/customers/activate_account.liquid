@@ -19,9 +19,9 @@
   <div class="grid-item large--one-third push--large--one-third">
 
 		<header class="page-header">
-		  <h1>Activate Account</h1>
+		  <h1>הפעלת חשבון</h1>
 		</header>
-		<p>Create your password to activate your account.</p>
+		<p>אנא בחרי סיסמה כדי לסיים את יצירת החשבון</p>
 
 		{% comment %}
 		  This form must use 'activate_customer_password'
@@ -30,17 +30,23 @@
 
 			{% include 'form-errors-custom' %}
 
-		  <label for="customer_password">Password</label>
+		  <label for="customer_password">סיסמה</label><br>
 		  <input type="password" value="" name="customer[password]" id="customer_password">
+		  <br>
+		  <br>
+		  <label for="customer_password_confirmation">הכניסי את הסיסמה שנית</label>
+		  <br>
+		  <input type="password" value="" name="customer[password_confirmation]" id="customer_password_confirmation"><br>
 
-		  <label for="customer_password_confirmation">Password Confirmation</label>
-		  <input type="password" value="" name="customer[password_confirmation]" id="customer_password_confirmation">
 
-		  <div class="text-center">
-		  	<p>
-			  	<input type="submit" class="btn" value="Activate Account">
+		  <div>
+		  	<p style="margin: 20px 0;">
+			  	<input type="submit" class="btn" value="הפעלת החשבון">
 			  </p>
-		  	or <input type="submit" class="text-link" name="decline" id="customer_decline" value="Decline Invitation">
+			  <p style="float: right;">
+			  או
+		  	 <input type="submit" class="text-link" name="decline" id="customer_decline" value="ביטול החשבון"> 
+		  	 </p>
 		  </div>
 		{% endform %}
 

@@ -648,9 +648,9 @@ blockquote .small {
   line-height: 1.42857143;
   color: #999;
 }
-blockquote footer:before,
-blockquote small:before,
-blockquote .small:before {
+blockquote footer:after,
+blockquote small:after,
+blockquote .small:after {
   content: '\2014 \00A0';
 }
 .blockquote-reverse,

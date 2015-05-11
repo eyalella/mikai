@@ -18,7 +18,7 @@
       {% else %}
       {{ collection.products.first.featured_image | product_img_url: 'large' | img_tag: collection_title }}
       {% endif %}
-      <div class="hover"></div>
+      {% comment %}<div class="hover"></div>{% endcomment %}
     </a>
     <a href="{{ collection.url }}" class="view">&nbsp;</a>
   </div>

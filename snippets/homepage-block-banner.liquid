@@ -1,18 +1,16 @@
 {% if settings.display_banner %}
-<section class="banner home-page wow fadeInUp" style="background-image: url({{ 'banner.jpg' | asset_url }});">
+<section class="banner home-page" style="background-image: url({{ 'banner.jpg' | asset_url }});">
   {{ 'banner.jpg' | asset_url | img_tag }}
   <div class="container">
     <div class="inner">
       {% if settings.banner_text_title != blank %}
-      <h2>ברוכה הבאה ל<span class="logo-font">-MIKAI.</span></h2>
+      <h2>ברוכה הבאה ל<span class="logo-font">-MIKAI</span><br>קניות אונליין</h2>
+      <p>רכישת פריטים במשלוח עד הבית או באיסוף עצמי</p>
       {% comment %}<p class="line">&nbsp;</p>{% endcomment %}
       {% endif %}
-      <p>
-      שלום יפה שלי! ברוכה הבאה ל<span class="logo-font">-MIKAI</span> בוטיק אופנה. אחת לכמה שבועות אני טסה לאיטליה ובוחרת עבורך את הקולקציה העכשווית בעולם האופנה. באתר תוכלי למצוא את הקולקציה החדשה, בגדים, תיקים, נעליים, אקססוריז ואפילו אאוטפיט אישי. כנסי ותתחדשי.
-      </p>
       {% if settings.banner_button_text != blank %}
-      <a href="{{ settings.banner_button_link }}" title="{{ settings.banner_button_text }}" class="btn" onclick="ga('send', 'event', 'button', 'click', 'homepage store btn');" >
-        {{ settings.banner_button_text }}
+      <a href="/account/register" title="להרשמה לחצי כאן" class="btn" onclick="ga('send', 'event', 'button', 'click', 'homepage store btn');" >
+        להרשמה לחצי כאן
         <span class="arrow">arrow</span>
       </a>		
       {% endif %}

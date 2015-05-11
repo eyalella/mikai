@@ -5,9 +5,10 @@
 <section class="widget-trending-product container">
   <div class="widget-title wow fadeIn">   
 	<fieldset class="box-title">
-      <legend align="center">{% if settings.slider_trending_title != blank %}
+      <legend align="center">{% comment %}{% if settings.slider_trending_title != blank %}
     	{{ settings.slider_trending_title }}
-    	{% endif %}
+    	{% endif %}{% endcomment %}
+      פריטים מומלצים
       </legend>
     </fieldset>
   </div>
@@ -21,7 +22,7 @@
           Loop through products in your Frontpage collection.
           This collection is created by default, but you must add products to it.
         {% endcomment %}
-	  	{% for product in collections.[settings.show_slider_trending_collection].products limit:settings.slider_trending_limit_all %}
+	  	{% for product in collections.[settings.show_slider_trending_collection].products %}
         	{% include 'product-grid-item-trending' %}	  
         {% endfor %}
      </div> 
@@ -32,10 +33,10 @@
 jQuery(document).ready(function() {
   jQuery('.widget-trending-product .products-grid').slick({
     infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     rtl: true,
-    dots: true,
+    dots: false,
     autoplay: true,
     autoplaySpeed: 5000,
     responsive: [

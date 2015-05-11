@@ -46,7 +46,7 @@
             {% if settings.display_availability or settings.display_product_type or settings.display_vendor %}
             <div class="product-infor">
               {% if settings.display_availability %}
-              <p class="product-inventory"> <label>Availability</label><span>{% if product.selected_or_first_available_variant.inventory_management %}{% assign first_inventory = product.selected_or_first_available_variant.inventory_quantity %}{% if first_inventory > 0 %}{{first_inventory}} במלאי{% else %}אזל{% endif %}{% else %}זמין במלאי{% endif %}
+              <p class="product-inventory"> <label>זמינות</label><span>{% if product.selected_or_first_available_variant.inventory_management %}{% assign first_inventory = product.selected_or_first_available_variant.inventory_quantity %}{% if first_inventory > 0 %}{{first_inventory}} במלאי{% else %}אזל{% endif %}{% else %}זמין במלאי{% endif %}
                 </span></p>
               {% endif %}
               {% if settings.display_product_type %}

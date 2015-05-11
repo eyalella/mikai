@@ -1,12 +1,5 @@
 <div class="toolbar">
-  <div class="view-mode">
-    <!--<span class="grid" title="Grid view">Grid</span>-->
-    <a class="list" href="list" title="List view">List</a>  
-    <a class="grid active" href="grid" title="Grid view">Grid</a>  
-    <label>תצוגה</label>
-  </div>
-  
-    <div class="filter-show btn-group">
+    {% comment %}<div class="filter-show btn-group">
       <label>הצג</label>
       <button class="btn btn-2 dropdown-toggle" data-toggle="dropdown">
         <i class="icon-exchange"></i>
@@ -30,10 +23,10 @@
        	<li {% if current_page_size == 32 %} class="active" {% endif %}><a href="32">32</a></li>
        	<li {% if current_page_size == 50 %} class="active" {% endif %}><a href="all">all</a></li>         
       </ul>
-    </div>
+    </div>{% endcomment %}
     
     <div class="filter-sortby btn-group">
-      <label for="sort-by">סינון</label> 
+      <label class="hidden" for="sort-by">סינון</label> 
       <button class="btn btn-2 dropdown-toggle" data-toggle="dropdown">
         <i class="icon-exchange"></i>
         <span>מומלצים</span>
@@ -41,15 +34,23 @@
       </button>
       
       <ul class="dropdown-menu" role="menu">
-        <li class="active"><a href="manual">>מומלצים</</a></li>
+        <li><a href="created-descending">מהחדש לישן</a></li>
+        <li><a href="created-ascending">מהישן לחדש</a></li>
         <li><a href="price-ascending">מחיר: מהנמוך לגבוה</a></li>
         <li><a href="price-descending">מחיר: מהגבוה לנמוך</a></li>
         <li><a href="title-ascending">א-ת</a></li>
         <li><a href="title-descending">ת-א</a></li>
-        <li><a href="created-ascending">מהישן לחדש</a></li>
-        <li><a href="created-descending">מהחדש לישן</a></li>
-        <li><a href="best-selling">המוכרים ביותר</a></li>
+
+        {% comment %}<li><a href="manual">>מומלצים</</a></li>
+        <li><a href="best-selling">המוכרים ביותר</a></li>{% endcomment %}
       </ul>
     </div>    
+
+    <div class="view-mode">
+      <!--<span class="grid" title="Grid view">Grid</span>-->
+      <a class="list" href="list" title="List view">List</a>  
+      <a class="grid active" href="grid" title="Grid view">Grid</a>  
+      <label class="hidden">תצוגה</label>
+    </div>
 
 </div>

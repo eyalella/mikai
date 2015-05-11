@@ -35,9 +35,10 @@
   </li>
   {% endif %}
   <li>
-    
+    {{ 'לחשבון שלך' | customer_login_link }}
     {% if shop.customer_accounts_optional %}
-      {{ 'הרשמי למועדון הלקוחות' | customer_register_link }}
+      <span class="or">|</span>
+      {{ 'הירשמי לאתר' | customer_register_link }}
       {% comment %}<span class="or">|</span>
       {{ 'לחשבון שלך' | customer_login_link }}{% endcomment %}
     {% endif %}

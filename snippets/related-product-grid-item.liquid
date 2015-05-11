@@ -62,7 +62,7 @@
     </div>
     {% endif %}
     
-    <div class="product-des">
+    {% comment %}<div class="product-des">
       {% include 'wishlist-product' %}
       
       <div class="action">
@@ -86,7 +86,7 @@
         <a href="javascript:void(0)" id="{{ product.handle }}" title="צפייה מהירה">צפייה מהירה</a>
       </div>
       {% endif %}      
-    </div>
+    </div>{% endcomment %}
   </div>
   
   <div class="product-bottom">

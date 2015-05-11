@@ -15,35 +15,118 @@
   <header class="page-header">
     <h1>יצירת חשבון</h1>
   </header>
+
   <p class="title">{{ settings.register_text_desc }}</p>
 
   {% comment %}
     This form must use 'create_customer'
   {% endcomment %}
-  {% form 'create_customer' %}
-  {% include 'form-errors-custom' %}
-  <div id="first_name">
-    <label for="first_name">שם פרטי</label>
-    <input type="text" value="" name="customer[first_name]" id="first_name" {% if form.errors contains "first_name" %} class="error"{% endif %} >
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <h3>הרשמה באמצעות פייסבוק</h3>
+
+        <div class="social-commerce-signin-facebook" data-style="logoandtext" data-size="medium" data-shopify="mikai-mikai-trendy-boutique" data-action="create"></div>
+
+        <hr>
+      </div>
+      
+      <div class="col-xs-12 col-md-6">
+        <h3>הרשמה על-ידי מילוי טופס</h3>
+        {% form 'create_customer' %}
+        {% include 'form-errors-custom' %}
+        <div id="first_name">
+          <label for="first_name">שם פרטי</label>
+          <input type="text" value="" name="customer[first_name]" id="first_name" {% if form.errors contains "first_name" %} class="error"{% endif %} >
+        </div>
+        
+        <div id="last_name">
+          <label for="last_name">שם משפחה</label>
+          <input type="text" value="" name="customer[last_name]" id="last_name" {% if form.errors contains "last_name" %} class="error"{% endif %} >
+        </div>
+        
+        <div id="email">
+          <label for="email">כתובת דוא"ל<em>*</em></label>
+          <input type="email" value="" name="customer[email]" id="email" {% if form.errors contains "email" %} class="error"{% endif %}  >
+        </div>
+        
+        <div id="create_password">
+          <label for="password">סיסמה<em>*</em></label>
+          <input type="password" value="" name="customer[password]" id="create_password" {% if form.errors contains "password" %} class="error"{% endif %}>
+        </div>
+        
+        <div class="action-btn">
+          <p><input type="submit" value="יצירת חשבון" class="btn"></p>
+        </div>
+        {% endform %}
+        <hr>
+      </div>
+    </div>
   </div>
   
-  <div id="last_name">
-    <label for="last_name">שם משפחה</label>
-    <input type="text" value="" name="customer[last_name]" id="last_name" {% if form.errors contains "last_name" %} class="error"{% endif %} >
-  </div>
+
   
-  <div id="email">
-    <label for="email">כתובת דוא"ל<em>*</em></label>
-    <input type="email" value="" name="customer[email]" id="email" {% if form.errors contains "email" %} class="error"{% endif %}  >
-  </div>
+
   
-  <div id="create_password">
-    <label for="password">סיסמה<em>*</em></label>
-    <input type="password" value="" name="customer[password]" id="create_password" {% if form.errors contains "password" %} class="error"{% endif %}>
-  </div>
-  
-  <div class="action-btn">
-    <p><input type="submit" value="יצירת חשבון" class="btn"></p>
-  </div>
-  {% endform %}
 </div>
+
+<script type="text/javascript">
+
+  jQuery(document).ready(function () {
+      
+      var counter = 0;
+
+      initSocialLoginLocale();
+
+      function initSocialLoginLocale() {
+        counter++;
+        
+        if(typeof AddShoppersWidget !== "undefined") {
+          setSocialLoginLocale();
+        } else if(counter < 50) {
+          setTimeout(initSocialLoginLocale, 200);
+        }
+      }
+
+      function setSocialLoginLocale() {
+        AddShoppersWidget.signin_result = function(a, b) {
+            var c = document.getElementById("share-buttons-signin-result"),
+                d = this._build_background();
+            if (!c) c = document.createElement("div"), c.id = "share-buttons-signin-result", c.className = "share-buttons", document.getElementsByTagName("body")[0].appendChild(c);
+            c.innerHTML = "";
+            if (b) e = '<div class="signin-result">אנא המתני, אנו מעבדים את בקשתך...</div><div onclick="AddShoppersWidget.hide()" class="widget-close"><span class="ui-icon ui-icon-closethick"></span></div>';
+            else {
+                var message = messageLocale(a.message);
+                    e = '<div class="signin-result">' +
+                    message + '</div><div onclick="AddShoppersWidget.hide()" class="widget-close"><span class="ui-icon ui-icon-closethick"></span></div><div class="submit-button-container"><a class="submit-button">סגירה</a></div>';
+                if (a.params && a.params.event) {
+                    var f = a.params.event;
+                    delete a.params.event;
+                    this.API.Event.trigger(f, a.params)
+                }
+            }
+            c.innerHTML = e;
+            if (!b) this.elementByClass("submit-button", c).onclick = function() {
+                document.getElementById("share-buttons-overlay").style.display = "none";
+                document.getElementById("share-buttons-signin-result").style.display =
+                    "none"
+            };
+            this.hide();
+            d.style.display = "block";
+            c.style.display = "block";
+
+            function messageLocale(msg) {
+                if(msg === "An account already exists for this email address.") {
+                    return "כבר קיים חשבון עם כתובת האמייל הזו."
+                } else if(msg === "Your account has been created and an activation email has been sent."){
+                    return "החשבון שלך נוצר בהצלחה! מייל הפעלה נשלח לתיבת הדואר שלך."
+                } else {
+                    return msg;
+                }
+            }
+        }
+      }
+      
+  });
+
+</script>
