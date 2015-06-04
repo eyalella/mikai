@@ -123,15 +123,32 @@ if (isMobile) {
 {% if settings.display_fixtop_menu %}
 <script>
   jQuery(window).scroll(function () {
+    var $headerBottom = jQuery('.header-bottom'),
+        $navSearch = jQuery('.nav-search'),
+        windowWidth = $(window).width();
+
     if (jQuery(this).scrollTop() > 216) {
-      jQuery('.header-bottom').addClass('on');
-      jQuery('.header-bottom').addClass('fadeInDown');
-      jQuery('.nav-search').removeClass('on');
+      $headerBottom.addClass('on');
+      $headerBottom.addClass('fadeInDown');
+      $navSearch.removeClass('on');
+
+      if(!windowWidth) {
+        console.log('Error: ' + 'windowWidth = ' + windowWidth);
+        }
+      else if(windowWidth >= 768) {
+        jQuery('[role="main"]').css('paddingTop', '216px');
+      }
     } 
     else {
-      jQuery('.header-bottom').removeClass('on');
-      jQuery('.header-bottom').removeClass('fadeInDown');
-      jQuery('.nav-search').addClass('on');
+      $headerBottom.removeClass('on');
+      $headerBottom.removeClass('fadeInDown');
+      $navSearch.addClass('on');
+       if(!windowWidth) {
+        console.log('Error: ' + 'windowWidth = ' + windowWidth);
+        }
+        else if(windowWidth >= 768) {
+              jQuery('[role="main"]').css('paddingTop', '30px');
+          }
     }
   });
 </script>
