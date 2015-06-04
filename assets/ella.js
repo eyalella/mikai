@@ -352,6 +352,10 @@
                 e(".filter-sortby > button span").text(n);
                 e(".filter-sortby li.active").removeClass("active");
                 e(".filter-sortby a[href='" + t + "']").parent().addClass("active")
+            } else {
+                debugger;
+                console.log('test');
+                //sidebarGetContent('created-descending');
             }
         },
         sidebarMapData: function(n) {
@@ -418,6 +422,7 @@
             t.sidebarGetContent(n)
         },
         sidebarGetContent: function(n) {
+            debugger;
             e.ajax({
                 type: "get",
                 url: n,
@@ -724,11 +729,13 @@
                 })
             }
         },
-        showModal: function(n) {
+        showModal: function(n, dontHide) {
             e(n).fadeIn(500);
-            t.ellaTimeout = setTimeout(function() {
-                e(n).fadeOut(500)
-            }, 5e3)
+            if(!dontHide) {
+                t.ellaTimeout = setTimeout(function() {
+                    e(n).fadeOut(500)
+                }, 5e3)   
+            }
         },
         initToggleCollectionPanel: function() {
             if (e(".collection-sharing-btn").length > 0) {
@@ -992,12 +999,25 @@
                     e(".ajax-success-modal").find(".ajax-product-image").attr("src", s);
                     e(".ajax-success-modal").find(".btn-go-to-wishlist").hide();
                     e(".ajax-success-modal").find(".btn-go-to-cart").show();
-                    t.showModal(".ajax-success-modal");
+                    t.showModal(".ajax-success-modal", true);
                     t.updateDropdownCart()
                 },
                 error: function(n, r) {
+                    var JSONResponse = e.parseJSON(n.responseText);
+                        responseText = JSONResponse.description,
+                        responseStatus = JSONResponse.status
+
                     t.hideLoading();
-                    e(".ajax-error-message").text(e.parseJSON(n.responseText).description);
+
+                    if(responseText.indexOf('All') > -1 && responseText.indexOf('are in your cart.') > -1 ) {
+                        e(".ajax-error-message").text('המוצר כבר נמצא בעגלה');
+                        e("#dropdown-cart").slideDown("fast");
+                        setTimeout(function() {
+                            e("#dropdown-cart").slideUp("fast");
+                        }, 5000);
+                    } else {
+                        e(".ajax-error-message").text(responseText);
+                    }
                     t.showModal(".ajax-error-modal")
                 }
             })

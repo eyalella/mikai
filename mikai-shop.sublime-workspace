@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"back",
+				"background"
+			],
+			[
+				"dis",
+				"display:none"
+			],
+			[
+				"float",
+				"float:right"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"gr",
+				"gray"
+			],
+			[
 				"marg",
 				"margin: 〔property〕"
 			],
@@ -104,10 +124,6 @@
 				"prependTo"
 			],
 			[
-				"dis",
-				"display"
-			],
-			[
 				"set",
 				"setTimeout〔function〕"
 			],
@@ -175,48 +191,6 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "{% assign variantCount = product.variants | size %}\n      <form action=\"/cart/add\" method=\"post\" class=\"variants\" id=\"product-actions-{{ product.id }}\" enctype=\"multipart/form-data\" style=\"padding:0px;\">    \n          {% if sold_out %}\n          <input class=\"btn add-to-cart-btn\" type=\"submit\" value=\"אזל במלאי\" disabled=\"disabled\" />\n          {% else %}\n            {% if variantCount > 1 %}    \n            <input class=\"btn plain-text-button\" type=\"button\" onclick=\"window.location.href='{{product.url}}'\" value=\"בחירת פריט\" />\n            {% else %}\n            <input type=\"hidden\" name=\"id\" value=\"{{ product.variants[0].id }}\" />      \n            <input class=\"btn add-to-cart-btn plain-text-button\" type=\"submit\" value=\"הוספה לעגלה\" onclick=\"ga('send', 'event', 'button', 'add to cart', 'product grid item');\" />\n            {% endif %}\n          {% endif %}\n        </form>  ",
-			"settings":
-			{
-				"buffer_size": 887,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "snippets/homepage-block-three-banner-bottom.liquid",
-			"settings":
-			{
-				"buffer_size": 8247,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "snippets/homepage-block-banner.liquid",
-			"settings":
-			{
-				"buffer_size": 827,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/eyal/.bash_aliases",
-			"settings":
-			{
-				"buffer_size": 775,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Searching 274 files for \"אתר רכישות און ליין\"\n\n/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-banner.liquid:\n    5      <div class=\"inner\">\n    6        {% if settings.banner_text_title != blank %}\n    7:       <h2>ברוכה הבאה ל<span class=\"logo-font\">-MIKAI</span><br>אתר רכישות און ליין</h2>\n    8        <p>רכישת פריטים במשלוח עד הבית או באיסוף עצמי</p>\n    9        {% comment %}<p class=\"line\">&nbsp;</p>{% endcomment %}\n\n1 match in 1 file\n",
-			"settings":
-			{
-				"buffer_size": 462,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -225,7 +199,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 117.0,
+		"height": 138.0,
 		"last_filter": "",
 		"selected_items":
 		[
@@ -246,7 +220,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 575.0
+		"width": 593.0
 	},
 	"console":
 	{
@@ -268,51 +242,62 @@
 	[
 		"/home/eyal/workspace/projects/MIKAI/shop",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/owlCarousel",
 		"/home/eyal/workspace/projects/MIKAI/shop/layout",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets",
-		"/home/eyal/workspace/projects/MIKAI/shop/templates"
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets"
 	],
 	"file_history":
 	[
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/theme-styles.css.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-trending.liquid",
-		"/home/eyal/.bash_aliases",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/header.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/head.min.css",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/head_styles.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/templates/product.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-three-banner.liquid",
 		"/home/eyal/workspace/projects/MIKAI/Gruntfile.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/head.min.js",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/theme-styles.css.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/theme-styles-setting.css.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/head_scripts.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/footer_scripts.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/layout/theme.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/templates/customers/register.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-trending.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/theme-styles-responsive.css.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-banner.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-flexslider.liquid",
+		"/home/eyal/workspace/projects/MIKAI/trash/ella-16-myshopify-com-copy-of-standard-ella-1-0-3-jan-30/templates/index.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/templates/index.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-list-item.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-grid-item-category.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-grid-item.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/recently-viewed-products.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/collection-grid-item.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/templates/collection.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/footer.min.js",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/ella.js",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/mega-menu-product-grid.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/collection-sidebar.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/message-modal.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/social.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/footer.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/customer_links.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/head.min.js",
+		"/home/eyal/workspace/projects/MIKAI/shop/todo-shop",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/toolbar.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/theme-styles-responsive.css.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/theme-styles-setting.css.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/wishlist-product.liquid",
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/checkout.scss.liquid",
+		"/home/eyal/.bash_aliases",
+		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-three-banner-bottom.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/related-products-by-tags.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-grid-item-trending.liquid",
 		"/home/eyal/Downloads/CommonStrings_de_DE (2).properties",
 		"/home/eyal/workspace/duda/duda3/DudaRoot/src/resources/German/config/CommonStrings_GERMAN.config.properties",
 		"/home/eyal/workspace/duda/duda3/DudaRoot/src/resources/German/strings/CommonStrings_GERMAN.strings.properties",
-		"/home/eyal/workspace/projects/MIKAI/shop/templates/product.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/recently-viewed-products.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/related-product-grid-item.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/related-products.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-grid-item-category.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/message-modal.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/templates/index.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-three-banner.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/layout/theme.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/header.liquid",
 		"/etc/hosts",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-banner.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/templates/customers/register.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/customer_links.liquid",
 		"/home/eyal/Desktop/untitled.js",
 		"/home/eyal/workspace/projects/MIKAI/shop/templates/cart.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/wishlist-product.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/templates/customers/activate_account.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/checkout.scss.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/todo-shop",
 		"/home/eyal/workspace/duda/duda3/DudaRoot/war/_dm/s/rt/scripts/vendor/jplayer/popcorn/popcorn.jplayer.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/templates/collection.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/collection-grid-item.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/templates/list-collections.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/quick-view-template.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/config/settings_data.json",
@@ -328,25 +313,19 @@
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/tags-article.liquid",
 		"/home/eyal/workspace/projects/myPortfolio/webpack.config.js",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/collection-sidebar-featured-products.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-grid-item.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/slick.css",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/slick-theme.css",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/swatch.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/swatch_scripts.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/head_scripts.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/head.min.css",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-list-item.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/templates/page.contact.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/layout/oldheadtemp",
 		"/home/eyal/workspace/projects/MIKAI/shop/layout/temp.html",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/_checkout.css.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/newsletter-form.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/newsletter.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/mega-menu-product-grid.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/product-grid-item-sidebar.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/search-result.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/wishlist-page.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/footer.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-16-myshopify-com-copy-of-standard-ella-1-0-3-jan-30/snippets/mega-menu-product-grid.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-16-myshopify-com-copy-of-standard-ella-1-0-3-jan-30/snippets/product-grid-item-category.liquid",
 		"/home/eyal/workspace/projects/MIKAI/ella-16-myshopify-com-copy-of-standard-ella-1-0-3-jan-30/snippets/product-grid-item-sidebar.liquid",
@@ -387,7 +366,6 @@
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/component.css",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/animate.css",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/collection-sidebar-shop-by-blocks.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/collection-sidebar.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/checkout.css",
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/homepage-block-newsletter.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/checkout.css.liquid",
@@ -396,17 +374,11 @@
 		"/home/eyal/workspace/projects/MIKAI/shop/snippets/wishlist-product-search.liquid",
 		"/home/eyal/workspace/projects/MIKAI/shop/mikai-theme.sublime-project",
 		"/home/eyal/workspace/projects/MIKAI/shop/assets/owl.carousel.min.css",
-		"/home/eyal/workspace/projects/MIKAI/shop/assets/owl.carousel.js",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/head_styles.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/footer_scripts.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/aboutus.html",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/head_fonts.liquid",
-		"/home/eyal/workspace/projects/MIKAI/shop/locales/he.json",
-		"/home/eyal/workspace/projects/MIKAI/shop/snippets/brands.liquid"
+		"/home/eyal/workspace/projects/MIKAI/shop/assets/owl.carousel.js"
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -463,6 +435,96 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"שמלות, ג'ינסים, מכנסים, ג'קטים, חולצות, חצאיות",
+			"//cdn.shopify.com/s/files/1/0775/1963/t/2/assets/women-cloths.jpg?10583590773047347933",
+			"//cdn.shopify.com/s/files/1/0775/1963/t/2/assets/women-cloths",
+			"product_img_url",
+			"class=\"product-photo-container\"",
+			"theme-styles-responsive.cs",
+			"fonts.googleapis.com/",
+			"googleapis",
+			"head.min.css",
+			"social-commerce-signin-facebook",
+			"ocial-commerce-signin-faceboo",
+			" if (jQuery.cookie('headerTop') == 'closed') {",
+			"facebook-login",
+			"ga_urchin_forms",
+			"dn.shopify.com/s/",
+			"dn.shopify.com/s/assets/themes_support/",
+			"footer.min.js",
+			"head.min.js",
+			".banner",
+			".banner .inner",
+			".banner h2",
+			"homepage-block-three-banner",
+			".banner.home-page .btn",
+			".banner-home-top li",
+			".banner-home-top h4",
+			".banner-home-t",
+			".banner-home-top h4",
+			"banner-home-top container",
+			"אזל מהמלאי",
+			"sold-out",
+			"class=\"products-grid\"",
+			".banner .inner",
+			".nav-search.on .search-bar",
+			"outique-hero.jpg",
+			"sold-out",
+			"sold",
+			"col-xs-3 sidebar collection-sidebar",
+			".banner.home-page .btn",
+			"title=\"להרשמה לחצי כאן\"",
+			"slick-slider",
+			"products-grid owl-carousel slick-slider",
+			"products-grid owl-carousel slick-initialized slick-slider",
+			".widget-title",
+			".banner",
+			".banner .inner",
+			".banner h2",
+			".banner",
+			"class=\"banner home-page\"",
+			"url(//cdn.shopify.com/s/files/1/0775/1963/t/2/assets/banner.jpg?10253943183865494856)",
+			"showModal",
+			"עגלת הקניות",
+			");",
+			",\n",
+			"ajax-error-title",
+			"/cart/add.js",
+			".header-fb-like a",
+			"<meta",
+			"scrollT",
+			"header-bottom",
+			".customer-links",
+			"{\n",
+			"header-fb-like",
+			".customer-links",
+			"class=\"customer-links\"",
+			"class=\"footer-top\"",
+			"class=\"social\"",
+			"rgb(198, 28, 28)",
+			"#E95144",
+			"rgb(233, 81, 68)",
+			".btn",
+			"req",
+			"קניות בגדים באינטרנט",
+			"sidebarAjaxClick",
+			"sidebarGetContent",
+			"debugger",
+			"sidebarGetContent",
+			"מומלצים",
+			"title=\"הוסיפי למועדפים\"",
+			"input[value=\"ירוק\"] + label",
+			"queryparams.sort_by",
+			"debug",
+			"AjaxClick",
+			"init",
+			"Sort",
+			"debugger",
+			"queryParams",
+			"Sorting",
+			"sidebarAjaxClick",
+			"dropdown-menu",
+			"מהחדש לישן",
 			"אתר רכישות און ליין",
 			"banner-home-bottom-1",
 			"banner.jpg",
@@ -500,97 +562,7 @@
 			"div class=\"product-des",
 			"div class=\"product-des clearfix\">",
 			"ajax-error-title",
-			"class=\"product-des",
-			"product-des",
-			"class=\"product-inventory\"",
-			"Availability",
-			".banner",
-			".price-box",
-			".free-shipping h3,",
-			"class=\"header-top\"",
-			".header-top",
-			"<head>",
-			"בוטיק אופנה מאת סוזן אלה",
-			" function initSocialLoginLocale() {",
-			"ga('send', 'event', 'button', 'click', 'homepage store btn');",
-			"title=\"לחנות לחצי כאן\"",
-			"ברוכה הבאה ל",
-			"banner home-page wow",
-			"banner home-page wow fadeInUp animated",
-			"לכניסה לחנות",
-			"לכניסה לחנות לחצי כאן",
-			"widget-trending-product container",
-			"מוצרים חמים",
-			" .",
-			"background:ur",
-			"backg",
-			"close",
-			"An account already exists for this email ad",
-			"An account already exists for this email add",
-			"An account already exists for this email addr",
-			"An account already exists for this email addre",
-			"An account already exists for this email addres",
-			"An account already exists for this email address",
-			"An account already exists for this email address.",
-			"exists",
-			"An account already exists for this email address.",
-			"signin_submit",
-			"signin_result",
-			"Activate Account",
-			"id=\"first_name\"",
-			"id=\"create_customer\"",
-			"agree-to-terms-label",
-			"class=\"wishlist\"",
-			"נוסף לרשימה שלי",
-			".ajax-product-title",
-			"class=\"product-des\"",
-			"class=\"contact-form\"",
-			"title=\"הוסיפי לעגלה\"",
-			"action=\"/cart/add\"",
-			"action=\"/contact\"",
-			".header-bottom .top-header",
-			"customer-links",
-			"<div class=\"wishlist\">",
-			"<a href=\"/account\"> החשבון שלי</a>",
-			".banner h2",
-			"Delete account and remove all access",
-			"class=\"widget-trending-product container\"",
-			".customer-links",
-			"  font-size: 16px;",
-			"customer_register_link",
-			"id=\"customer_register_link\"",
-			"id=\"cartToggle\"",
-			".order-summary .product-list .product",
-			".product-list .product--has-image",
-			"<h2",
-			"class=\"related-products\"",
-			"מוצרים רלוונטים",
-			"<h2",
-			"#C0387D",
-			"related-products",
-			".products-grid .grid-item",
-			".grid-item:hover",
-			".grid-item:hover img",
-			".products-grid .grid-item",
-			".col-main .products-grid .grid-item.grid-4",
-			".quickview-button a",
-			"class=\"list-category row\"",
-			".collection-title a",
-			"height",
-			"product-grid-image",
-			".slick",
-			".recently-viewed-products",
-			"class=\"recently-viewed-products\"",
-			"section class=\"related-products\"",
-			"מוצרים רלוונטים",
-			"<h2",
-			"class=\"related-products\"",
-			"raw",
-			"recently-viewed-products",
-			"recently-viewed-products.liquid",
-			"bottom",
-			"product-bottom",
-			"-bottom"
+			"class=\"product-des"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -643,176 +615,8 @@
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 887,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								887,
-								887
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"default_dir": "/home/eyal/workspace/projects/MIKAI/shop",
-							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "snippets/homepage-block-three-banner-bottom.liquid",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8247,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								572,
-								572
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "snippets/homepage-block-banner.liquid",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 827,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								311,
-								311
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/home/eyal/.bash_aliases",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 775,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								245,
-								245
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 462,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										286,
-										305
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								300,
-								300
-							]
-						],
-						"settings":
-						{
-							"default_dir": "/home/eyal/workspace/projects/MIKAI/shop",
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -869,32 +673,136 @@
 		"selected_items":
 		[
 			[
-				"footermin",
-				"assets/footer.min.js"
-			],
-			[
 				"head",
-				"assets/head.min.js"
+				"snippets/header.liquid"
 			],
 			[
-				"themes",
-				"assets/theme-styles.css.liquid"
+				"head.css",
+				"assets/head.min.css"
+			],
+			[
+				"headcss",
+				"assets/head.min.css"
 			],
 			[
 				"homepagetr",
 				"snippets/homepage-block-trending.liquid"
 			],
 			[
+				"themestyle",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"themestyl",
+				"assets/theme-styles-responsive.css.liquid"
+			],
+			[
+				"themes",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"banner",
+				"snippets/homepage-block-banner.liquid"
+			],
+			[
+				"homepage-block-three-banner",
+				"snippets/homepage-block-three-banner.liquid"
+			],
+			[
+				"homepa",
+				"snippets/homepage-flexslider.liquid"
+			],
+			[
+				"homepageblock",
+				"snippets/homepage-block-banner.liquid"
+			],
+			[
+				"threeb",
+				"snippets/homepage-block-three-banner.liquid"
+			],
+			[
+				"theme",
+				"layout/theme.liquid"
+			],
+			[
+				"themestyleres",
+				"assets/theme-styles-responsive.css.liquid"
+			],
+			[
+				"themest",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"theme-s",
+				"assets/theme-styles.css.liquid"
+			],
+			[
+				"products",
+				"snippets/product-list-item.liquid"
+			],
+			[
+				"collection",
+				"snippets/collection-grid-item.liquid"
+			],
+			[
+				"themestre",
+				"assets/theme-styles-responsive.css.liquid"
+			],
+			[
+				"product-grid-item-category",
+				"snippets/product-grid-item-category.liquid"
+			],
+			[
+				"collec",
+				"templates/collection.liquid"
+			],
+			[
+				"themestylere",
+				"assets/theme-styles-responsive.css.liquid"
+			],
+			[
+				"footer",
+				"assets/footer.min.js"
+			],
+			[
 				"ella",
 				"assets/ella.js"
 			],
 			[
-				"themestyl",
-				"assets/theme-styles.css.liquid"
+				"social",
+				"snippets/social.liquid"
 			],
 			[
-				"themestyle",
-				"assets/theme-styles-setting.css.liquid"
+				"checkou",
+				"assets/checkout.scss.liquid"
+			],
+			[
+				"head.min",
+				"assets/head.min.js"
+			],
+			[
+				"minjs",
+				"assets/head.min.js"
+			],
+			[
+				"foot",
+				"assets/footer.min.js"
+			],
+			[
+				"todo",
+				"todo-shop"
+			],
+			[
+				"colle",
+				"templates/collection.liquid"
+			],
+			[
+				"style",
+				"snippets/head_styles.liquid"
+			],
+			[
+				"footermin",
+				"assets/footer.min.js"
 			],
 			[
 				"product-grid-item-trending",
@@ -933,10 +841,6 @@
 				"snippets/homepage-block-three-banner.liquid"
 			],
 			[
-				"themestyleres",
-				"assets/theme-styles-responsive.css.liquid"
-			],
-			[
 				"wishlist-product",
 				"snippets/wishlist-product.liquid"
 			],
@@ -947,10 +851,6 @@
 			[
 				"checkout.cs",
 				"assets/checkout.scss.liquid"
-			],
-			[
-				"todo",
-				"todo-shop"
 			],
 			[
 				"relatedpro",
@@ -979,14 +879,6 @@
 			[
 				"wishlist-pro",
 				"snippets/wishlist-product.liquid"
-			],
-			[
-				"product-grid-item-category",
-				"snippets/product-grid-item-category.liquid"
-			],
-			[
-				"themestylere",
-				"assets/theme-styles-responsive.css.liquid"
 			],
 			[
 				"themesty",
@@ -1025,10 +917,6 @@
 				"snippets/product-list-item.liquid"
 			],
 			[
-				"collec",
-				"templates/collection.liquid"
-			],
-			[
 				"themst",
 				"assets/theme-styles.css.liquid"
 			],
@@ -1045,10 +933,6 @@
 				"templates/page.contact.liquid"
 			],
 			[
-				"theme",
-				"layout/theme.liquid"
-			],
-			[
 				"check",
 				"assets/checkout.scss.liquid"
 			],
@@ -1057,16 +941,8 @@
 				"assets/_checkout.css.liquid"
 			],
 			[
-				"themest",
-				"assets/theme-styles.css.liquid"
-			],
-			[
 				"header",
 				"snippets/header.liquid"
-			],
-			[
-				"checkou",
-				"assets/checkout.css.liquid"
 			],
 			[
 				"checkout",
@@ -1197,10 +1073,6 @@
 				"assets/theme-styles.css.liquid"
 			],
 			[
-				"footer",
-				"snippets/footer.liquid"
-			],
-			[
 				"th",
 				"layout/theme.liquid"
 			],
@@ -1237,16 +1109,8 @@
 				"assets/theme-styles.css.liquid"
 			],
 			[
-				"social",
-				"snippets/social.liquid"
-			],
-			[
 				"homepage-block-newsletter",
 				"snippets/homepage-block-newsletter.liquid"
-			],
-			[
-				"style",
-				"assets/theme-styles-setting.css.liquid"
 			],
 			[
 				"jcarus",
@@ -1319,66 +1183,6 @@
 			[
 				"neefwjs",
 				"war/editor/nee/utils/nee.fw.js"
-			],
-			[
-				"fontpa",
-				"war/_dm/s/rt/fonts/font-pack.css"
-			],
-			[
-				"oneincl",
-				"war/editor/nee/one.include.jspf"
-			],
-			[
-				"oneshelll",
-				"war/editor/dudaone/shell/one.shellLayout.jsp"
-			],
-			[
-				"fn.js",
-				"war/editor/nee/utils/crossPlatform/nee.fn.extensions.js"
-			],
-			[
-				"initdatajs",
-				"war/editor/nee/editableObjects/editablesInitData.js"
-			],
-			[
-				"inlineedgridcss",
-				"war/_dm/s/rt/css/one.inlineEditGrid.css"
-			],
-			[
-				"neeheader",
-				"war/editor/nee/editableObjects/header/nee.header.js"
-			],
-			[
-				"onefwsma",
-				"war/editor/dudaone/utils/fw/one.fw.smart-site.js"
-			],
-			[
-				"neeinlinepreviewdra",
-				"war/editor/nee/inline/framework/nee.inlinePreviewDrag.js"
-			],
-			[
-				"previewdrag",
-				"war/editor/nee/inline/framework/one.inlinePreviewDrag.js"
-			],
-			[
-				"neeinlinepre",
-				"war/editor/nee/inline/framework/nee.inlinePreviewDrop.js"
-			],
-			[
-				"neemed",
-				"war/editor/nee/utils/nee.media.js"
-			],
-			[
-				"inlineutils",
-				"war/editor/nee/inline/framework/nee.inlineEditorUtils.js"
-			],
-			[
-				".fn",
-				"war/editor/nee/utils/crossPlatform/nee.fn.extensions.js"
-			],
-			[
-				"dmlayoutcomm",
-				"war/_dm/s/rt/scripts/dmLayoutCommonComponents.js"
 			]
 		],
 		"width": 0.0

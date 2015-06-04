@@ -9,77 +9,53 @@
     </fieldset>
   </div>
   <ul class="row">
-    <li class="col-xs-4 wow fadeInUp" data-wow-delay="100ms">
-	<a href="{{ settings.three_block_banner_link_1 }}" title="{{ settings.three_block_banner_text_1 }}">
-	{{ 'top-banner-home-1.jpg' | asset_url | img_tag }}
+    <li class="col-xs-3 wow fadeInUp" data-wow-delay="100ms">
+	<a href="/collections/women-cloth" title="{{ settings.three_block_banner_text_1 }}">
+	{{ 'women-cloths.jpg' | asset_url | img_tag }}
 	{% if settings.display_banner_text_1 %}
 	  <h4>
-        <span style="
-          {% if settings.three_block_banner_size_1 != blank %}
-              font-size: {{ settings.three_block_banner_size_1] }}px;
-          {% elsif settings.three_block_banner_size != blank %}
-              font-size: {{ settings.three_block_banner_size] }}px;
-          {% endif %}
-          {% if settings.three_block_banner_color_1 != blank %} 
-              color: {{ settings.three_block_banner_color_1 }};
-          {% elsif settings.three_block_banner_color != blank %}
-              color: {{ settings.three_block_banner_color }};
-          {% endif %}"
-        >	
-			{% if settings.three_block_banner_text_1 != blank %}
-			{{ settings.three_block_banner_text_1 }}
-			{% endif %}
-		</span>
+        <span>בגדים</span>
       </h4>
+
+      <p>שמלות, ג'ינסים, מכנסים, ג'קטים, חולצות, חצאיות</p>
+      <div class="btn" value="בגדים">צפייה בבגדים</div>
 	{% endif %}
 	</a>
 	</li>
-    <li class="col-xs-4 wow fadeInUp" data-wow-delay="300ms">
-		<a href="{{ settings.three_block_banner_link_2 }}" title="{{ settings.three_block_banner_text_2 }}">{{ 'top-banner-home-2.jpg' | asset_url | img_tag }}
+    <li class="col-xs-3 wow fadeInUp" data-wow-delay="300ms">
+		<a href="/collections/collections-hand-bags" title="{{ settings.three_block_banner_text_2 }}">{{ 'women-bags.jpg' | asset_url | img_tag }}
 			{% if settings.display_banner_text_2 %}
 				<h4>
-                  <span style="
-          {% if settings.three_block_banner_size_2 != blank %}
-              font-size: {{ settings.three_block_banner_size_2] }}px;
-          {% elsif settings.three_block_banner_size != blank %}
-              font-size: {{ settings.three_block_banner_size] }}px;
-          {% endif %}
-          {% if settings.three_block_banner_color_2 != blank %} 
-              color: {{ settings.three_block_banner_color_2 }};
-          {% elsif settings.three_block_banner_color != blank %}
-              color: {{ settings.three_block_banner_color }};
-          {% endif %}"
-        >
-				{% if settings.three_block_banner_text_2 != blank %}
-				{{ settings.three_block_banner_text_2 }}
-				{% endif %}
-				</span></h4>
+                  <span>תיקים</span></h4>
+
+                  <p>תיקי קלאץ', תיקי צד, ארנקים, תיקי ערב</p>
+      <div class="btn" value="בגדים">צפייה בתיקים</div>
 			{% endif %}
 		</a>
 	</li>
-    <li class="col-xs-4 wow fadeInUp" data-wow-delay="500ms">
-	<a href="{{ settings.three_block_banner_link_3 }}" title="{{ settings.three_block_banner_text_3 }}">{{ 'top-banner-home-3.jpg' | asset_url | img_tag }}
+    <li class="col-xs-3 wow fadeInUp" data-wow-delay="500ms">
+	<a href="/collections/women-shoes" title="{{ settings.three_block_banner_text_3 }}">{{ 'women-shoes.jpg' | asset_url | img_tag }}
 	{% if settings.display_banner_text_3 %}
 	<h4>
-                  <span style="
-          {% if settings.three_block_banner_size_3 != blank %}
-              font-size: {{ settings.three_block_banner_size_3] }}px;
-          {% elsif settings.three_block_banner_size != blank %}
-              font-size: {{ settings.three_block_banner_size] }}px;
-          {% endif %}
-          {% if settings.three_block_banner_color_3 != blank %} 
-              color: {{ settings.three_block_banner_color_3 }};
-          {% elsif settings.three_block_banner_color != blank %}
-              color: {{ settings.three_block_banner_color }};
-          {% endif %}"
-        >
-	{% if settings.three_block_banner_text_3 != blank %}
-	{{ settings.three_block_banner_text_3 }}
-	{% endif %}
-	</span></h4>
+                  <span>נעליים</span></h4>
+
+                  <p>נעלים, מגפיים, סנדלים, נעלי עקב, אלגנט, מגפונים</p>
+      <div class="btn" value="בגדים">צפייה בנעליים</div>
 	{% endif %}
 	</a>
 	</li>
+
+  <li class="col-xs-3 wow fadeInUp" data-wow-delay="500ms">
+  <a href="/collections/accessorize" title="{{ settings.three_block_banner_text_3 }}">{{ 'women-accesorize.jpg' | asset_url | img_tag }}
+  {% if settings.display_banner_text_3 %}
+  <h4>
+                  <span>אקססוריז</span></h4>
+
+                  <p>תכשיטים, שעונים, משקפי שמש, צמידים</p>
+      <div class="btn" value="בגדים">צפייה באקססוריז</div>
+  {% endif %}
+  </a>
+  </li>
   </ul>
 </section>
 {% endif %}

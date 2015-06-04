@@ -20,6 +20,62 @@
 {{ 'classie.js' | asset_url | script_tag }}
 {% endcomment %}
 
+{% comment %}
+{{ 'jquery-cookie.min.js' | asset_url | script_tag }}
+{{ 'selectize.min.js' | asset_url | script_tag }}
+{{ 'jquery.flexslider-min.js' | asset_url | script_tag }}
+{% endcomment %}
+{{ 'head.min.js' | asset_url | script_tag }}
+
+<script>(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+      var fbds = document.createElement('script');
+      fbds.async = true;
+      fbds.src = '//connect.facebook.net/en_US/fbds.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(fbds, s);
+      _fbq.loaded = true;
+    }
+    _fbq.push(['addPixelId', '413469872166664']);
+  })();
+  window._fbq = window._fbq || [];
+  window._fbq.push(['track', 'PixelInitialized', {}]);
+  </script>
+  <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=413469872166664&amp;ev=PixelInitialized" /></noscript>
+
+{% if settings.header_top_text != blank %}
+<script>
+      if (jQuery.cookie('headerTop') == 'closed') {
+        jQuery('.header-top').remove();
+      }
+
+      jQuery('.header-top a.close').bind('click',function(){
+        jQuery('.header-top').remove();
+        jQuery.cookie('headerTop', 'closed', {expires:1, path:'/'});
+      });  
+  </script>
+{% endif %}
+
+<script>
+  window.ajax_cart = {{settings.ajax_cart}};
+  window.money_format = "{{shop.money_with_currency_format}}";
+  window.shop_currency = "{{ shop.currency }}";
+  window.show_multiple_currencies = {{settings.enable_multiple_currencies}};
+  window.loading_url = "{{ 'loading.gif' | asset_url}}"; 
+  window.use_color_swatch = {{ settings.use_color_swatch }};
+  window.product_image_resize = {{settings.product_image_resize}};
+  window.enable_sidebar_multiple_choice = {{ settings.enable_sidebar_multiple_choice}};
+  window.dropdowncart_type = "{{ settings.dropdowncart_type }}";
+  window.file_url = "{{''|file_url}}";
+  window.asset_url = "{{''|asset_url}}";
+  window.images_size = {
+    is_crop: {{ settings.product_image_crop }},
+    ratio_width : {{ settings.product_image_ratio_width }},
+    ratio_height : {{ settings.product_image_ratio_height }},
+  };
+</script>
+
 {{ 'footer.min.js' | asset_url | script_tag }}
 
 <script>
@@ -67,7 +123,7 @@ if (isMobile) {
 {% if settings.display_fixtop_menu %}
 <script>
   jQuery(window).scroll(function () {
-    if (jQuery(this).scrollTop() > 242) {
+    if (jQuery(this).scrollTop() > 216) {
       jQuery('.header-bottom').addClass('on');
       jQuery('.header-bottom').addClass('fadeInDown');
       jQuery('.nav-search').removeClass('on');

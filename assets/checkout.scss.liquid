@@ -8,11 +8,17 @@
 	left: 0;
 }
 
-html { font-size: {{ settings.body_font_size }}px; color: {{ settings.body_color }}; font-family: 'Roboto'; font-weight: 400; }
-body { direction: rtl; font-family: "Alef Hebrew", ans-serif; }
+html { font-size: 15px; color: {{ settings.body_color }}; font-family: 'Roboto'; font-weight: 400; }
+body { direction: rtl; font-family: "Alef Hebrew", ans-serif;   background-color: #FAFAF8; }
 
-h3 { font-family: Alef Hebrew; font-size: 16px; font-weight: 700; letter-spacing: 0.02em; color: #000; }
-h5 { color: #000; font-family: 'Montserrat'; font-weight: 700; font-size: 13px; letter-spacing: 0.05em; margin-bottom: 13px; }
+h3 { font-family: Alef Hebrew; font-size: 21px; font-weight: 700; letter-spacing: 0.02em; color: #000; }
+h5 {   color: #000;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 21px;
+  letter-spacing: 0.05em;
+  margin-bottom: 13px;
+  margin-top: 2em; }
 
 label { color: #000; font-weight: 700; }
 label small { font-size: {{ settings.body_font_size }}px; color: {{ settings.body_color }}; }
@@ -33,7 +39,9 @@ input, select { color: #3d3d3d; }
 p { color: {{ settings.body_color }}; }
 .btn { font-family: 'Montserrat'; font-weight: 700; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; padding: 17px 50px; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
 .btn:hover,
-.btn.btn--primary:hover{ border-color:{{ settings.second_button_border_color_hover }}; background-color: {{ settings.second_button_bg_color_hover }}; color: {{ settings.second_button_text_color_hover }}; }
+.btn.btn--primary:hover{   background-color: #FFFFFF;
+  color: #e95144;
+  border: 1px solid #e95144; }
 .btn.btn--primary { padding: 17px 30px; }
 
 /*  Header -------------------------- */
@@ -102,7 +110,7 @@ payment-due__currency,
 .section__header .section__edit-link { float: left; }
 .field .label--full-width { position: relative; }
 .shipping-option__price { left: 10px; right: auto; }
-.field__icon { left: 1.25em; right: auto; }
+.field__icon { left: 4.25em; right: auto; }
 .more:hover:after { -webkit-transform: translateX(0.5em); transform: translateX(-0.5em); }
 
 
@@ -110,6 +118,46 @@ payment-due__currency,
 .footer { padding: 35px 0 70px; margin-top: 40px; }
 .boxshadow .footer { -webkit-box-shadow: 0 -1px #dadada; -moz-box-shadow: 0 -1px #dadada; box-shadow: 0 -1px #dadada; }
 .footer__copyright, .footer a { color: {{ settings.body_color }}; font-size: {{ settings.body_font_size }}px; }
+
+/* Costume */
+
+.order-summary .product-list .product {
+	  padding-left: 0em;
+}
+
+
+/* Custom form setup */
+[data-country-section] { display: none; }
+
+.field--required label:before {
+  content: "*";
+  color: red;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.btn.btn--primary,
+.btn {
+  	background-color: #F82424;
+  	border: 1px solid white;
+}
+
+.boxshadow .btn.btn--primary:focus:hover,
+.boxshadow .btn:focus:hover
+.boxshadow .btn.btn--primary:focus,
+.boxshadow .btn:focus {
+  background-color: #fff;
+  color: #F82424;
+  box-shadow: none;
+}
+
+#shipping-method {
+	display: none;
+}
+
+.field-group.field-group--has-subfields {
+  display: none;
+}
 
 @media (max-width: 999px) {
   #checkout { width: 100%; }
@@ -121,8 +169,36 @@ payment-due__currency,
   #checkout { width: 100%; }
   .order-summary { width: 100%; float: left; }
   .footer { padding-left: 20px; padding-right: 20px; }
-}
 
-.order-summary .product-list .product {
-	  padding-left: 0em;
+  .call-to-action {
+		width: 100%;
+	}
+
+	.safari .call-to-action label {
+	 margin-right: auto;
+	}
+
+	.product .product__image {
+	  float: right;
+	  border: 1px solid #ccc;
+	  margin-left: 20px;
+	  margin-right: 0;
+	}
+	.order-summary-recap .product-list .product:last-child {
+		width: 100%;
+		margin: 0;
+	}
+
+	.chrome input[type='checkbox']:checked, .safari input[type='checkbox']:checked, .opera input[type='checkbox']:checked {
+	  background: #21D4DC;
+	  border-color: #21D4DC;
+	}
+
+	.order-summary .product-list .product {
+		padding-right: 0;
+	}
+
+	.boxshadow .btn:focus:hover {
+		background-color: #fff;
+	}
 }

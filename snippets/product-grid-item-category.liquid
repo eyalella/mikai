@@ -49,6 +49,7 @@
       - http://docs.shopify.com/support/your-store/collections/how-to-navigate-within-a-collection
 
   {% endcomment %}
+  
   <div class="product-top">
     <div class="product-image">
       <a href="{{ product.url | within: collection }}" class="product-grid-image">
@@ -57,13 +58,16 @@
       </a>
     </div>
     
-    {% if on_sale or sold_out %}
+    {% if on_sale or sold_out or product.tags contains 'new' %}
     <div class="product-label">
       {% if on_sale %}
       <strong class="label">מבצע</strong>
       {% endif %}
       {% if sold_out %}
-      <strong class="sold-out-labelאזל מהמלאי</strong>
+      <strong class="sold-out-label sold-out">אזל מהמלאי</strong>
+      {% endif %}
+      {% if product.tags contains 'new' %}
+      <strong class="new-label sold-out">חדש</strong>
       {% endif %}
     </div>
     {% endif %}

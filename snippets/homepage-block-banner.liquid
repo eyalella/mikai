@@ -1,18 +1,17 @@
 {% if settings.display_banner %}
-<section class="banner home-page" style="background-image: url({{ 'banner.jpg' | asset_url }});">
-  {{ 'banner.jpg' | asset_url | img_tag }}
+<section class="banner home-page" style="background-image: url({{ 'model-hero-image.jpg' | asset_url }});">
+  {{ 'model-hero-image.jpg' | asset_url | img_tag }}
   <div class="container">
     <div class="inner">
       {% if settings.banner_text_title != blank %}
-      <h2>ברוכה הבאה ל<span class="logo-font">-MIKAI</span><br>קניות אונליין</h2>
-      <p>רכישת פריטים במשלוח עד הבית או באיסוף עצמי</p>
+      <h2><span class="logo-font">MIKAI </span><span>קניות אונליין</span></h2>
+      <p>אופנת נשים - בגדים, נעליים, תיקים ואקססוריז<br>לקנייה באתר או בטלפון 02-6711020</p>
       {% comment %}<p class="line">&nbsp;</p>{% endcomment %}
       {% endif %}
       {% if settings.banner_button_text != blank %}
-      <a href="/account/register" title="להרשמה לחצי כאן" class="btn" onclick="ga('send', 'event', 'button', 'click', 'homepage store btn');" >
-        להרשמה לחצי כאן
-        <span class="arrow">arrow</span>
-      </a>		
+      <div title="משלוח חינם בכל קניה!" class="btn" onclick="$('html, body').animate({ scrollTop: '450px' });" >
+        משלוח חינם בכל קניה!
+      </div>		
       {% endif %}
     </div>
   </div>

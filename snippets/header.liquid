@@ -16,16 +16,7 @@
         </p>
       </div>
     </div>
-  	<script>
-      if (jQuery.cookie('headerTop') == 'closed') {
-        jQuery('.header-top').remove();
-      }
-
-      jQuery('.header-top a.close').bind('click',function(){
-        jQuery('.header-top').remove();
-        jQuery.cookie('headerTop', 'closed', {expires:1, path:'/'});
-      });  
-	</script>
+  	
     {% endif %}
   {% endif %}
   
@@ -130,7 +121,7 @@
               {{ 'logo.png' | asset_url | img_tag: shop.name }}
             </a>
             {% elsif settings.brand_text != "" %}
-            <a class="logo-title" href="/">{{ settings.brand_text }}<small>קניות בגדים באינטרנט</small> </a>
+            <a class="logo-title" href="/">{{ settings.brand_text }}<small>קניות אונליין - יפה יותר, אופנתי יותר, איכותי יותר!</small> </a>
             {% else %}
             <a class="logo-title" href="/">{{shop.name}}</a>
             {% endif %}
