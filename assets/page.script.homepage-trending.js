@@ -1,5 +1,6 @@
 jQuery(document).ready(function() {
-  jQuery('.widget-trending-product .products-grid').slick({
+  if($(window).width() > 600) {
+    jQuery('.widget-trending-product .products-grid').slick({
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 4,
@@ -20,4 +21,5 @@ jQuery(document).ready(function() {
       }
     ]
   });
+  }
 });
