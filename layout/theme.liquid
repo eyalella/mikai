@@ -25,19 +25,18 @@
   <!-- Helpers ================================================== -->
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="google-site-verification" content="qIu9dFv5S3qBbzn8n6fn7TgRKXoLqndwJbeTSRjpAKI" />
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
   
   <!-- Favicon -->
   <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/x-icon" />
   
-   <!-- fonts -->
-  {% include 'head_fonts' %}
+   {% comment %}<!-- fonts -->
+  {% include 'head_fonts' %}{% endcomment %}
   
    <!-- Styles -->
    {% include 'head_styles' %}
   
-   <!-- Scripts -->
-  {% include 'head_scripts' %}
+  
 
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
@@ -81,10 +80,9 @@
   	{% include 'quick-view-template' %}
   {% endif %}
 
-  {% include 'footer_scripts' %}
-  {% include 'newsletter' %}
-  <div id="back-top" style="display: none;"><a class="nav_up" href="#top">Back to top</a></div>
-  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script> 
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+  {{ 'jquery-cookie.min.js' | asset_url | script_tag }}
 
   {% if settings.display_recently_viewed_products %}
   <!-- Begin Recently Viewed Products -->
@@ -97,6 +95,11 @@
   {% endif %}
   <!-- End Recently Viewed Products -->
   {% endif %}
+
+  {% include 'footer_scripts' %}
+  {% include 'newsletter' %}
+  <div id="back-top" style="display: none;"><a class="nav_up" href="#top">Back to top</a></div>
+  </div>
   
   {% if settings.enable_retina %}
   {{ 'retina.js' | asset_url | script_tag }}

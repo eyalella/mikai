@@ -2,7 +2,6 @@
 {% comment %}
 {{ 'bootstrap.min.js' | asset_url | script_tag }}  
 {% endcomment %}
-{{ 'api.jquery.js' | shopify_asset_url | script_tag }}
 {{ 'option_selection.js' | shopify_asset_url | script_tag }}
 {% comment %}
 {{ 'owl.carousel.min.js' | asset_url | script_tag }}
@@ -21,11 +20,32 @@
 {% endcomment %}
 
 {% comment %}
-{{ 'jquery-cookie.min.js' | asset_url | script_tag }}
 {{ 'selectize.min.js' | asset_url | script_tag }}
 {{ 'jquery.flexslider-min.js' | asset_url | script_tag }}
 {% endcomment %}
 {{ 'head.min.js' | asset_url | script_tag }}
+
+<!-- Template based scripts -->
+{{ template }}
+{% if template contains 'customers' %}
+    {{ 'page.script.register.js' | asset_url | script_tag }}
+{% endif %}
+
+{% if template contains 'index' %}
+  {{ 'page.script.homepage-trending.js' | asset_url | script_tag }}
+{% endif %}
+
+{% if template contains 'product' %}
+  {%  include 'page_product_scripts' %}
+{% endif %}
+
+{% if template contains 'contact' %}
+  <script>
+    jQuery('.main-content').removeClass('container');
+  </script>
+{% endif %}
+
+<!-- End template based scripts -->
 
 <script>(function() {
     var _fbq = window._fbq || (window._fbq = []);

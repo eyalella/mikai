@@ -1,5 +1,4 @@
-{{ '//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js' | script_tag }}
-{{ 'jquery.products.min.js' | asset_url | script_tag }}
+
 
 <section class="recently-viewed-products">
   {% if settings.recently_viewed_products_title != '' %}
@@ -10,7 +9,7 @@
 </section>
 
 {% raw %}
-<script id="recently-viewed-product-grid-template"  type="text/x-jquery-tmpl">
+<script id="recently-viewed-product-grid-template" type="text/x-jquery-tmpl">
 {% endraw %}
 <div class="{% if settings.prouduct_item_no_hover%}product-item-no-hover{% endif %}  {% if settings.product_image_border%} grid-item-border {% endif %} {% if settings.product_image_crop%} crop_image {% else %} no_crop_image {% endif %} grid-item product-item {% raw %} {{if !available}} sold-out {{/if}} {{if compare_at_price_min > price_min}} on-sale {{/if}}"  id="product-${id}">
   <div class="product-top">
@@ -54,48 +53,3 @@
 </script>
 {% endraw %}
 
-<script>
-Shopify.Products.showRecentlyViewed({ 
-  howManyToShow: {{ settings.number_of_recently_viewed_products }}, 
-  wrapperId: 'recently-viewed-products-grid', 
-  templateId: 'recently-viewed-product-grid-template',
-  onComplete: function() {
-    if (jQuery("#recently-viewed-products-grid").children().length > 0) {
-  	  jQuery(".recently-viewed-products").show();
-  	  if (window.product_image_resize) {
-          jQuery('#recently-viewed-products-grid img').fakecrop({ 
-            fill: window.images_size.is_crop,
-            widthSelector: ".products-grid .product-image",
-            ratioWrapper: window.images_size
-          });
-  	  }
-  
-  	  if (window.show_multiple_currencies) {
-         Currency.convertAll(window.shop_currency, jQuery('#currencies').val(), 'span.money', 'money_format');
-      }
-jQuery('#recently-viewed-products-grid').slick({
-  infinite: true,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  rtl: true,
-  dots: true,
-  autoplay: true,
-  autoplaySpeed: 5000,
-  dots: false,
-  responsive: [
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
-});
-      if (jQuery(".spr-badge").length>0) {
-          return window.SPR.registerCallbacks(), window.SPR.initRatingHandler(), window.SPR.initDomEls(), window.SPR.loadProducts(), window.SPR.loadBadges();
-      }
-    }    
-  }
-});
-</script>
