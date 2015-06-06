@@ -147,7 +147,11 @@ if (isMobile) {
         console.log('Error: ' + 'windowWidth = ' + windowWidth);
         }
         else if(windowWidth >= 768) {
-              jQuery('[role="main"]').css('paddingTop', '30px');
+            if($('body').hasClass('template-index')) {
+                jQuery('[role="main"]').css('paddingTop', '0px');
+            } else {
+                jQuery('[role="main"]').css('paddingTop', '30px');
+            }
           }
     }
   });
