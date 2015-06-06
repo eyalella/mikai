@@ -26,7 +26,7 @@
 {{ 'head.min.js' | asset_url | script_tag }}
 
 <!-- Template based scripts -->
-{{ template }}
+
 {% if template contains 'customers' %}
     {{ 'page.script.register.js' | asset_url | script_tag }}
 {% endif %}
@@ -45,6 +45,15 @@
   </script>
 {% endif %}
 
+
+{% if template contains 'cart' %}
+  $(document).ready(function(){
+    var $payPalBtn = $('input[value="paypal_express"]');
+    $('.paypal-he-button').on('click', function() {
+      $payPalBtn.trigger('click');
+    });
+  });
+{% endif %}
 <!-- End template based scripts -->
 
 <script>(function() {
